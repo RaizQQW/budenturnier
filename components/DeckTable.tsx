@@ -36,7 +36,7 @@ function DecklistBlock({
               <span className="w-6 shrink-0 text-right text-zinc-500">
                 {line.qty}×
               </span>
-              <span className="min-w-0">
+              <span className="min-w-0 break-words leading-snug">
                 {meta ? (
                   <CardPreview
                     name={meta.name}
@@ -65,27 +65,26 @@ export function DeckTable({
 }) {
   const [openId, setOpenId] = useState<string | null>(null);
 
-  const showBracket = decks.some((d) => d.bracketWeightedPoints !== 0);
-  const showPlacement = decks.some((d) => d.placementBonus !== 0);
-  const colCount = 4 + (showBracket ? 1 : 0) + (showPlacement ? 1 : 0) + 2;
+  // Show group column only when at least one deck has a group that differs
+  // from its fine-grained archetype (i.e. archetypeGroups is configured)
+  const showGroup = decks.some(
+    (d) =>
+      d.groupedArchetype != null &&
+      d.groupedArchetype !== (d.harmonizedArchetype ?? d.archetype),
+  );
+
+  const colCount = 3 + (showGroup ? 1 : 0); // Rank, Player, [Group,] Archetype, Swiss pts
 
   return (
     <div className="overflow-x-auto rounded-lg border border-zinc-200 dark:border-zinc-800">
-      <table className="w-full min-w-[640px] border-collapse text-sm">
+      <table className="w-full min-w-[400px] border-collapse text-sm">
         <thead>
           <tr className="border-b border-zinc-200 bg-zinc-100/80 text-left dark:border-zinc-800 dark:bg-zinc-900">
             <th className="px-3 py-2 font-medium">Rank</th>
             <th className="px-3 py-2 font-medium">Player</th>
+            {showGroup && <th className="px-3 py-2 font-medium">Group</th>}
             <th className="px-3 py-2 font-medium">Archetype</th>
             <th className="px-3 py-2 font-medium text-right">Swiss pts</th>
-            {showBracket && (
-              <th className="px-3 py-2 font-medium text-right">Bracket</th>
-            )}
-            {showPlacement && (
-              <th className="px-3 py-2 font-medium text-right">Place +</th>
-            )}
-            <th className="px-3 py-2 font-medium text-right">Total</th>
-            <th className="px-3 py-2 font-medium">List</th>
           </tr>
         </thead>
         <tbody>
@@ -129,38 +128,21 @@ export function DeckTable({
                       ) : null}
                     </span>
                   </td>
+                  {showGroup && (
+                    <td className="px-3 py-2 text-zinc-500 dark:text-zinc-400">
+                      {d.groupedArchetype ?? "—"}
+                    </td>
+                  )}
                   <td className="px-3 py-2 text-zinc-600 dark:text-zinc-400">
                     {d.harmonizedArchetype ?? d.archetype ?? "—"}
                   </td>
                   <td className="px-3 py-2 text-right tabular-nums">
                     {d.swissMatchPoints.toFixed(1)}
                   </td>
-                  {showBracket && (
-                    <td className="px-3 py-2 text-right tabular-nums">
-                      {d.bracketWeightedPoints.toFixed(1)}
-                    </td>
-                  )}
-                  {showPlacement && (
-                    <td className="px-3 py-2 text-right tabular-nums">
-                      {d.placementBonus.toFixed(1)}
-                    </td>
-                  )}
-                  <td className="px-3 py-2 text-right font-medium tabular-nums">
-                    {d.performanceScore.toFixed(1)}
-                  </td>
-                  <td className="px-3 py-2 text-xs">
-                    {hasList ? (
-                      <span className="text-green-600 dark:text-green-400">
-                        Yes
-                      </span>
-                    ) : (
-                      <span className="text-zinc-400">No</span>
-                    )}
-                  </td>
                 </tr>
                 {expanded && hasList ? (
                   <tr className="border-b border-zinc-200 bg-zinc-50/90 dark:border-zinc-800 dark:bg-zinc-950/80">
-                    <td colSpan={colCount} className="px-4 py-4 align-top">
+                    <td colSpan={colCount + 1} className="px-4 py-4 align-top">
                       <div className="max-h-[min(70vh,560px)] overflow-y-auto pr-1">
                         <DecklistBlock
                           title="Mainboard"
@@ -185,14 +167,8 @@ export function DeckTable({
       </table>
       {decks.some((d) => d.lines.length > 0) ? (
         <p className="border-t border-zinc-200 px-3 py-2 text-xs text-zinc-500 dark:border-zinc-800">
-          Click a row with a decklist to expand. Click again to collapse.
-          <span className="mt-1 block">
-            <strong className="font-medium text-zinc-600 dark:text-zinc-400">
-              Archetype
-            </strong>{" "}
-            is read from mainboard signatures when we have a decklist; otherwise
-            it uses the tag from the event (e.g. Vampires → Rakdos Vampires).
-          </span>
+          Click a row to expand its decklist. Archetype is auto-detected from
+          mainboard signatures where a list is available.
         </p>
       ) : null}
     </div>

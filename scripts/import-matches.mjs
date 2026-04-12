@@ -29,6 +29,15 @@ if (!Array.isArray(raw.matches)) {
   process.exit(1);
 }
 
+const standingsPath = path.join(root, "data", "tournaments", slug, "standings.json");
+const knownNames = fs.existsSync(standingsPath)
+  ? new Set(
+      (JSON.parse(fs.readFileSync(standingsPath, "utf8")).standings ?? []).map(
+        (row) => row.displayName,
+      ),
+    )
+  : null;
+
 for (const m of raw.matches) {
   if (!m.phase || !["swiss", "bracket"].includes(m.phase)) {
     console.error("Invalid match phase", m);
@@ -36,6 +45,22 @@ for (const m of raw.matches) {
   }
   if (typeof m.playerA !== "string") {
     console.error("Invalid match playerA", m);
+    process.exit(1);
+  }
+  if (!m.bye && typeof m.playerB !== "string") {
+    console.error("Non-bye match must include playerB", m);
+    process.exit(1);
+  }
+  if (m.bye && m.playerB != null) {
+    console.error("Bye match must not include playerB", m);
+    process.exit(1);
+  }
+  if (knownNames && !knownNames.has(m.playerA)) {
+    console.error("playerA not found in standings", m.playerA);
+    process.exit(1);
+  }
+  if (knownNames && m.playerB && !knownNames.has(m.playerB)) {
+    console.error("playerB not found in standings", m.playerB);
     process.exit(1);
   }
 }

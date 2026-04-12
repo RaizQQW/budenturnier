@@ -56,8 +56,11 @@ export function computeMetagameMatrix(
   }
 
   for (const row of matches) {
-    if (row.bye || row.playerB == null) continue;
-    const { playerA: A, playerB: B, gamesA: ga, gamesB: gb } = row;
+    if (row.bye) continue;
+    const A = row.playerA;
+    const B = row.playerB;
+    const { gamesA: ga, gamesB: gb } = row;
+    if (!A || !B) continue;
     if (ga === 0 && gb === 0) continue;
 
     const archA = playerToSuperArch.get(A)?.trim();

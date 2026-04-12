@@ -4,6 +4,7 @@ import path from "node:path";
 import type {
   CardAggregateRow,
   CardCacheFile,
+  CardPackageCorpusMeta,
   CardPerformanceCluster,
   CardPreviewPayload,
   DeckEntry,
@@ -18,21 +19,14 @@ import {
   computePlayerScores,
   computeStandingsOnlyScores,
 } from "./scoring";
-import { clusterDecksByMainNonland } from "./clustering";
 import {
   computeMetagameMatrix,
   type MetagameMatrixPayload,
 } from "./metagameMatrix";
 import { applyArchetypeGroups } from "./archetypeGroups";
 import { resolveHarmonizedArchetype } from "./harmonizeArchetype";
+import { assertTournamentBundleData } from "./validation";
 import { computeCardPerformanceClusters } from "./cardPerformanceClusters";
-
-function slugifyDisplayName(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-}
 
 function tournamentDir(slug: string): string {
   return path.join(process.cwd(), "data", "tournaments", slug);
@@ -59,6 +53,15 @@ export function loadTournamentBundle(slug: string) {
   const cardCache: CardCacheFile = fs.existsSync(cachePath)
     ? loadJson<CardCacheFile>(cachePath)
     : { cards: {} };
+  assertTournamentBundleData({
+    slug,
+    dir,
+    meta,
+    standings,
+    decks: decksFile,
+    matches,
+    cardCache,
+  });
   return { dir, meta, standings, decks: decksFile, matches, cardCache };
 }
 
@@ -103,9 +106,9 @@ export type TournamentStats = {
   cardRows: CardAggregateRow[];
   /** Co-occurrence clusters among better-performing decklists (see `cardPerformanceClusters.ts`). */
   cardPerformanceClusters: CardPerformanceCluster[];
+  /** Non-null when card packages are shown; describes the TF-IDF corpus. */
+  cardPackageCorpus: CardPackageCorpusMeta | null;
   decklistCoverage: { withList: number; total: number };
-  archetypeRows: { archetype: string; deckCount: number; avgScore: number }[];
-  clusters: import("./types").ArchetypeCluster[];
   metagame: MetagameMatrixPayload | null;
   /** Broader grouped-archetype matrix (e.g. all BG variants → "BG"). */
   metagameGrouped: MetagameMatrixPayload | null;
@@ -152,14 +155,19 @@ export function computeTournamentStats(slug: string): TournamentStats {
     resolvedOracleIds: Record<string, string>,
   ) {
     const arch = d.archetype ?? null;
+    const harmonizedArchetype = resolveHarmonizedArchetype(
+      d.harmonizedArchetype,
+      { oracleQty, archetype: arch },
+      cardCache,
+    );
     partialDecks.push({
       playerId: d.playerId,
       displayName: d.displayName,
       archetype: arch,
-      harmonizedArchetype: resolveHarmonizedArchetype(
-        d.harmonizedArchetype,
-        { oracleQty, archetype: arch },
-        cardCache,
+      harmonizedArchetype,
+      groupedArchetype: applyArchetypeGroups(
+        harmonizedArchetype ?? arch,
+        meta.archetypeGroups,
       ),
       rank,
       performanceScore: perf,
@@ -205,7 +213,10 @@ export function computeTournamentStats(slug: string): TournamentStats {
     const d =
       deckByName.get(st.displayName) ??
       ({
-        playerId: slugifyDisplayName(st.displayName),
+        playerId: st.displayName
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-|-$/g, ""),
         displayName: st.displayName,
         deckFile: null,
         archetype: null,
@@ -315,7 +326,10 @@ export function computeTournamentStats(slug: string): TournamentStats {
     const c = cardCache.cards[oracle_id];
     const name = c?.name ?? oracle_id;
     const type_line = c?.type_line ?? "";
-    const colors = c?.colors ?? c?.color_identity ?? [];
+    const colors =
+      c?.colors && c.colors.length > 0
+        ? c.colors
+        : (c?.color_identity ?? []);
 
     // Copy-weighted percentile avg: a 4-of counts 4x as much as a 1-of
     const weightedAvgPctl =
@@ -363,36 +377,14 @@ export function computeTournamentStats(slug: string): TournamentStats {
 
   cardRows.sort((a, b) => b.adjustedAvgPercentile - a.adjustedAvgPercentile);
 
-  const cardPerformanceClusters = computeCardPerformanceClusters(
-    decksWithCards,
-    cardCache,
-    cardRows,
-  );
-
-  const archMap = new Map<string, { sum: number; n: number }>();
-  for (const dw of decksWithCards) {
-    const coarse = (dw.harmonizedArchetype ?? dw.archetype)?.trim();
-    if (!coarse) continue;
-    const a = applyArchetypeGroups(coarse, meta.archetypeGroups) ?? coarse;
-    const cur = archMap.get(a) ?? { sum: 0, n: 0 };
-    cur.sum += dw.performanceScore;
-    cur.n += 1;
-    archMap.set(a, cur);
-  }
-  const archetypeRows = [...archMap.entries()]
-    .map(([archetype, { sum, n }]) => ({
-      archetype,
-      deckCount: n,
-      avgScore: sum / n,
-    }))
-    .sort((a, b) => b.avgScore - a.avgScore);
-
-  const clusters = clusterDecksByMainNonland(decksWithCards, cardCache, 3);
+  const { clusters: cardPerformanceClusters, corpus: cardPackageCorpus } =
+    computeCardPerformanceClusters(decksWithCards, cardCache, cardRows);
 
   const playerToSuperArch = new Map<string, string>();
   for (const dw of decksWithCards) {
     const tag = (dw.harmonizedArchetype ?? dw.archetype)?.trim();
-    if (tag) playerToSuperArch.set(dw.displayName, tag);
+    if (!tag) continue;
+    playerToSuperArch.set(dw.displayName, tag);
   }
   const metagame =
     matches.length > 0
@@ -480,9 +472,8 @@ export function computeTournamentStats(slug: string): TournamentStats {
     cardPreviewsByOracle,
     cardRows,
     cardPerformanceClusters,
+    cardPackageCorpus,
     decklistCoverage,
-    archetypeRows,
-    clusters,
     metagame,
     metagameGrouped,
     superArchetypePlayRates,

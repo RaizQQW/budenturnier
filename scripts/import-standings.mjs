@@ -25,6 +25,8 @@ if (!slug || !tsvPath) {
 
 const text = fs.readFileSync(tsvPath, "utf8");
 const standings = [];
+const seenNames = new Set();
+const seenRanks = new Set();
 
 for (const line of text.split(/\r?\n/)) {
   if (!line.trim()) continue;
@@ -42,19 +44,30 @@ for (const line of text.split(/\r?\n/)) {
   const rank = Number(rankStr);
   const matchPoints = Number(matchPointsStr);
   if (!displayName?.trim() || !Number.isFinite(rank)) continue;
+  const name = displayName.trim();
+  if (seenNames.has(name)) {
+    console.error("Duplicate standings displayName:", name);
+    process.exit(1);
+  }
+  if (seenRanks.has(rank)) {
+    console.error("Duplicate standings rank:", rank);
+    process.exit(1);
+  }
   const h = (hasDeckStr ?? "").trim().toLowerCase();
   const hasDecklist =
     (h.includes("decklist") && !h.includes("no")) ||
     /^(y|yes|true|1)$/.test(h);
   const row = {
     rank,
-    displayName: displayName.trim(),
+    displayName: name,
     matchPoints: Number.isFinite(matchPoints) ? matchPoints : 0,
     hasDecklist,
   };
   if (omw?.trim()) row.omwPercent = Number(omw);
   if (gw?.trim()) row.gwPercent = Number(gw);
   if (ogw?.trim()) row.ogwPercent = Number(ogw);
+  seenNames.add(name);
+  seenRanks.add(rank);
   standings.push(row);
 }
 

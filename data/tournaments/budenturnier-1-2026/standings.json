@@ -2,7 +2,7 @@
   "standings": [
     { "rank": 1, "displayName": "Lei Gao", "matchPoints": 13, "omwPercent": 55.93, "gwPercent": 77.78, "ogwPercent": 53.6, "hasDecklist": true },
     { "rank": 2, "displayName": "Julian Gramatke", "matchPoints": 13, "omwPercent": 64, "gwPercent": 71.79, "ogwPercent": 62.11, "hasDecklist": true },
-    { "rank": 3, "displayName": "Fabian M", "matchPoints": 10, "omwPercent": 48.33, "gwPercent": 63.64, "ogwPercent": 49.85, "hasDecklist": false },
+    { "rank": 3, "displayName": "Fabian M", "matchPoints": 10, "omwPercent": 48.33, "gwPercent": 63.64, "ogwPercent": 49.85, "hasDecklist": true },
     { "rank": 4, "displayName": "Mombo", "matchPoints": 10, "omwPercent": 53.27, "gwPercent": 58.33, "ogwPercent": 52.2, "hasDecklist": true },
     { "rank": 5, "displayName": "Henning Lloyd Dünner", "matchPoints": 9, "omwPercent": 58.67, "gwPercent": 61.54, "ogwPercent": 56.93, "hasDecklist": true },
     { "rank": 6, "displayName": "Ricardo Rodrigues", "matchPoints": 9, "omwPercent": 57.27, "gwPercent": 60, "ogwPercent": 53.82, "hasDecklist": true },

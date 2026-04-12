@@ -232,30 +232,43 @@ export default function MethodologyPage() {
 
       <Section id="card-packages" title="Card packages">
         <p>
-          We cluster non-land mainboard cards by co-occurrence in the
-          better-performing half of decklists. Cards that show up together in
-          winning decks are grouped into &ldquo;packages&rdquo; &mdash;
-          natural building blocks that players gravitate toward.
+          The main output is <strong>which non-land mainboard cards tend to
+          show up in the same decklists</strong> &mdash; automatic
+          &ldquo;packages&rdquo; or building blocks. That is a{" "}
+          <strong>co-occurrence</strong> signal (TF-IDF over decks), not a
+          second win-rate model.
+        </p>
+        <p>
+          We only look at decklists with at least one resolved card (same pool
+          as the card table). Among those lists, we take the{" "}
+          <strong>upper half by percentile score</strong>: lists whose
+          percentile is at or above the median percentile{" "}
+          <em>within that listed subset</em>. Each deck&rsquo;s percentile
+          itself is still computed against the <strong>full</strong> standings
+          field (see Percentile ranking), so &ldquo;top half here&rdquo; means
+          &ldquo;upper half of submitted lists,&rdquo; not &ldquo;half of all
+          registered players.&rdquo;
+        </p>
+        <p>
+          For each cluster we also show the <strong>mean adjusted average
+          percentile</strong> of its member cards &mdash; the same{" "}
+          <strong>Adj.</strong> scale as the card table. That number
+          summarizes how those cards scored in aggregate; use it as a light
+          sanity check, not the primary read.
+        </p>
+        <p>
+          Small events produce noisy groups. Treat packages as exploratory
+          hints; combine with your own format knowledge.
         </p>
         <Formula summary="Clustering method">
           <p>
-            Cards are represented as TF-IDF vectors across the top-half
-            decklists (by performance score). We run k-means clustering
-            (cosine similarity, k chosen from sample size) on cards that
-            appear in at least two of those decks. Cluster labels are the
-            card names closest to each centroid.
+            Cards are TF-IDF vectors over the corpus of upper-half listed
+            decks (main non-lands, presence capped once per deck for IDF).
+            k-means uses cosine similarity; k scales with how many eligible
+            cards pass a median <strong>Adj.</strong> bar among multi-deck
+            non-lands. Labels are the member cards closest to each centroid.
           </p>
         </Formula>
-      </Section>
-
-      <Section id="deck-archetypes" title="Deck archetypes (auto-detected)">
-        <p>
-          Independent of the card-level clusters, we also cluster entire
-          decklists by their mainboard non-land composition. Each deck is
-          represented as a TF-IDF vector across all cards, then grouped via
-          k-means. This helps identify distinct deck strategies even without
-          manual archetype tags.
-        </p>
       </Section>
 
       <Section id="limitations" title="Limitations">

@@ -12,8 +12,8 @@
     {
       "playerId": "fabian-m",
       "displayName": "Fabian M",
-      "deckFile": null,
-      "archetype": "WG (Selesnya Humans)",
+      "deckFile": "fabian-m.txt",
+      "archetype": "Selesnya Humans",
       "harmonizedArchetype": "Selesnya Humans"
     },
     {

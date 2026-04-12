@@ -8,25 +8,6 @@ import { CardPreview } from "./CardPreview";
 
 const MANA_COLORS = ["W", "U", "B", "R", "G"] as const;
 
-function colorPips(colors: string[]) {
-  const cls: Record<string, string> = {
-    W: "text-amber-200",
-    U: "text-blue-400",
-    B: "text-violet-300",
-    R: "text-red-400",
-    G: "text-green-400",
-  };
-  if (!colors.length) return <span className="text-zinc-400">—</span>;
-  return (
-    <span className="flex gap-0.5 font-mono text-xs">
-      {colors.map((c) => (
-        <span key={c} className={cls[c] ?? ""} title={c}>
-          {c}
-        </span>
-      ))}
-    </span>
-  );
-}
 
 function toggleColor(set: Set<string>, c: string) {
   const next = new Set(set);
@@ -312,6 +293,7 @@ export function CardsTable({
           </span>
           {MANA_COLORS.map((c) => {
             const on = colorFilter.has(c);
+            const colorName: Record<string, string> = { W: "White", U: "Blue", B: "Black", R: "Red", G: "Green" };
             return (
               <button
                 key={c}
@@ -323,6 +305,7 @@ export function CardsTable({
                     : "border-zinc-300 bg-white text-zinc-700 hover:bg-zinc-100 dark:border-zinc-600 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:bg-zinc-800"
                 }`}
                 aria-pressed={on}
+                aria-label={colorName[c] ?? c}
               >
                 {c}
               </button>
@@ -366,19 +349,16 @@ export function CardsTable({
         </p>
       </div>
 
-      <div className="overflow-x-hidden rounded-lg border border-zinc-200 dark:border-zinc-800">
+      <div className="overflow-x-auto rounded-lg border border-zinc-200 dark:border-zinc-800">
         <div className="max-h-[min(70vh,720px)] overflow-y-auto">
           <table className="w-full min-w-0 table-fixed border-collapse text-sm">
             <thead className="sticky top-0 z-10 bg-zinc-100/90 shadow-sm dark:bg-zinc-900">
               <tr className="border-b border-zinc-200 text-left dark:border-zinc-800">
-                <th className="w-[18%] min-w-0 px-2 py-2 text-xs font-medium sm:px-3 sm:text-sm">
+                <th className="w-[38%] min-w-[7.5rem] px-2 py-2 text-xs font-medium sm:w-[28%] sm:px-3 sm:text-sm lg:w-[22%]">
                   Card
                 </th>
                 <th className="hidden w-[12%] min-w-0 px-2 py-2 text-xs font-medium min-[900px]:table-cell sm:px-3 sm:text-sm">
                   Type
-                </th>
-                <th className="w-[3.25rem] whitespace-nowrap px-2 py-2 text-xs font-medium sm:px-3 sm:text-sm">
-                  Colors
                 </th>
                 <Th sortKey="decks" currentSort={sortKey} onSort={setSortKey} className="w-[4.5rem] whitespace-nowrap px-2 py-2 text-right text-xs sm:px-3 sm:text-sm" title="Decklists on file that run ≥1 copy">
                   Decks
@@ -447,6 +427,27 @@ export function CardsTable({
               </tr>
             </thead>
             <tbody>
+              {sorted.length === 0 && (
+                <tr>
+                  <td
+                    colSpan={20}
+                    className="px-4 py-8 text-center text-sm text-zinc-500 dark:text-zinc-400"
+                  >
+                    No cards match your filters.{" "}
+                    <button
+                      type="button"
+                      className="text-blue-600 underline dark:text-blue-400"
+                      onClick={() => {
+                        setNameQuery("");
+                        setTypeQuery("");
+                        setColorFilter(new Set());
+                      }}
+                    >
+                      Clear filters
+                    </button>
+                  </td>
+                </tr>
+              )}
               {sorted.map((r, i) => {
                 const inFocusDeck = Boolean(
                   focusDeck?.oracleQty[r.oracle_id],
@@ -471,7 +472,7 @@ export function CardsTable({
                   }`}
                 >
                   <td className="min-w-0 px-2 py-2 align-top sm:px-3">
-                    <div className="min-w-0 truncate">
+                    <div className="min-w-0 break-words text-left leading-snug">
                       <CardPreview
                         name={r.name}
                         typeLine={r.type_line}
@@ -483,7 +484,6 @@ export function CardsTable({
                   <td className="hidden min-w-0 px-2 py-2 align-top text-xs leading-snug text-zinc-600 min-[900px]:table-cell sm:px-3 dark:text-zinc-400">
                     <span className="line-clamp-2 break-words">{r.type_line || "—"}</span>
                   </td>
-                  <td className="whitespace-nowrap px-2 py-2 align-top sm:px-3">{colorPips(r.colors)}</td>
                   <td className="whitespace-nowrap px-2 py-2 text-right tabular-nums sm:px-3">
                     {r.deckCount}
                   </td>

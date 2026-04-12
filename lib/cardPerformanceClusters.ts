@@ -2,9 +2,16 @@ import { cardNameKey } from "./parseDecklist";
 import type {
   CardAggregateRow,
   CardCacheFile,
+  CardPackageCorpusMeta,
   CardPerformanceCluster,
   DeckWithCards,
 } from "./types";
+
+type CardPerformanceClustersResult = {
+  clusters: CardPerformanceCluster[];
+  /** Present only when `clusters` is non-empty. */
+  corpus: CardPackageCorpusMeta | null;
+};
 
 function isNonlandMain(
   oid: string,
@@ -119,8 +126,9 @@ function labelFromCentroid(
 }
 
 /**
- * k-means on cards that co-occur in the **upper half** of decklists by
- * **percentile score** (main nonland only, TF-IDF over those decks).
+ * k-means on cards that co-occur in the **upper half** of listed decklists by
+ * **percentile score** (same listed pool as card stats: ≥1 resolved card;
+ * main nonland only, TF-IDF over those decks).
  * Eligible cards must clear a bar on `adjustedAvgPercentile` among
  * multi-deck nonlands (relaxed if too few points). Cluster sort metric is
  * mean adjusted percentile of member cards (same scale as the card table).
@@ -129,15 +137,18 @@ export function computeCardPerformanceClusters(
   decks: DeckWithCards[],
   cardCache: CardCacheFile,
   cardRows: CardAggregateRow[],
-): CardPerformanceCluster[] {
-  const decksOnFile = decks.filter((d) => d.lines.length > 0);
-  if (decksOnFile.length < 4) return [];
+): CardPerformanceClustersResult {
+  /** Same “decklists on file” bar as `aggregate.ts` card aggregation. */
+  const decksOnFile = decks.filter(
+    (d) => Object.keys(d.oracleQty).length > 0,
+  );
+  if (decksOnFile.length < 4) return { clusters: [], corpus: null };
 
   const deckPctls = decksOnFile.map((d) => d.percentileScore);
   const pctlMed = median(deckPctls);
   const focusDecks = decksOnFile.filter((d) => d.percentileScore >= pctlMed);
   const N = focusDecks.length;
-  if (N < 3) return [];
+  if (N < 3) return { clusters: [], corpus: null };
 
   const deckKey = (i: number) => String(i);
   const docFreq = new Map<string, number>();
@@ -186,7 +197,7 @@ export function computeCardPerformanceClusters(
     4,
     Math.max(minK, Math.round(Math.sqrt(eligible.length / 2))),
   );
-  if (eligible.length < k * 2) return [];
+  if (eligible.length < k * 2) return { clusters: [], corpus: null };
 
   const vectors: Map<string, number>[] = [];
   for (const oid of eligible) {
@@ -254,7 +265,14 @@ export function computeCardPerformanceClusters(
     });
   }
 
-  return clusters
+  const sorted = clusters
     .sort((a, b) => b.avgMemberAvgScore - a.avgMemberAvgScore)
     .map((c, i) => ({ ...c, id: i }));
+
+  const corpus: CardPackageCorpusMeta = {
+    listedDecklists: decksOnFile.length,
+    focusDeckCount: N,
+  };
+
+  return { clusters: sorted, corpus };
 }

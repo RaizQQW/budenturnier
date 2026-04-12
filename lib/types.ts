@@ -109,6 +109,11 @@ export type DeckWithCards = {
    * manual-tag harmonization when no signature matches.
    */
   harmonizedArchetype: string | null;
+  /**
+   * Broader category from `meta.archetypeGroups` (e.g. "Aggro"), or the same
+   * as `harmonizedArchetype` when no groups are configured.
+   */
+  groupedArchetype: string | null;
   /** Final rank from standings */
   rank: number;
   performanceScore: number;
@@ -150,7 +155,7 @@ export type CardAggregateRow = {
   sumPercentile: number;
   /** Mean deck percentile among decks running this card. */
   avgPercentile: number;
-  /** Bayesian-shrunk avg percentile: `(n*avg + k*50) / (n+k)`, k=2. */
+  /** Bayesian-shrunk avg percentile toward the field mean. */
   adjustedAvgPercentile: number;
   /** `avgPercentile(with) - avgPercentile(without)`. */
   winRateDelta: number;
@@ -196,18 +201,21 @@ export type TournamentIndexEntry = {
   slug: string;
   title: string;
   date: string;
+  format?: string;
+  playerCount?: number;
+  decklistsWith?: number;
 };
 
 export type TournamentIndexFile = {
   tournaments: TournamentIndexEntry[];
 };
 
-export type ArchetypeCluster = {
-  id: number;
-  label: string;
-  playerIds: string[];
-  avgScore: number;
-  distinctiveOracleIds: string[];
+/** Corpus used for card-package TF-IDF (see methodology). */
+export type CardPackageCorpusMeta = {
+  /** Decklists with ≥1 resolved card (same pool as card stats). */
+  listedDecklists: number;
+  /** Lists in the package corpus: at or above median percentile among listed decks. */
+  focusDeckCount: number;
 };
 
 /** k-means groupings of cards by co-occurrence in best-half decks. */
@@ -216,7 +224,10 @@ export type CardPerformanceCluster = {
   /** Representative card names from centroid similarity. */
   label: string;
   oracleIds: string[];
-  /** Mean `adjustedAvgPercentile` among cards in this cluster (0–100). */
+  /**
+   * Mean `adjustedAvgPercentile` among cards in this cluster (0–100).
+   * Secondary summary — same “Adj.” scale as the card table, not a separate win model.
+   */
   avgMemberAvgScore: number;
   cardCount: number;
 };

@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { ArchetypeTable } from "@/components/ArchetypeTable";
 import { CardsTable } from "@/components/CardsTable";
-import { ClusterTable } from "@/components/ClusterTable";
 import { DeckTable } from "@/components/DeckTable";
 import { MetagameMatrix } from "@/components/MetagameMatrix";
 import { ScryfallFooter } from "@/components/ScryfallFooter";
@@ -95,13 +93,6 @@ export default async function TournamentPage({ params }: Props) {
           <Link href="/" className="hover:text-zinc-800 dark:hover:text-zinc-200">
             ← All events
           </Link>
-          <span className="hidden sm:inline">·</span>
-          <Link
-            href="/methodology"
-            className="hover:text-zinc-800 dark:hover:text-zinc-200"
-          >
-            Methodology
-          </Link>
         </div>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
           {stats.meta.title}
@@ -132,12 +123,12 @@ export default async function TournamentPage({ params }: Props) {
       </header>
 
       <TournamentSection
-        title="Card performance"
+        title="Cards"
         aside={<TournamentCsvExports slug={slug} bundles={csvBundles} />}
         description={
           <>
-            Which cards showed up in decks that did well? Sort any column;
-            optional view uses raw match points instead of our adjusted scores.{" "}
+            Cards from decks that performed well. Sort any column — switch to
+            raw match points with the Percentile scoring toggle.{" "}
             <Link
               href="/methodology#card-evaluation"
               className="underline hover:text-zinc-800 dark:hover:text-zinc-200"
@@ -159,39 +150,6 @@ export default async function TournamentPage({ params }: Props) {
               oracleQty: d.oracleQty,
             }))
             .sort((a, b) => a.rank - b.rank || a.displayName.localeCompare(b.displayName))}
-        />
-      </TournamentSection>
-
-      {stats.cardPerformanceClusters.length > 0 ? (
-        <TournamentSection
-          title="Card packages"
-          description={
-            <>
-              Cards that frequently appear together in top-performing decks,
-              grouped automatically. Labels show the most representative cards
-              per group.{" "}
-              <Link
-                href="/methodology#card-packages"
-                className="underline hover:text-zinc-800 dark:hover:text-zinc-200"
-              >
-                How is this calculated?
-              </Link>
-            </>
-          }
-        >
-          <CardPerformanceClusterTable
-            clusters={stats.cardPerformanceClusters}
-            oracleNames={Object.fromEntries(
-              stats.cardRows.map((r) => [r.oracle_id, r.name]),
-            )}
-          />
-        </TournamentSection>
-      ) : null}
-
-      <TournamentSection title="Decks">
-        <DeckTable
-          decks={stats.decksWithCards}
-          cardPreviewsByOracle={stats.cardPreviewsByOracle}
         />
       </TournamentSection>
 
@@ -252,34 +210,35 @@ export default async function TournamentPage({ params }: Props) {
         </TournamentSection>
       ) : null}
 
-      {stats.archetypeRows.length > 0 ? (
-        <TournamentSection
-          title="Archetypes (tagged)"
-          description="Deck labels assigned by the tournament organizer."
-        >
-          <ArchetypeTable rows={stats.archetypeRows} />
-        </TournamentSection>
-      ) : null}
+      <TournamentSection title="Decklists">
+        <DeckTable
+          decks={stats.decksWithCards}
+          cardPreviewsByOracle={stats.cardPreviewsByOracle}
+        />
+      </TournamentSection>
 
-      {stats.clusters.length > 0 ? (
+      {stats.cardPerformanceClusters.length > 0 ? (
         <TournamentSection
-          title="Deck archetypes (auto-detected)"
+          title="Card packages"
           description={
             <>
-              Decklists grouped by shared mainboard cards. Labels show the
-              most distinctive cards per cluster.{" "}
+              Main read: <strong>cards that show up in the same decklists</strong>{" "}
+              (co-occurrence), not a separate win model. We only use lists with
+              resolved cards; the corpus is the upper half of those lists by{" "}
+              <strong>percentile</strong> (median split within that subset —
+              each deck&rsquo;s percentile still compares to the full field).{" "}
               <Link
-                href="/methodology#deck-archetypes"
+                href="/methodology#card-packages"
                 className="underline hover:text-zinc-800 dark:hover:text-zinc-200"
               >
-                How is this calculated?
+                Methodology
               </Link>
             </>
           }
         >
-          <ClusterTable
-            clusters={stats.clusters}
-            decks={stats.decksWithCards}
+          <CardPerformanceClusterTable
+            clusters={stats.cardPerformanceClusters}
+            corpus={stats.cardPackageCorpus}
             oracleNames={Object.fromEntries(
               stats.cardRows.map((r) => [r.oracle_id, r.name]),
             )}
