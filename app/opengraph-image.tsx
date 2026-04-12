@@ -12,43 +12,19 @@ export default function Image() {
   );
   const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
 
+  // Zoom to 200 % width so the title text (top ~20 % of image) scrolls
+  // off the top and only the 5-colour panels fill the frame.
   return new ImageResponse(
     <div
       style={{
         width: 1200,
         height: 630,
-        display: "flex",
-        flexDirection: "column",
+        backgroundImage: `url(${logoSrc})`,
+        backgroundSize: "2400px auto",
+        backgroundPosition: "center bottom",
         backgroundColor: "#ffffff",
       }}
-    >
-      {/* Logo fills full width */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={logoSrc}
-        style={{ width: 1200, height: 471, objectFit: "cover" }}
-        alt=""
-      />
-      {/* Dark info strip */}
-      <div
-        style={{
-          flex: 1,
-          backgroundColor: "#18181b",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 24,
-        }}
-      >
-        <div style={{ fontSize: 32, fontWeight: 700, color: "#f4f4f5" }}>
-          Budenturnier Stats
-        </div>
-        <div style={{ fontSize: 24, color: "#71717a" }}>·</div>
-        <div style={{ fontSize: 24, color: "#a1a1aa" }}>
-          budenturnier.vercel.app
-        </div>
-      </div>
-    </div>,
+    />,
     { ...size },
   );
 }
