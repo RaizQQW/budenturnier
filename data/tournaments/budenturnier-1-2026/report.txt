@@ -1,0 +1,295 @@
+BUDENTURNIER 1 2026 — EVENT REPORT
+====================================
+19 players | 5 Swiss rounds + Top 4 bracket | April 11, 2026
+
+
+THE FORMAT
+----------
+A custom constructed format drawing from Innistrad (ISD), Shadows over Innistrad (SOI),
+Midnight Hunt (MID), Crimson Vow (VOW), Strixhaven (STX), and M15 as a base set.
+An extensive ban list shaped the meta heavily — and directly explains several of the
+meta calls that did and didn't pan out.
+
+Key bans relevant to pre-tournament predictions:
+
+- Lightning Strike, Fiery Temper, Thermo-Alchemist, Blasphemous Act
+  These four cards are the backbone of Mono Red Burn. Their bans didn't just weaken
+  the archetype — they made it nonviable. The prediction of Mono Red showing up was
+  reasonable from a raw power-level standpoint, but the format was deliberately
+  designed to prevent it.
+
+- Thalia's Lieutenant, Katilda Dawnhart Martyr, Voice of the Blessed,
+  Geist of Saint Traft, Reckless Stormseeker
+  Targeted cuts to keep Humans and aggressive two-drop synergy strategies below
+  broken. Humans survived as a playable but not dominant archetype.
+
+- Snapcaster Mage, Liliana of the Veil, Teferi Who Slows the Sunset,
+  Bloodtithe Harvester, Meathook Massacre
+  Capping the ceiling of tempo and control, preventing instant-speed graveyard
+  recursion loops and one-sided sweepers.
+
+The format rewarded midrange and tempo-forward decks that could still generate card
+advantage without leaning on the most broken individual cards.
+
+
+FINAL STANDINGS
+---------------
+Rank  Player                  Archetype              MP   GW%    OW%
+----  ----------------------  ---------------------  ---  -----  -----
+  1   Lei Gao                 Mardu Midrange          13  77.78  55.93
+  2   Julian Gramatke         Abzan Control           13  71.79  64.00
+  3   Fabian M                Selesnya Humans         10  63.64  48.33
+  4   Mombo                   Selesnya Humans         10  58.33  53.27
+  5   Henning Lloyd Dünner    Izzet Ensoul             9  61.54  58.67
+  6   Ricardo Rodrigues       Rakdos Vampires          9  60.00  57.27
+  7   Andy Gast               Rakdos Vampires          9  50.00  53.33
+  8   Max Q.                  Naya Humans (Toolbox)    9  58.33  52.00
+  9   Simon Ranzau            Izzet Control            7  54.55  56.00
+ 10   Luc                     BG Graveyard             7  54.55  49.33
+ 11   Lars-Erik Endlich       Boros Humans             7  48.72  42.60
+ 12   Teasy                   UW Control               6  41.67  61.33
+ 13   Andreas Hansen Meyer    BG Pests                 6  50.00  48.25
+ 14   Tobias Erdmann          Boros Aggro              6  46.15  47.93
+ 15   Darius Metz             BG Sacrifice             6  41.67  44.92
+ 16   Stefan Rather           MonoWhite Midrange       5  44.44  46.67
+ 17   Spook                   BG Pests                 5  38.89  45.33
+ 18   Michael Hagemann        BG Midrange              4  30.00  56.58
+ 19   Niklas Meyer            Vampires                 3  27.27  43.93
+
+MP = Match Points | GW% = Game Win % | OW% = Opponent Win %
+
+
+ARCHETYPE FIELD BREAKDOWN
+--------------------------
+Archetype Family              Players  Share  Best Finish
+----------------------------  -------  -----  -----------
+BG Variants (5 flavors)             5    26%  10th (Luc)
+Humans (GW / Naya / Boros)          4    21%  3rd (Fabian M)
+Rakdos Vampires                     3    16%  6th (Ricardo)
+Control (Abzan / Izzet / UW)        3    16%  2nd (Julian)
+Midrange (Mardu / MonoWhite)        2    11%  1st (Lei Gao)
+Aggro / Ensoul (Izzet / Boros)      2    11%  5th (Henning)
+
+BG variants were the single largest archetype family — but fragmented into five
+different strategies (Graveyard, Pests x2, Sacrifice, Midrange), none of which
+cracked the top 8. They shared colors and some overlap in pieces but had no coherent
+plan against the field. High representation, low conversion.
+
+
+THE BRACKET
+-----------
+Semis:      Julian Gramatke (Abzan Control)   2-1   Fabian M (GW Humans)
+            Lei Gao (Mardu Midrange)          2-0   Mombo (GW Humans)
+
+Third:      Fabian M                          2-0   Mombo
+
+Finals:     Lei Gao                           2-0   Julian Gramatke
+
+
+WHY LEI GAO WON: MARDU MIDRANGE
+---------------------------------
+Decklist core: Graveyard Trespasser x4, Sorin the Mirthless x3, Voldaren
+Bloodcaster x2, Florian x2, Edgar x1, Anje x1, backed by Infernal Grasp,
+Vanishing Verse, Fateful Absence, Humiliate, Duress.
+
+Swiss record: 4W-0L-1D | Bracket: 3 matches, 4-0 in games (swept every bracket
+series). Game win rate of 77.78% — highest at the event by a significant margin.
+
+What made this deck dominant:
+
+1. THE RIGHT THREATS FOR THE FORMAT
+   Graveyard Trespasser is a 3/3 with ward that eats graveyards on attack. In a
+   field with BG Graveyard (Luc), Abzan Control using Seasons Past recursion, and
+   artifact synergies, this card was universally good. It attacks well, blocks well,
+   and disrupts the two main value engines in the format.
+
+2. SORIN THE MIRTHLESS GENERATES IMMEDIATE VALUE
+   At 4 mana, Sorin either draws a card and puts it into play (a 4-mana cantrip
+   threat), or makes a 1/1 flying lifelinker. He is never slow. Against control he
+   provides a clock and card advantage simultaneously. Against aggro he gains life
+   and makes chump blockers. In a format without Lightning Strike he survives
+   burn-based removal.
+
+3. SURGICAL DISRUPTION SUITE
+   Duress + Humiliate as hand disruption meant Lei Gao could strip a sweeper
+   (Vanquish the Horde) or a key threat (Seasons Past, Adeline) before it mattered.
+   Humiliate's learn clause then tutored whatever answer he needed from the sideboard
+   — extra Burn Down the House against tokens, End the Festivities against small
+   humans, Fracture against Ensoul Artifact, Go Blank against control.
+
+4. TEMPO WITHOUT BEING ALL-IN AGGRO
+   Mardu wasn't trying to win on turn 4. It was grinding — efficient removal to
+   neutralize early threats, then developing threats that required multiple answers.
+   Florian rewards connecting in combat with free card selection. Bloodcaster makes
+   Bats when you spend mana. The deck's threats all generated incremental value
+   without dying to a single removal spell.
+
+5. THE WHITE SPLASH WAS ESSENTIALLY FREE
+   Isolated Chapel, Shattered Sanctum, Shineshadow Snarl gave access to Vanishing
+   Verse (exile any non-land permanent for instant-speed mana — hits Adeline,
+   Tireless Tracker, Intrepid Adversary) and Fateful Absence (hits planeswalkers
+   and creatures).
+
+The R1 draw with Julian (1-1) was the only Swiss blemish for both players. That draw
+defined bracket seeding, and crucially the two players met again in the finals —
+where Lei Gao had clearly identified the correct answers to the Abzan plan.
+
+
+JULIAN'S RUN: ABZAN CONTROL
+-----------------------------
+Swiss: 4W-0L-1D (13 points, opponent win% of 64.00% — toughest schedule in the field)
+Bracket: Won vs Fabian M 2-1 | Lost to Lei Gao 0-2 in Finals
+
+WHAT WORKED:
+The deck was correctly designed for the expected field. Professor of Symbology is a
+2/1 Human Wizard that learns on ETB — fetching a Lesson from outside the game
+(Environmental Sciences, Introduction to Prophecy, Mascot Exhibition), enabling a
+flexible toolbox sideboard.
+
+Sedgemoor Witch is a 3/2 with menace that generates a 1/1 Pest token (with
+lifelink-on-death) whenever YOU cast your first instant or sorcery each turn. Each
+removal spell — Flunk, Vanishing Verse, Humiliate — is simultaneously a
+token-generator, building a side army while answering threats.
+
+Vanquish the Horde as a scalable sweeper at 2WW (discounted by creatures in play)
+was the correct anti-Humans finisher — hitting the board at instant speed for minimal
+mana when facing 4-6 creatures.
+
+Seasons Past recursion was the intended inevitability engine. In a long game,
+recurring Flunk + Vanishing Verse + Vanquish creates a loop of card advantage and
+removal that should bury slower midrange decks.
+
+The call on Humans proved correct: 2 of 4 semifinalists were GW Humans, plus Naya
+Humans at 8th. Abzan swept Mombo in Swiss, handled Henning's Ensoul (won R4 2-1),
+and beat Max Q. (R5 2-1).
+
+WHAT DIDN'T WORK — THE MARDU MIDRANGE MATCHUP:
+The structural problem is that Abzan Control's game plan requires setup time.
+Seasons Past costs 6 mana. Sedgemoor Witch needs spells. Professor of Symbology is
+a 2/1 that needs a turn to settle. Against Mardu Midrange, every one of those turns
+is contested:
+
+- Duress strips Seasons Past or Vanquish before it can be cast.
+- Humiliate strips a card and replaces itself via learn — tutors what beats
+  your current position.
+- Graveyard Trespasser actively hates out Seasons Past. It exiles graveyard
+  cards on attack, denying future recursion targets.
+- Sorin generates a 1/1 flier + card advantage on the same turn you're trying
+  to stabilize. Flier damage doesn't interact with pest tokens on the ground.
+- Florian rewards attacking into an open board after a sweeper — if you tap
+  out for Vanquish, the next turn Florian draws cards through the new threats.
+
+The result: outtempoed, put on the backfoot of the value game plan. Abzan needed to
+reach a critical mass of resources (sweeper + recursion + disruption) that Mardu
+prevented by stripping pieces one at a time.
+
+POTENTIAL COUNTER-STRATEGY:
+Culling Ritual (already in the sideboard) could have been the secret weapon —
+against a Mardu board of 2-cost creatures and a Sorin token, Culling Ritual at BB
+wipes them all and generates mana. Tainted Adversary's menace and zombie generation
+applies pressure that Mardu can't cleanly answer with spot removal (zombie tokens
+replenish). The tools were in the sideboard; the matchup understanding was the gap.
+
+
+ARCHETYPE ANALYSIS
+------------------
+SELESNYA HUMANS (Fabian M 3rd / Mombo 4th)
+Two meaningfully different builds. Fabian M ran mana acceleration (Elvish Mystic x3,
+Avacyn's Pilgrim x4) into top-end threats (Archangel Avacyn, Tovolar's Huntmaster,
+Garruk Relentless) — effectively a humans-shell ramp strategy. Mombo ran true tribal:
+Champion of the Parish, Adeline, Hopeful Initiate, Thalia main deck, Torens — leaning
+into go-wide pump synergy. Both had 10 Swiss points but diverged in the bracket:
+Fabian beat Mombo twice. The ramp strategy had a higher power ceiling but was more
+vulnerable to removal-heavy draws.
+
+IZZET ENSOUL (Henning Lloyd Dünner, 5th — 9 points, 3W-2L)
+This is the "Shrapnel Blast deck" that was anticipated — just differently framed.
+Henning used Shrapnel Blast not as a standalone burn spell but as an artifact
+finisher: Ornithopter + Darksteel Citadel + Ensoul Artifact creates a 5/5 flying or
+5/5 indestructible on turn 2-3. Delver of Secrets, Stormchaser Drake, and Suspicious
+Stowaway were the supporting threats, Fading Hope for interaction, Serpentine Ambush
+as a token generator. Shrapnel Blast then did 5 damage for 2 mana by sacrificing
+an artifact — a burn spell attached to an aggro plan rather than standalone burn.
+
+Swiss losses were to Lei Gao (R5, 2-1) and Julian (R4, 2-1). Both top-2 finishers
+took this deck to three games. Lei Gao's sideboard ran Fracture specifically for
+Ensoul Artifact.
+
+RAKDOS VAMPIRES (Ricardo 6th / Andy 7th / Niklas 19th)
+Three completely different builds. Ricardo ran tribal midrange: Bloodthirsty Adversary,
+Bloodvial Purveyor, Dominating Vampire, Henrika Domnathi (4/4 flying deathtouch that
+flips into a draw engine), Slaughter Specialist. Andy ran aggressive curve: Falkenrath
+Gorger, Voldaren Epicure, Cemetery Gatekeeper into Olivia Voldaren, using Blood tokens
+as resources. Niklas ran the weakest build and finished last.
+
+The archetype had the widest variance of any family: 6th, 7th, and dead last.
+Ricardo's success came from a better-structured threat curve and flexible sideboard
+(Graveyard Trespasser in the board, Vampires' Vengeance as a wrath). Andy's raw
+aggro couldn't convert against midrange and control. Three pilots, three results.
+
+BG VARIANTS (best finish 10th — Luc, BG Graveyard)
+Five different pilots, five different angles, no top-4 representation. BG's primary
+tools (pest tokens, graveyard recursion, sacrifice outlets) are incremental and
+setup-dependent. Against Mardu's surgical disruption the setup gets dismantled.
+Against Humans going wide on turns 2-3 the BG engines are too slow. Luc's BG
+Graveyard list did best because graveyard-based redundancy is inherently resilient
+to spot removal — but it still couldn't push into the bracket.
+
+CONTROL (Teasy UW 12th / Simon Izzet 9th)
+Teasy's opponent win% of 61.33% with only 6 match points tells the story: played
+against extremely strong opponents (including Lei Gao R4 2-0, Henning R3 2-0),
+couldn't convert games despite playing the best opponents. Simon's Izzet Control
+at 9th — 7 points, solid but not finals-caliber. Izzet Control without Snapcaster
+Mage (banned) lacks the recursion to truly dominate late.
+
+
+META PREDICTIONS VS REALITY
+-----------------------------
+Prediction                                    Reality
+--------------------------------------------  ------------------------------------------
+Mono Red Burn shows up                        Completely absent — Lightning Strike,
+                                              Fiery Temper, and Thermo-Alchemist
+                                              were all banned, deleting the archetype
+Humans shows up and is significant            Correct — 4 human pilots, 2 in top 4,
+                                              3 in top 8
+Shrapnel Blast deck as a side note            Correct framing — Henning's Izzet Ensoul
+                                              used Shrapnel Blast, finished 5th
+Abzan Control goes over the top of Humans     Mostly correct — beat Mombo in Swiss,
+                                              beat Fabian M in semis
+Abzan Control fails to Mardu Midrange         Exactly correct — lost both meetings
+                                              (R1 draw, finals 0-2)
+
+The single biggest miss was not anticipating Mardu Midrange. In a format where red
+cards are constrained, pivoting into a three-color midrange shell with white removal
+and black disruption isn't an obvious call — but it was the exact right answer.
+Mardu combined the tempo of aggressive bodies with incremental card advantage engines
+and surgical hand disruption. It was the deck that could beat both aggro (efficient
+bodies, Burn Down the House access) and control (Duress into threats).
+
+
+KEY DATA POINTS
+----------------
+- Highest game win rate:      Lei Gao 77.78%
+- Highest opponent win%:      Julian Gramatke 64.00% (toughest schedule in the field)
+- Players reaching 13 Swiss points: 2 (Lei Gao and Julian Gramatke only)
+- Draws in Swiss: 6 total — notably Julian/Lei Gao drew R1, setting up their finals rematch
+- BG Pests (two players): Average finish 15th — worst-performing subarchetype by placement
+- Rakdos Vampires: Widest finish spread at 6th, 7th, and 19th
+
+
+SUMMARY VERDICT
+---------------
+The event was won by the deck no one predicted — Mardu Midrange — which answered
+the field's questions while asking its own. Humans was correctly anticipated as the
+volume archetype, and Abzan Control was the right counter to it. The finals matchup
+(Abzan vs Mardu) was the format's two best-defined macro-strategies colliding:
+inevitable control vs efficient tempo. Mardu's answer was to never let the control
+player reach inevitability.
+
+The BG variants were the tournament's collective misread — high representation, low
+conversion. The absence of Meathook Massacre and Bloodtithe Harvester meant those
+engines couldn't stabilize against faster tempo decks.
+
+For next time: the ban list is the first thing to read before predicting the meta.
+The absence of Lightning Strike, Fiery Temper, and Thermo-Alchemist isn't a footnote
+— it's an archetype deletion.
