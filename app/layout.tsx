@@ -16,8 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Budenturnier stats",
-  description: "Magic: The Gathering custom-format tournament stats",
+  title: {
+    default: "Budenturnier Metagame Explorer",
+    template: "%s · Budenturnier",
+  },
+  description: "Budenturnier Metagame Explorer",
 };
 
 export default function RootLayout({

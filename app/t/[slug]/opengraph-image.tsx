@@ -24,41 +24,14 @@ export default function Image() {
       style={{
         width: 1200,
         height: 630,
-        backgroundColor: "#18181b",
+        overflow: "hidden",
         display: "flex",
-        alignItems: "center",
-        padding: "0 80px",
-        gap: 64,
+        flexDirection: "column",
+        justifyContent: "flex-end",
       }}
     >
-      {/* Scaled-up icon — panels only, text cropped off the top */}
-      <div
-        style={{
-          width: 420,
-          height: 420,
-          flexShrink: 0,
-          backgroundImage: `url(${logoSrc})`,
-          backgroundSize: "1350px auto",
-          backgroundPosition: "center bottom",
-          backgroundColor: "#ffffff",
-          borderRadius: 16,
-        }}
-      />
-      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-        <div
-          style={{
-            fontSize: 72,
-            fontWeight: 700,
-            color: "#f4f4f5",
-            lineHeight: 1.05,
-          }}
-        >
-          Budenturnier
-        </div>
-        <div style={{ fontSize: 42, color: "#a1a1aa", fontWeight: 400 }}>
-          Metagame Explorer
-        </div>
-      </div>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={logoSrc} width={2055} style={{ marginLeft: -428 }} alt="" />
     </div>,
     { ...size },
   );
