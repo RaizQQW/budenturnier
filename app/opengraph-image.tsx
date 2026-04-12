@@ -19,34 +19,32 @@ export default function Image() {
         height: 630,
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
         backgroundColor: "#ffffff",
-        gap: 32,
-        padding: "48px 64px",
       }}
     >
+      {/* Logo fills full width */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={logoSrc} width={900} style={{ objectFit: "contain" }} alt="" />
+      <img
+        src={logoSrc}
+        style={{ width: 1200, height: 471, objectFit: "cover" }}
+        alt=""
+      />
+      {/* Dark info strip */}
       <div
         style={{
+          flex: 1,
+          backgroundColor: "#18181b",
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
-          gap: 8,
+          justifyContent: "center",
+          gap: 24,
         }}
       >
-        <div
-          style={{
-            fontSize: 40,
-            fontWeight: 700,
-            color: "#18181b",
-            letterSpacing: "-0.5px",
-          }}
-        >
-          Tournament Stats
+        <div style={{ fontSize: 32, fontWeight: 700, color: "#f4f4f5" }}>
+          Budenturnier Stats
         </div>
-        <div style={{ fontSize: 22, color: "#71717a" }}>
+        <div style={{ fontSize: 24, color: "#71717a" }}>·</div>
+        <div style={{ fontSize: 24, color: "#a1a1aa" }}>
           budenturnier.vercel.app
         </div>
       </div>

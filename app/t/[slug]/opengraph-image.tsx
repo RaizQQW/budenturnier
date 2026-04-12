@@ -55,38 +55,32 @@ export default async function Image({
         height: 630,
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
         backgroundColor: "#ffffff",
-        padding: "40px 64px",
-        gap: 28,
       }}
     >
+      {/* Logo fills full width */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={logoSrc} width={820} style={{ objectFit: "contain" }} alt="" />
-
+      <img
+        src={logoSrc}
+        style={{ width: 1200, height: 471, objectFit: "cover" }}
+        alt=""
+      />
+      {/* Dark info strip */}
       <div
         style={{
+          flex: 1,
+          backgroundColor: "#18181b",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 10,
+          justifyContent: "center",
+          gap: 6,
         }}
       >
-        <div
-          style={{
-            fontSize: 52,
-            fontWeight: 700,
-            color: "#18181b",
-            letterSpacing: "-0.5px",
-            textAlign: "center",
-          }}
-        >
+        <div style={{ fontSize: 34, fontWeight: 700, color: "#f4f4f5" }}>
           {meta.title}
         </div>
-        <div style={{ fontSize: 26, color: "#71717a", textAlign: "center" }}>
-          {details}
-        </div>
+        <div style={{ fontSize: 22, color: "#a1a1aa" }}>{details}</div>
       </div>
     </div>,
     { ...size },
