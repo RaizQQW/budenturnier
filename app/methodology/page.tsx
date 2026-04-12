@@ -282,10 +282,10 @@ export default function MethodologyPage() {
       <Section id="limitations" title="Limitations">
         <ul className="list-inside list-disc space-y-1">
           <li>
-            <strong>Small samples</strong> &mdash; a 19-player event with 17
-            decklists provides limited statistical power. All metrics should
-            be read as &ldquo;useful signals&rdquo; rather than definitive
-            truths.
+            <strong>Small samples</strong> &mdash; a 19-player event provides
+            limited statistical power regardless of decklist coverage. All
+            metrics should be read as &ldquo;useful signals&rdquo; rather than
+            definitive truths.
           </li>
           <li>
             <strong>Pilot skill vs. card quality</strong> &mdash; every
