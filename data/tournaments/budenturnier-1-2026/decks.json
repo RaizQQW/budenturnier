@@ -19,7 +19,7 @@
     {
       "playerId": "andy-gast",
       "displayName": "Andy Gast",
-      "deckFile": null,
+      "deckFile": "andy-gast.txt",
       "archetype": "Rakdos Vampires",
       "harmonizedArchetype": "Rakdos Vampires"
     },

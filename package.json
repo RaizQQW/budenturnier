@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "cache:cards": "tsx scripts/cache-cards.ts",
-    "check:data": "tsx scripts/check-data.ts"
+    "check:data": "tsx scripts/check-data.ts",
+    "sync:index": "tsx scripts/sync-index.ts"
   },
   "dependencies": {
     "next": "16.2.3",

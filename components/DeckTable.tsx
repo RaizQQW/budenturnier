@@ -1,10 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { Fragment, useState } from "react";
 
+import type { MatchRow } from "@/lib/aggregate";
 import type { CardPreviewPayload, DeckWithCards } from "@/lib/types";
 
 import { CardPreview } from "./CardPreview";
+import { ManaCurve } from "./ManaCurve";
+import { RoundResults } from "./RoundResults";
 import { cardNameKey } from "@/lib/parseDecklist";
 
 function DecklistBlock({
@@ -56,35 +60,47 @@ function DecklistBlock({
   );
 }
 
+
 export function DeckTable({
   decks,
   cardPreviewsByOracle,
+  matches = [],
+  cardCmcByOracle = {},
+  cardTypesByOracle = {},
+  slug,
 }: {
   decks: DeckWithCards[];
   cardPreviewsByOracle: Record<string, CardPreviewPayload>;
+  matches?: MatchRow[];
+  cardCmcByOracle?: Record<string, number>;
+  cardTypesByOracle?: Record<string, string>;
+  slug?: string;
 }) {
   const [openId, setOpenId] = useState<string | null>(null);
 
-  // Show group column only when at least one deck has a group that differs
-  // from its fine-grained archetype (i.e. archetypeGroups is configured)
   const showGroup = decks.some(
     (d) =>
       d.groupedArchetype != null &&
       d.groupedArchetype !== (d.harmonizedArchetype ?? d.archetype),
   );
 
-  const colCount = 3 + (showGroup ? 1 : 0); // Rank, Player, [Group,] Archetype, Swiss pts
+  const hasMatches = matches.length > 0;
+
+  // Rank, Player, [Group,] Archetype, Swiss pts
+  const colCount = 4 + (showGroup ? 1 : 0);
 
   return (
     <div className="overflow-x-auto rounded-lg border border-zinc-200 dark:border-zinc-800">
-      <table className="w-full min-w-[400px] border-collapse text-sm">
+      <table className="w-full min-w-[520px] border-collapse text-sm">
         <thead>
           <tr className="border-b border-zinc-200 bg-zinc-100/80 text-left dark:border-zinc-800 dark:bg-zinc-900">
-            <th className="px-3 py-2 font-medium">Rank</th>
+            <th className="px-3 py-2 font-medium">#</th>
             <th className="px-3 py-2 font-medium">Player</th>
             {showGroup && <th className="px-3 py-2 font-medium">Group</th>}
             <th className="px-3 py-2 font-medium">Archetype</th>
-            <th className="px-3 py-2 font-medium text-right">Swiss pts</th>
+            <th className="px-3 py-2 text-right font-medium" title="Swiss match points">
+              Swiss pts
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -117,10 +133,22 @@ export function DeckTable({
                   tabIndex={hasList ? 0 : undefined}
                   aria-expanded={hasList ? expanded : undefined}
                 >
-                  <td className="px-3 py-2 tabular-nums">{d.rank}</td>
+                  <td className="px-3 py-2 tabular-nums text-zinc-500 dark:text-zinc-400">
+                    {d.rank}
+                  </td>
                   <td className="px-3 py-2 font-medium">
                     <span className="inline-flex items-center gap-2">
-                      {d.displayName}
+                      {slug ? (
+                        <Link
+                          href={`/t/${slug}/player/${d.playerId}`}
+                          className="underline decoration-zinc-300 underline-offset-2 hover:decoration-zinc-500 dark:decoration-zinc-600 dark:hover:decoration-zinc-400"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {d.displayName}
+                        </Link>
+                      ) : (
+                        d.displayName
+                      )}
                       {hasList ? (
                         <span className="text-xs font-normal text-zinc-400">
                           {expanded ? "▲" : "▼"}
@@ -137,12 +165,30 @@ export function DeckTable({
                     {d.harmonizedArchetype ?? d.archetype ?? "—"}
                   </td>
                   <td className="px-3 py-2 text-right tabular-nums">
-                    {d.swissMatchPoints.toFixed(1)}
+                    {Math.round(d.swissMatchPoints)}
                   </td>
                 </tr>
                 {expanded && hasList ? (
                   <tr className="border-b border-zinc-200 bg-zinc-50/90 dark:border-zinc-800 dark:bg-zinc-950/80">
-                    <td colSpan={colCount + 1} className="px-4 py-4 align-top">
+                    <td colSpan={colCount} className="px-4 py-4 align-top">
+                      {hasMatches && (
+                        <div className="mb-4">
+                          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                            Round results
+                          </p>
+                          <RoundResults matches={matches} playerName={d.displayName} />
+                        </div>
+                      )}
+                      {Object.keys(cardCmcByOracle).length > 0 && (
+                        <div className="mb-4">
+                          <ManaCurve
+                            lines={d.lines}
+                            resolvedOracleIds={d.resolvedOracleIds}
+                            oracleCmc={cardCmcByOracle}
+                            oracleTypes={cardTypesByOracle}
+                          />
+                        </div>
+                      )}
                       <div className="max-h-[min(70vh,560px)] overflow-y-auto pr-1">
                         <DecklistBlock
                           title="Mainboard"
@@ -167,8 +213,8 @@ export function DeckTable({
       </table>
       {decks.some((d) => d.lines.length > 0) ? (
         <p className="border-t border-zinc-200 px-3 py-2 text-xs text-zinc-500 dark:border-zinc-800">
-          Click a row to expand its decklist. Archetype is auto-detected from
-          mainboard signatures where a list is available.
+          Click a row to expand its decklist and round results. Archetype is
+          auto-detected from mainboard signatures where a list is available.
         </p>
       ) : null}
     </div>

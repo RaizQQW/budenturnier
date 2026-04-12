@@ -7,6 +7,12 @@ export type MetagameCell = {
   gamesForCol: number;
   /** gamesForRow / (gamesForRow + gamesForCol); null if no games. */
   winRate: number | null;
+  /** Matches (not games) won by row vs col. */
+  matchesForRow: number;
+  /** Matches won by col vs row. */
+  matchesForCol: number;
+  /** matchesForRow / (matchesForRow + matchesForCol); null if no matches. */
+  matchWinRate: number | null;
 };
 
 export type MetagameMatrixPayload = {
@@ -16,42 +22,49 @@ export type MetagameMatrixPayload = {
   cells: Record<string, Record<string, MetagameCell>>;
   /** Overall games won / lost per super-archetype (non-mirror, non-bye). */
   archetypeRecords: Record<string, { gamesWon: number; gamesLost: number }>;
+  /** Overall matches won / lost per super-archetype (non-mirror, non-bye, draws excluded). */
+  archetypeMatchRecords: Record<string, { matchesWon: number; matchesLost: number }>;
 };
 
 function addPair(
-  m: Map<string, Map<string, { gRow: number; gCol: number }>>,
+  m: Map<string, Map<string, { gRow: number; gCol: number; mRow: number; mCol: number }>>,
   rowArch: string,
   colArch: string,
   gRow: number,
   gCol: number,
+  mRow: number,
+  mCol: number,
 ) {
   if (!m.has(rowArch)) m.set(rowArch, new Map());
   const inner = m.get(rowArch)!;
-  const cur = inner.get(colArch) ?? { gRow: 0, gCol: 0 };
+  const cur = inner.get(colArch) ?? { gRow: 0, gCol: 0, mRow: 0, mCol: 0 };
   cur.gRow += gRow;
   cur.gCol += gCol;
+  cur.mRow += mRow;
+  cur.mCol += mCol;
   inner.set(colArch, cur);
 }
 
 /**
- * Builds super-archetype × super-archetype **game** totals from Bo3 pairings.
+ * Builds super-archetype × super-archetype **game** and **match** totals from Bo3 pairings.
  * Uses `playerToSuperArch` (display name → harmonized label, typically).
  * Includes draws (1–1): each side won a game, so both game wins count.
  * Skips byes, mirrors, and any match where either player lacks a tag.
+ * Draws (gamesA === gamesB) are excluded from match win/loss counts.
  */
 export function computeMetagameMatrix(
   matches: MatchRow[],
   playerToSuperArch: Map<string, string>,
 ): MetagameMatrixPayload | null {
-  /** Directed cell[row][col] = games row scored vs col + games col scored vs row in shared matches. */
-  const pairGames = new Map<string, Map<string, { gRow: number; gCol: number }>>();
-  /** Per archetype: games that player won / games that player lost (all counted matches). */
-  const overall = new Map<string, { gw: number; gl: number }>();
+  const pairData = new Map<string, Map<string, { gRow: number; gCol: number; mRow: number; mCol: number }>>();
+  const overall = new Map<string, { gw: number; gl: number; mw: number; ml: number }>();
 
-  function bumpOverall(arch: string, won: number, lost: number) {
-    const cur = overall.get(arch) ?? { gw: 0, gl: 0 };
-    cur.gw += won;
-    cur.gl += lost;
+  function bumpOverall(arch: string, gWon: number, gLost: number, mWon: number, mLost: number) {
+    const cur = overall.get(arch) ?? { gw: 0, gl: 0, mw: 0, ml: 0 };
+    cur.gw += gWon;
+    cur.gl += gLost;
+    cur.mw += mWon;
+    cur.ml += mLost;
     overall.set(arch, cur);
   }
 
@@ -67,14 +80,18 @@ export function computeMetagameMatrix(
     const archB = playerToSuperArch.get(B)?.trim();
     if (!archA || !archB || archA === archB) continue;
 
-    addPair(pairGames, archA, archB, ga, gb);
-    addPair(pairGames, archB, archA, gb, ga);
-    bumpOverall(archA, ga, gb);
-    bumpOverall(archB, gb, ga);
+    // Match win/loss (draws excluded from match counts)
+    const mA = ga > gb ? 1 : 0;
+    const mB = gb > ga ? 1 : 0;
+
+    addPair(pairData, archA, archB, ga, gb, mA, mB);
+    addPair(pairData, archB, archA, gb, ga, mB, mA);
+    bumpOverall(archA, ga, gb, mA, mB);
+    bumpOverall(archB, gb, ga, mB, mA);
   }
 
   const archSet = new Set<string>();
-  for (const [r, inner] of pairGames) {
+  for (const [r, inner] of pairData) {
     archSet.add(r);
     for (const c of inner.keys()) archSet.add(c);
   }
@@ -89,36 +106,34 @@ export function computeMetagameMatrix(
   if (archetypes.length < 2) return null;
 
   const cells: Record<string, Record<string, MetagameCell>> = {};
-  const archetypeRecords: Record<
-    string,
-    { gamesWon: number; gamesLost: number }
-  > = {};
+  const archetypeRecords: Record<string, { gamesWon: number; gamesLost: number }> = {};
+  const archetypeMatchRecords: Record<string, { matchesWon: number; matchesLost: number }> = {};
 
   for (const r of archetypes) {
     cells[r] = {};
-    const o = overall.get(r) ?? { gw: 0, gl: 0 };
+    const o = overall.get(r) ?? { gw: 0, gl: 0, mw: 0, ml: 0 };
     archetypeRecords[r] = { gamesWon: o.gw, gamesLost: o.gl };
+    archetypeMatchRecords[r] = { matchesWon: o.mw, matchesLost: o.ml };
     for (const c of archetypes) {
       if (r === c) {
-        cells[r][c] = {
-          gamesForRow: 0,
-          gamesForCol: 0,
-          winRate: null,
-        };
+        cells[r][c] = { gamesForRow: 0, gamesForCol: 0, winRate: null, matchesForRow: 0, matchesForCol: 0, matchWinRate: null };
         continue;
       }
-      const p = pairGames.get(r)?.get(c) ?? { gRow: 0, gCol: 0 };
-      const dec = p.gRow + p.gCol;
-      const winRate = dec > 0 ? p.gRow / dec : null;
+      const p = pairData.get(r)?.get(c) ?? { gRow: 0, gCol: 0, mRow: 0, mCol: 0 };
+      const gDec = p.gRow + p.gCol;
+      const mDec = p.mRow + p.mCol;
       cells[r][c] = {
         gamesForRow: p.gRow,
         gamesForCol: p.gCol,
-        winRate,
+        winRate: gDec > 0 ? p.gRow / gDec : null,
+        matchesForRow: p.mRow,
+        matchesForCol: p.mCol,
+        matchWinRate: mDec > 0 ? p.mRow / mDec : null,
       };
     }
   }
 
-  return { archetypes, cells, archetypeRecords };
+  return { archetypes, cells, archetypeRecords, archetypeMatchRecords };
 }
 
 /** CSS background for win rate in [0,1]. */

@@ -82,6 +82,8 @@ export type CardCacheEntry = {
   type_line: string;
   colors: string[];
   color_identity: string[];
+  /** Converted mana cost / mana value (from Scryfall `cmc`). */
+  cmc?: number;
   image_normal?: string;
   scryfall_uri?: string;
 };

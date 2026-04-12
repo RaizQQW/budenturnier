@@ -1,3 +1,4 @@
+import { cache } from "react";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -14,6 +15,7 @@ import type {
   SuperArchetypePlayRate,
   TournamentMeta,
 } from "./types";
+export type { MatchRow };
 import { cardNameKey, parseDecklist } from "./parseDecklist";
 import {
   computePlayerScores,
@@ -99,10 +101,15 @@ export type TournamentStats = {
   slug: string;
   meta: TournamentMeta;
   standings: StandingRow[];
+  matches: MatchRow[];
   playerScores: Map<string, import("./scoring").PlayerScoreBreakdown>;
   decksWithCards: DeckWithCards[];
   /** Oracle id → fields for hover previews in decklists. */
   cardPreviewsByOracle: Record<string, CardPreviewPayload>;
+  /** Oracle id → mana value (cmc); undefined if not yet in cache. */
+  cardCmcByOracle: Record<string, number>;
+  /** Oracle id → type_line string (for land detection in mana curve). */
+  cardTypesByOracle: Record<string, string>;
   cardRows: CardAggregateRow[];
   /** Co-occurrence clusters among better-performing decklists (see `cardPerformanceClusters.ts`). */
   cardPerformanceClusters: CardPerformanceCluster[];
@@ -118,7 +125,7 @@ export type TournamentStats = {
   groupedPlayRates: SuperArchetypePlayRate[];
 };
 
-export function computeTournamentStats(slug: string): TournamentStats {
+export const computeTournamentStats = cache(function computeTournamentStats(slug: string): TournamentStats {
   const { dir, meta, standings, decks, matches, cardCache } =
     loadTournamentBundle(slug);
 
@@ -334,9 +341,11 @@ export function computeTournamentStats(slug: string): TournamentStats {
     // Copy-weighted percentile avg: a 4-of counts 4x as much as a 1-of
     const weightedAvgPctl =
       v.weightSum > 0 ? v.weightedSumPctl / v.weightSum : 50;
+    // Bayesian shrinkage: use deck count as the confidence measure so that
+    // copy-proportion fractions (always <<1) don't swamp the prior.
     const adjustedAvgPercentile =
-      (v.weightSum * weightedAvgPctl + BAYES_K * globalAvgPercentile) /
-      (v.weightSum + BAYES_K);
+      (v.deckCount * weightedAvgPctl + BAYES_K * globalAvgPercentile) /
+      (v.deckCount + BAYES_K);
 
     // Delta uses unweighted avg (presence-based) for interpretability
     const avgPctl = v.sumPctl / v.deckCount;
@@ -370,7 +379,7 @@ export function computeTournamentStats(slug: string): TournamentStats {
         v.totalQty > 0 ? Math.min(1, v.sideQty / v.totalQty) : 0,
       mainCopyShare:
         v.totalQty > 0 ? Math.min(1, (v.totalQty - v.sideQty) / v.totalQty) : 0,
-      playRate: withList > 0 ? v.deckCount / withList : 0,
+      playRate: decksOnFile.length > 0 ? v.deckCount / decksOnFile.length : 0,
       totalCopiesPlayed: v.totalQty,
     });
   }
@@ -454,6 +463,8 @@ export function computeTournamentStats(slug: string): TournamentStats {
   }
 
   const cardPreviewsByOracle: Record<string, CardPreviewPayload> = {};
+  const cardCmcByOracle: Record<string, number> = {};
+  const cardTypesByOracle: Record<string, string> = {};
   for (const [id, c] of Object.entries(cardCache.cards)) {
     cardPreviewsByOracle[id] = {
       name: c.name,
@@ -461,15 +472,20 @@ export function computeTournamentStats(slug: string): TournamentStats {
       image_normal: c.image_normal,
       scryfall_uri: c.scryfall_uri,
     };
+    if (c.cmc != null) cardCmcByOracle[id] = c.cmc;
+    cardTypesByOracle[id] = c.type_line;
   }
 
   return {
     slug,
     meta,
     standings,
+    matches,
     playerScores,
     decksWithCards,
     cardPreviewsByOracle,
+    cardCmcByOracle,
+    cardTypesByOracle,
     cardRows,
     cardPerformanceClusters,
     cardPackageCorpus,
@@ -479,4 +495,4 @@ export function computeTournamentStats(slug: string): TournamentStats {
     superArchetypePlayRates,
     groupedPlayRates,
   };
-}
+});

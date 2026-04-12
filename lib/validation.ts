@@ -228,6 +228,22 @@ export function validateTournamentBundleData(
         path.join(dir, "matches.json"),
       );
     }
+
+    // Validate Bo3 game scores so invalid entries don't throw inside scoring.
+    const { gamesA, gamesB } = match;
+    const validBo3 =
+      (gamesA === 2 && gamesB < 2) ||
+      (gamesB === 2 && gamesA < 2) ||
+      (gamesA === 1 && gamesB === 1);
+    if (!validBo3) {
+      push(
+        issues,
+        "error",
+        "invalid-bo3-score",
+        `Match at table ${match.table} (${match.playerA} vs ${match.playerB}) has invalid Bo3 score ${gamesA}–${gamesB}`,
+        path.join(dir, "matches.json"),
+      );
+    }
   }
 
   const nameToOracle = buildNameToOracle(cardCache);

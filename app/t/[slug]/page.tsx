@@ -7,6 +7,7 @@ import { MetagameMatrix } from "@/components/MetagameMatrix";
 import { ScryfallFooter } from "@/components/ScryfallFooter";
 import { CardPerformanceClusterTable } from "@/components/CardPerformanceClusterTable";
 import { SuperArchetypePlayRates } from "@/components/SuperArchetypePlayRates";
+import { StandingsTable } from "@/components/StandingsTable";
 import { Disclosure } from "@/components/Disclosure";
 import { TournamentCsvExports } from "@/components/TournamentCsvExports";
 import { TournamentSection } from "@/components/TournamentSection";
@@ -85,6 +86,20 @@ export default async function TournamentPage({ params }: Props) {
     });
   }
 
+  const hasMetagame =
+    stats.groupedPlayRates.length > 0 ||
+    stats.superArchetypePlayRates.length > 0 ||
+    stats.metagame != null;
+  const hasCardPackages = stats.cardPerformanceClusters.length > 0;
+
+  const navLinks: { href: string; label: string }[] = [
+    { href: "#cards", label: "Cards" },
+    ...(hasMetagame ? [{ href: "#metagame", label: "Metagame" }] : []),
+    { href: "#decklists", label: "Decklists" },
+    ...(hasCardPackages ? [{ href: "#card-packages", label: "Card packages" }] : []),
+    { href: "#standings", label: "Standings" },
+  ];
+
   return (
     <div className="min-h-full bg-zinc-50/50 dark:bg-zinc-950">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-14 px-4 py-10 sm:px-6">
@@ -120,9 +135,21 @@ export default async function TournamentPage({ params }: Props) {
           Final standings, decklists, and stats from this event — browse cards,
           matchups, and how each deck performed.
         </p>
+        <nav className="mt-5 flex flex-wrap gap-x-1 gap-y-1">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="rounded-md border border-zinc-200 bg-white px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:border-zinc-300 hover:bg-zinc-50 hover:text-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
       </header>
 
       <TournamentSection
+        id="cards"
         title="Cards"
         aside={<TournamentCsvExports slug={slug} bundles={csvBundles} />}
         description={
@@ -153,10 +180,9 @@ export default async function TournamentPage({ params }: Props) {
         />
       </TournamentSection>
 
-      {stats.groupedPlayRates.length > 0 ||
-      stats.superArchetypePlayRates.length > 0 ||
-      stats.metagame ? (
+      {hasMetagame ? (
         <TournamentSection
+          id="metagame"
           title="Metagame"
           description={
             <>
@@ -210,15 +236,20 @@ export default async function TournamentPage({ params }: Props) {
         </TournamentSection>
       ) : null}
 
-      <TournamentSection title="Decklists">
+      <TournamentSection id="decklists" title="Decklists">
         <DeckTable
           decks={stats.decksWithCards}
           cardPreviewsByOracle={stats.cardPreviewsByOracle}
+          matches={stats.matches}
+          cardCmcByOracle={stats.cardCmcByOracle}
+          cardTypesByOracle={stats.cardTypesByOracle}
+          slug={slug}
         />
       </TournamentSection>
 
-      {stats.cardPerformanceClusters.length > 0 ? (
+      {hasCardPackages ? (
         <TournamentSection
+          id="card-packages"
           title="Card packages"
           description={
             <>
@@ -245,6 +276,10 @@ export default async function TournamentPage({ params }: Props) {
           />
         </TournamentSection>
       ) : null}
+
+      <TournamentSection id="standings" title="Standings">
+        <StandingsTable standings={stats.standings} />
+      </TournamentSection>
 
       <ScryfallFooter />
       </div>

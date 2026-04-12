@@ -22,11 +22,6 @@ function isLandCard(typeLine: string): boolean {
 
 type SortKey =
   | "adjustedAvg"
-  | "delta"
-  | "sumPctl"
-  | "avgPctl"
-  | "sumRaw"
-  | "avgRaw"
   | "decks"
   | "playRate"
   | "topCut"
@@ -43,16 +38,6 @@ function sortValue(
   switch (key) {
     case "adjustedAvg":
       return r.adjustedAvgPercentile;
-    case "delta":
-      return r.winRateDelta;
-    case "sumPctl":
-      return r.sumPercentile;
-    case "avgPctl":
-      return r.avgPercentile;
-    case "sumRaw":
-      return r.sumPerformanceScore;
-    case "avgRaw":
-      return r.avgPerformanceScore;
     case "decks":
       return r.deckCount;
     case "playRate":
@@ -110,6 +95,55 @@ function Th({
   );
 }
 
+type Grade = "S" | "A" | "B" | "C" | "D" | "F";
+
+/**
+ * Assign grades relative to the full card pool so shrinkage toward the mean
+ * (common in small tournaments) doesn't collapse everything to C.
+ * Buckets (cumulative from top): S 5%, A 20%, B 45%, C 75%, D 90%, F rest.
+ */
+function buildGradeMap(allRows: CardAggregateRow[]): Map<string, Grade> {
+  const sorted = [...allRows].sort(
+    (a, b) => b.adjustedAvgPercentile - a.adjustedAvgPercentile,
+  );
+  const n = sorted.length;
+  const thresholds: [Grade, number][] = [
+    ["S", 0.05],
+    ["A", 0.20],
+    ["B", 0.45],
+    ["C", 0.75],
+    ["D", 0.90],
+  ];
+  const map = new Map<string, Grade>();
+  for (let i = 0; i < sorted.length; i++) {
+    const rank = i / n;
+    const grade =
+      thresholds.find(([, t]) => rank < t)?.[0] ?? "F";
+    map.set(sorted[i]!.oracle_id, grade);
+  }
+  return map;
+}
+
+const GRADE_STYLES: Record<Grade, string> = {
+  S: "bg-violet-100 text-violet-700 dark:bg-violet-950/60 dark:text-violet-300",
+  A: "bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300",
+  B: "bg-sky-100 text-sky-700 dark:bg-sky-950/60 dark:text-sky-300",
+  C: "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400",
+  D: "bg-amber-100 text-amber-700 dark:bg-amber-950/60 dark:text-amber-400",
+  F: "bg-red-100 text-red-600 dark:bg-red-950/60 dark:text-red-400",
+};
+
+function GradeBadge({ grade, percentile }: { grade: Grade; percentile: number }) {
+  return (
+    <span
+      className={`inline-block rounded px-1 py-0.5 text-[10px] font-bold leading-none ${GRADE_STYLES[grade]}`}
+      title={`Grade ${grade} (relative rank) — adjusted avg percentile: ${percentile.toFixed(1)}`}
+    >
+      {grade}
+    </span>
+  );
+}
+
 function deckCopyLabel(q: { main: number; side: number } | undefined): string {
   if (!q) return "—";
   const { main, side } = q;
@@ -143,7 +177,6 @@ export function CardsTable({
   const [typeQuery, setTypeQuery] = useState("");
   const [colorFilter, setColorFilter] = useState<Set<string>>(() => new Set());
   const [hideLands, setHideLands] = useState(true);
-  const [usePercentile, setUsePercentile] = useState(true);
   const [sortKey, setSortKey] = useState<SortKey>("adjustedAvg");
   const [focusPlayerId, setFocusPlayerId] = useState<string | null>(null);
   const [deckScopeOnly, setDeckScopeOnly] = useState(true);
@@ -153,9 +186,12 @@ export function CardsTable({
     [focusPlayerId, playerOptions],
   );
 
+  const gradeMap = useMemo(() => buildGradeMap(rows), [rows]);
+
   useEffect(() => {
     if (!focusPlayerId && sortKey === "vsField") setSortKey("adjustedAvg");
   }, [focusPlayerId, sortKey]);
+
 
   const filtered = useMemo(() => {
     const nq = nameQuery.trim().toLowerCase();
@@ -321,29 +357,15 @@ export function CardsTable({
             </button>
           ) : null}
         </div>
-        <div className="flex flex-wrap items-center gap-4">
-          <label className="flex cursor-pointer items-center gap-2 text-sm text-zinc-700 dark:text-zinc-300">
-            <input
-              type="checkbox"
-              checked={hideLands}
-              onChange={(e) => setHideLands(e.target.checked)}
-              className="size-4 rounded border-zinc-300 text-zinc-900 focus:ring-zinc-400 dark:border-zinc-600"
-            />
-            Hide lands
-          </label>
-          <label className="flex cursor-pointer items-center gap-2 text-sm text-zinc-700 dark:text-zinc-300">
-            <input
-              type="checkbox"
-              checked={usePercentile}
-              onChange={(e) => {
-                setUsePercentile(e.target.checked);
-                setSortKey(e.target.checked ? "adjustedAvg" : "sumRaw");
-              }}
-              className="size-4 rounded border-zinc-300 text-zinc-900 focus:ring-zinc-400 dark:border-zinc-600"
-            />
-            Percentile scoring
-          </label>
-        </div>
+        <label className="flex cursor-pointer items-center gap-2 text-sm text-zinc-700 dark:text-zinc-300">
+          <input
+            type="checkbox"
+            checked={hideLands}
+            onChange={(e) => setHideLands(e.target.checked)}
+            className="size-4 rounded border-zinc-300 text-zinc-900 focus:ring-zinc-400 dark:border-zinc-600"
+          />
+          Hide lands
+        </label>
         <p className="text-xs text-zinc-500">
           Showing {filtered.length} of {rows.length} cards
         </p>
@@ -354,7 +376,10 @@ export function CardsTable({
           <table className="w-full min-w-0 table-fixed border-collapse text-sm">
             <thead className="sticky top-0 z-10 bg-zinc-100/90 shadow-sm dark:bg-zinc-900">
               <tr className="border-b border-zinc-200 text-left dark:border-zinc-800">
-                <th className="w-[38%] min-w-[7.5rem] px-2 py-2 text-xs font-medium sm:w-[28%] sm:px-3 sm:text-sm lg:w-[22%]">
+                <Th sortKey="adjustedAvg" currentSort={sortKey} onSort={setSortKey} className="w-10 whitespace-nowrap px-2 py-2 text-center text-xs sm:px-3 sm:text-sm" title="Performance grade relative to all cards in this event (S = top 5%, A = next 15%, B = next 25%, C = next 30%, D = next 15%, F = bottom 10%)">
+                  Grade
+                </Th>
+                <th className="w-[36%] min-w-[7rem] px-2 py-2 text-xs font-medium sm:w-[26%] sm:px-3 sm:text-sm lg:w-[20%]">
                   Card
                 </th>
                 <th className="hidden w-[12%] min-w-0 px-2 py-2 text-xs font-medium min-[900px]:table-cell sm:px-3 sm:text-sm">
@@ -373,31 +398,8 @@ export function CardsTable({
                   className="w-[4.5rem] whitespace-nowrap px-2 py-2 text-right text-xs sm:px-3 sm:text-sm"
                   title="Total main + side copies played across all decklists that run this card"
                 >
-                  Σ copies
+                  Copies
                 </Th>
-
-                {usePercentile ? (
-                  <>
-                    <Th sortKey="adjustedAvg" currentSort={sortKey} onSort={setSortKey} className="w-[4.5rem] whitespace-nowrap px-2 py-2 text-right text-xs sm:px-3 sm:text-sm" title="Bayesian-adjusted average percentile (shrunk toward field mean to dampen single-deck noise)">
-                      Adj.
-                    </Th>
-                    <Th sortKey="delta" currentSort={sortKey} onSort={setSortKey} className="w-[4rem] whitespace-nowrap px-2 py-2 text-right text-xs sm:px-3 sm:text-sm" title="Win-rate delta: avg percentile of decks WITH this card minus avg percentile of decks WITHOUT">
-                      Δ
-                    </Th>
-                    <Th sortKey="sumPctl" currentSort={sortKey} onSort={setSortKey} className="w-[4.5rem] whitespace-nowrap px-2 py-2 text-right text-xs sm:px-3 sm:text-sm" title="Sum of deck percentile ranks (field impact)">
-                      Σ pctl
-                    </Th>
-                  </>
-                ) : (
-                  <>
-                    <Th sortKey="sumRaw" currentSort={sortKey} onSort={setSortKey} className="w-[4.5rem] whitespace-nowrap px-2 py-2 text-right text-xs sm:px-3 sm:text-sm" title="Sum of raw deck performance scores">
-                      Σ score
-                    </Th>
-                    <Th sortKey="avgRaw" currentSort={sortKey} onSort={setSortKey} className="w-[4rem] whitespace-nowrap px-2 py-2 text-right text-xs sm:px-3 sm:text-sm" title="Average raw deck performance score">
-                      Avg
-                    </Th>
-                  </>
-                )}
 
                 <Th sortKey="topCut" currentSort={sortKey} onSort={setSortKey} className="w-[4.5rem] whitespace-nowrap px-2 py-2 text-right text-xs sm:px-3 sm:text-sm" title="% of decks playing this card that finished rank ≤4">
                   Top-4
@@ -430,7 +432,14 @@ export function CardsTable({
               {sorted.length === 0 && (
                 <tr>
                   <td
-                    colSpan={20}
+                    colSpan={
+                      /* Grade + Card + Type + Decks + Play% + Copies = 6 */
+                      6 +
+                      /* Top-4, Main, Side = 3 */
+                      3 +
+                      /* focus deck columns: Deck + vs avg = 2 */
+                      (focusDeck ? 2 : 0)
+                    }
                     className="px-4 py-8 text-center text-sm text-zinc-500 dark:text-zinc-400"
                   >
                     No cards match your filters.{" "}
@@ -471,6 +480,12 @@ export function CardsTable({
                       : ""
                   }`}
                 >
+                  <td className="px-2 py-2 text-center align-middle sm:px-3">
+                    <GradeBadge
+                      grade={gradeMap.get(r.oracle_id) ?? "C"}
+                      percentile={r.adjustedAvgPercentile}
+                    />
+                  </td>
                   <td className="min-w-0 px-2 py-2 align-top sm:px-3">
                     <div className="min-w-0 break-words text-left leading-snug">
                       <CardPreview
@@ -494,37 +509,6 @@ export function CardsTable({
                     {r.totalCopiesPlayed}
                   </td>
 
-                  {usePercentile ? (
-                    <>
-                      <td className="whitespace-nowrap px-2 py-2 text-right tabular-nums font-medium sm:px-3">
-                        {r.adjustedAvgPercentile.toFixed(1)}
-                      </td>
-                      <td
-                        className={`whitespace-nowrap px-2 py-2 text-right tabular-nums sm:px-3 ${
-                          r.winRateDelta > 0
-                            ? "text-green-600 dark:text-green-400"
-                            : r.winRateDelta < 0
-                              ? "text-red-500 dark:text-red-400"
-                              : "text-zinc-500"
-                        }`}
-                      >
-                        {r.winRateDelta > 0 ? "+" : ""}
-                        {r.winRateDelta.toFixed(1)}
-                      </td>
-                      <td className="whitespace-nowrap px-2 py-2 text-right tabular-nums text-zinc-600 sm:px-3 dark:text-zinc-400">
-                        {r.sumPercentile.toFixed(1)}
-                      </td>
-                    </>
-                  ) : (
-                    <>
-                      <td className="whitespace-nowrap px-2 py-2 text-right tabular-nums sm:px-3">
-                        {r.sumPerformanceScore.toFixed(1)}
-                      </td>
-                      <td className="whitespace-nowrap px-2 py-2 text-right tabular-nums sm:px-3">
-                        {r.avgPerformanceScore.toFixed(1)}
-                      </td>
-                    </>
-                  )}
 
                   <td
                     className="whitespace-nowrap px-2 py-2 text-right tabular-nums sm:px-3"

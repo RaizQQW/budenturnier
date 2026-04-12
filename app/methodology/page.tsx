@@ -122,8 +122,7 @@ export default function MethodologyPage() {
       <Section id="card-evaluation" title="Card evaluation">
         <p>
           Each card is evaluated based on how well the decks that play it
-          performed, with three key adjustments that prevent misleading
-          rankings:
+          performed, with two adjustments that prevent misleading rankings:
         </p>
 
         <h3 className="mt-2 font-semibold text-zinc-900 dark:text-zinc-100">
@@ -139,52 +138,75 @@ export default function MethodologyPage() {
         </p>
 
         <h3 className="mt-2 font-semibold text-zinc-900 dark:text-zinc-100">
-          Adjusted average (Adj. avg)
+          Bayesian shrinkage
         </h3>
         <p>
-          The primary ranking metric. It uses Bayesian shrinkage to pull
-          low-sample cards toward the field average, so a card that only
-          appeared in one (strong) deck can&rsquo;t dominate the rankings
-          purely by luck of the draw. Cards that appear in many decks are
-          barely affected; cards in just one or two decks are pulled
-          significantly toward the average.
+          The primary ranking metric is a Bayesian-adjusted average percentile.
+          It pulls low-sample cards toward the field average, so a card that
+          only appeared in one strong deck can&rsquo;t dominate purely by luck
+          of the draw. Cards appearing in many decks are barely affected; cards
+          in just one or two decks are pulled significantly toward the average.
         </p>
         <Formula summary="Bayesian shrinkage formula">
           <p>
-            <code>adjustedAvg = (W &times; weightedAvg + k &times; fieldMean) / (W + k)</code>
+            <code>adjustedAvg = (n &times; weightedAvg + k &times; fieldMean) / (n + k)</code>
           </p>
           <p>
-            Where <code>W</code> = sum of copy weights across all decks
-            playing the card, <code>weightedAvg</code> = copy-weighted
-            average percentile, <code>fieldMean</code> = average percentile
-            of all decklists on file (always near 50), and{" "}
-            <code>k = round(N / 3)</code> where N = decklists on file.
+            Where <code>n</code> = number of decklists running the card,{" "}
+            <code>weightedAvg</code> = copy-weighted average percentile of
+            those decks, <code>fieldMean</code> = average percentile of all
+            decklists on file (always near 50), and{" "}
+            <code>k = max(2, round(N / 3))</code> where N = total decklists
+            on file.
           </p>
           <p>
-            With 17 decklists, k = 6. A 1-of in only the winning deck gets
-            pulled from ~100 down to ~51. A 4-of in three top-half decks
-            stays near its true average.
+            With 19 decklists, k&nbsp;=&nbsp;6. A card in 1 deck gets 14%
+            weight from actual data and 86% from the prior — strong
+            shrinkage. A card in 10 decks gets 63% weight from actual data —
+            the signal starts to dominate.
           </p>
         </Formula>
 
         <h3 className="mt-2 font-semibold text-zinc-900 dark:text-zinc-100">
-          Win-rate delta (Delta)
+          Letter grades (S / A / B / C / D / F)
         </h3>
         <p>
-          The difference between the average percentile of decks <em>with</em>{" "}
-          the card and decks <em>without</em> it. A positive delta means decks
-          playing this card performed better than the rest of the field. This
-          metric uses unweighted presence (the card is either in the deck or
-          not) for straightforward interpretability.
+          Grades are assigned by ranking all cards in the event by their
+          adjusted average percentile and dividing them into buckets by
+          percentile rank within that pool — not against fixed absolute
+          thresholds. This ensures a balanced distribution even in small
+          events where Bayesian shrinkage compresses scores toward the mean.
         </p>
+        <Formula summary="Grade buckets">
+          <p>
+            Cards are sorted by adjusted avg percentile, then assigned grades
+            based on their position in that sorted list:
+          </p>
+          <ul className="list-inside list-disc space-y-1">
+            <li><strong>S</strong> — top 5%</li>
+            <li><strong>A</strong> — next 15% (top 5–20%)</li>
+            <li><strong>B</strong> — next 25% (top 20–45%)</li>
+            <li><strong>C</strong> — next 30% (top 45–75%)</li>
+            <li><strong>D</strong> — next 15% (top 75–90%)</li>
+            <li><strong>F</strong> — bottom 10%</li>
+          </ul>
+        </Formula>
 
         <h3 className="mt-2 font-semibold text-zinc-900 dark:text-zinc-100">
           Other columns
         </h3>
         <ul className="list-inside list-disc space-y-1">
           <li>
+            <strong>Decks</strong> &mdash; number of decklists on file that
+            include at least one copy.
+          </li>
+          <li>
             <strong>Play %</strong> &mdash; fraction of decklists on file
             that include at least one copy.
+          </li>
+          <li>
+            <strong>Copies</strong> &mdash; total copies across all decklists
+            (main + sideboard combined).
           </li>
           <li>
             <strong>Top-4 %</strong> &mdash; share of decks running the card
@@ -192,25 +214,11 @@ export default function MethodologyPage() {
             with top finishes.
           </li>
           <li>
-            <strong>Avg main / Avg side</strong> &mdash; average number of
-            copies in the mainboard and sideboard per deck that runs the card.
-            Helps answer &ldquo;how many should I play?&rdquo;
-          </li>
-          <li>
-            <strong>&Sigma; pctl</strong> &mdash; sum of percentile ranks
-            across all decks playing the card. Measures total field impact
-            rather than per-deck quality.
+            <strong>Main / Side</strong> &mdash; average copies in the
+            mainboard and sideboard per deck that runs the card. Helps answer
+            &ldquo;how many should I play?&rdquo;
           </li>
         </ul>
-
-        <h3 className="mt-2 font-semibold text-zinc-900 dark:text-zinc-100">
-          Raw mode
-        </h3>
-        <p>
-          Toggle off &ldquo;Percentile scoring&rdquo; to see the original
-          match-point-based sums and averages. These are not adjusted for
-          copy count or sample size and are included for transparency.
-        </p>
       </Section>
 
       <Section id="metagame" title="Metagame">
@@ -251,8 +259,8 @@ export default function MethodologyPage() {
         </p>
         <p>
           For each cluster we also show the <strong>mean adjusted average
-          percentile</strong> of its member cards &mdash; the same{" "}
-          <strong>Adj.</strong> scale as the card table. That number
+          percentile</strong> of its member cards — the same underlying
+          metric that drives the letter grades in the card table. That number
           summarizes how those cards scored in aggregate; use it as a light
           sanity check, not the primary read.
         </p>
@@ -265,7 +273,7 @@ export default function MethodologyPage() {
             Cards are TF-IDF vectors over the corpus of upper-half listed
             decks (main non-lands, presence capped once per deck for IDF).
             k-means uses cosine similarity; k scales with how many eligible
-            cards pass a median <strong>Adj.</strong> bar among multi-deck
+            cards pass a median adjusted-avg-percentile bar among multi-deck
             non-lands. Labels are the member cards closest to each centroid.
           </p>
         </Formula>

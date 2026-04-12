@@ -23,6 +23,7 @@ type ScryfallCard = {
   type_line: string;
   colors: string[];
   color_identity: string[];
+  cmc: number;
   image_uris?: { normal?: string };
   card_faces?: { image_uris?: { normal?: string } }[];
   scryfall_uri?: string;
@@ -39,6 +40,7 @@ function toEntry(c: ScryfallCard): CardCacheEntry {
     type_line: c.type_line,
     colors: c.colors ?? [],
     color_identity: c.color_identity ?? [],
+    cmc: c.cmc ?? 0,
     image_normal: img,
     scryfall_uri: c.scryfall_uri,
   };
