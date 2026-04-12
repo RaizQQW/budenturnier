@@ -33,8 +33,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!isValidSlug(slug)) return { title: "Tournament" };
   const stats = computeTournamentStats(slug);
   return {
-    title: `${stats.meta.title} · Budenturnier`,
-    description: `${stats.meta.format} — card performance`,
+    title: stats.meta.title,
+    description: "Budenturnier Metagame Explorer",
   };
 }
 
