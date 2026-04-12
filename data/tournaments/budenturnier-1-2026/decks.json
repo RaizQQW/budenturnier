@@ -9,6 +9,20 @@
     },
     { "playerId": "julian-gramatke", "displayName": "Julian Gramatke", "deckFile": "julian-gramatke.txt", "archetype": "Abzan Control" },
     { "playerId": "mombo", "displayName": "Mombo", "deckFile": "mombo.txt", "archetype": "Selesnya Humans" },
+    {
+      "playerId": "fabian-m",
+      "displayName": "Fabian M",
+      "deckFile": null,
+      "archetype": "WG (Selesnya Humans)",
+      "harmonizedArchetype": "Selesnya Humans"
+    },
+    {
+      "playerId": "andy-gast",
+      "displayName": "Andy Gast",
+      "deckFile": null,
+      "archetype": "Rakdos Vampires",
+      "harmonizedArchetype": "Rakdos Vampires"
+    },
     { "playerId": "niklas-meyer", "displayName": "Niklas Meyer", "deckFile": "niklas-meyer.txt", "archetype": "Vampires" },
     { "playerId": "henning-lloyd-dunner", "displayName": "Henning Lloyd Dünner", "deckFile": "henning-lloyd-dunner.txt", "archetype": "Izzet Ensoul" },
     { "playerId": "max-q", "displayName": "Max Q.", "deckFile": "max-q.txt", "archetype": "Naya Humans (toolbox)" },

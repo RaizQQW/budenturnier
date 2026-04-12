@@ -120,9 +120,10 @@ function labelFromCentroid(
 
 /**
  * k-means on cards that co-occur in the **upper half** of decklists by
- * performance score (main nonland only, TF-IDF over those decks).
- * Restricts to non-lands with aggregate stats at least median among
- * multi-deck cards (relaxed if too few points).
+ * **percentile score** (main nonland only, TF-IDF over those decks).
+ * Eligible cards must clear a bar on `adjustedAvgPercentile` among
+ * multi-deck nonlands (relaxed if too few points). Cluster sort metric is
+ * mean adjusted percentile of member cards (same scale as the card table).
  */
 export function computeCardPerformanceClusters(
   decks: DeckWithCards[],
@@ -132,11 +133,9 @@ export function computeCardPerformanceClusters(
   const decksOnFile = decks.filter((d) => d.lines.length > 0);
   if (decksOnFile.length < 4) return [];
 
-  const deckScores = decksOnFile.map((d) => d.performanceScore);
-  const scoreMed = median(deckScores);
-  const focusDecks = decksOnFile.filter(
-    (d) => d.performanceScore >= scoreMed,
-  );
+  const deckPctls = decksOnFile.map((d) => d.percentileScore);
+  const pctlMed = median(deckPctls);
+  const focusDecks = decksOnFile.filter((d) => d.percentileScore >= pctlMed);
   const N = focusDecks.length;
   if (N < 3) return [];
 
@@ -159,17 +158,17 @@ export function computeCardPerformanceClusters(
   const multiDeckRows = cardRows.filter(
     (r) => r.deckCount >= 2 && !/\bLand\b/.test(r.type_line),
   );
-  const avgMed =
+  const pctlBar =
     multiDeckRows.length > 0
-      ? median(multiDeckRows.map((r) => r.avgPerformanceScore))
-      : 0;
+      ? median(multiDeckRows.map((r) => r.adjustedAvgPercentile))
+      : 50;
 
   let eligible = [...docFreq.keys()].filter((oid) => {
     if ((docFreq.get(oid) ?? 0) < 2) return false;
     const row = rowByOracle.get(oid);
     if (!row || row.deckCount < 2) return false;
     if (/\bLand\b/.test(row.type_line)) return false;
-    return row.avgPerformanceScore >= avgMed;
+    return row.adjustedAvgPercentile >= pctlBar;
   });
 
   const minK = 2;
@@ -236,7 +235,7 @@ export function computeCardPerformanceClusters(
     if (oracleIds.length === 0) continue;
     const centroid = centroids[j] ?? new Map<string, number>();
     const scores = oracleIds.map(
-      (oid) => rowByOracle.get(oid)?.avgPerformanceScore ?? 0,
+      (oid) => rowByOracle.get(oid)?.adjustedAvgPercentile ?? 0,
     );
     const avgMemberAvgScore =
       scores.reduce((a, b) => a + b, 0) / scores.length;

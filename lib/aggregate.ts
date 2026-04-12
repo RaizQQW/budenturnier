@@ -23,6 +23,7 @@ import {
   computeMetagameMatrix,
   type MetagameMatrixPayload,
 } from "./metagameMatrix";
+import { applyArchetypeGroups } from "./archetypeGroups";
 import { resolveHarmonizedArchetype } from "./harmonizeArchetype";
 import { computeCardPerformanceClusters } from "./cardPerformanceClusters";
 
@@ -106,8 +107,12 @@ export type TournamentStats = {
   archetypeRows: { archetype: string; deckCount: number; avgScore: number }[];
   clusters: import("./types").ArchetypeCluster[];
   metagame: MetagameMatrixPayload | null;
+  /** Broader grouped-archetype matrix (e.g. all BG variants → "BG"). */
+  metagameGrouped: MetagameMatrixPayload | null;
   /** Harmonized archetype presence among decklists on file. */
   superArchetypePlayRates: SuperArchetypePlayRate[];
+  /** Grouped archetype play rates (using `meta.archetypeGroups`). */
+  groupedPlayRates: SuperArchetypePlayRate[];
 };
 
 export function computeTournamentStats(slug: string): TournamentStats {
@@ -128,9 +133,73 @@ export function computeTournamentStats(slug: string): TournamentStats {
       ? computePlayerScores(matches, standings, meta)
       : computeStandingsOnlyScores(standings, meta);
 
+  // --- Build deck rows (without percentile yet — need all scores first) ---
+  type PartialDeck = Omit<DeckWithCards, "percentileScore">;
+
   const deckByName = new Map(decks.map((d) => [d.displayName, d]));
-  const decksWithCards: DeckWithCards[] = [];
+  const partialDecks: PartialDeck[] = [];
   let withList = 0;
+
+  function pushDeck(
+    d: DeckEntry,
+    rank: number,
+    perf: number,
+    sw: number,
+    br: number,
+    pb: number,
+    oracleQty: Record<string, { main: number; side: number }>,
+    lines: import("./types").ParsedDeckLine[],
+    resolvedOracleIds: Record<string, string>,
+  ) {
+    const arch = d.archetype ?? null;
+    partialDecks.push({
+      playerId: d.playerId,
+      displayName: d.displayName,
+      archetype: arch,
+      harmonizedArchetype: resolveHarmonizedArchetype(
+        d.harmonizedArchetype,
+        { oracleQty, archetype: arch },
+        cardCache,
+      ),
+      rank,
+      performanceScore: perf,
+      swissMatchPoints: sw,
+      bracketWeightedPoints: br,
+      placementBonus: pb,
+      oracleQty,
+      lines,
+      resolvedOracleIds,
+    });
+  }
+
+  function processEntry(d: DeckEntry, rank: number) {
+    const scoreRow = playerScores.get(d.displayName);
+    const perf = scoreRow?.performanceScore ?? 0;
+    const sw = scoreRow?.swissMatchPoints ?? 0;
+    const br = scoreRow?.bracketWeightedPoints ?? 0;
+    const pb = scoreRow?.placementBonus ?? 0;
+
+    if (!d.deckFile) {
+      pushDeck(d, rank, perf, sw, br, pb, {}, [], {});
+      return;
+    }
+    const fp = path.join(dir, "decklists", d.deckFile);
+    if (!fs.existsSync(fp)) {
+      pushDeck(d, rank, perf, sw, br, pb, {}, [], {});
+      return;
+    }
+    withList++;
+    const text = fs.readFileSync(fp, "utf8");
+    const parsed = parseDecklist(text);
+    const resolved = resolveDeckToOracleIds(text, nameToOracle);
+    const oracleQty = Object.fromEntries(
+      buildOracleQtyFromLines(parsed.lines, resolved),
+    );
+    pushDeck(
+      d, rank, perf, sw, br, pb,
+      oracleQty, parsed.lines, Object.fromEntries(resolved),
+    );
+  }
 
   for (const st of standings) {
     const d =
@@ -141,181 +210,64 @@ export function computeTournamentStats(slug: string): TournamentStats {
         deckFile: null,
         archetype: null,
       } satisfies DeckEntry);
-    const rank = st.rank;
-    const scoreRow = playerScores.get(st.displayName);
-    const perf = scoreRow?.performanceScore ?? 0;
-    const sw = scoreRow?.swissMatchPoints ?? 0;
-    const br = scoreRow?.bracketWeightedPoints ?? 0;
-    const pb = scoreRow?.placementBonus ?? 0;
-
-    if (!d.deckFile) {
-      const arch = d.archetype ?? null;
-      decksWithCards.push({
-        playerId: d.playerId,
-        displayName: d.displayName,
-        archetype: arch,
-        harmonizedArchetype: resolveHarmonizedArchetype(
-          d.harmonizedArchetype,
-          { oracleQty: {}, archetype: arch },
-          cardCache,
-        ),
-        rank,
-        performanceScore: perf,
-        swissMatchPoints: sw,
-        bracketWeightedPoints: br,
-        placementBonus: pb,
-        oracleQty: {},
-        lines: [],
-        resolvedOracleIds: {},
-      });
-      continue;
-    }
-
-    const fp = path.join(dir, "decklists", d.deckFile);
-    if (!fs.existsSync(fp)) {
-      const arch = d.archetype ?? null;
-      decksWithCards.push({
-        playerId: d.playerId,
-        displayName: d.displayName,
-        archetype: arch,
-        harmonizedArchetype: resolveHarmonizedArchetype(
-          d.harmonizedArchetype,
-          { oracleQty: {}, archetype: arch },
-          cardCache,
-        ),
-        rank,
-        performanceScore: perf,
-        swissMatchPoints: sw,
-        bracketWeightedPoints: br,
-        placementBonus: pb,
-        oracleQty: {},
-        lines: [],
-        resolvedOracleIds: {},
-      });
-      continue;
-    }
-
-    withList++;
-    const text = fs.readFileSync(fp, "utf8");
-    const parsed = parseDecklist(text);
-    const resolved = resolveDeckToOracleIds(text, nameToOracle);
-    const oracleQty = Object.fromEntries(
-      buildOracleQtyFromLines(parsed.lines, resolved),
-    );
-    const arch = d.archetype ?? null;
-    decksWithCards.push({
-      playerId: d.playerId,
-      displayName: d.displayName,
-      archetype: arch,
-      harmonizedArchetype: resolveHarmonizedArchetype(
-        d.harmonizedArchetype,
-        { oracleQty, archetype: arch },
-        cardCache,
-      ),
-      rank,
-      performanceScore: perf,
-      swissMatchPoints: sw,
-      bracketWeightedPoints: br,
-      placementBonus: pb,
-      oracleQty,
-      lines: parsed.lines,
-      resolvedOracleIds: Object.fromEntries(resolved),
-    });
+    processEntry(d, st.rank);
   }
 
   const seenStandingNames = new Set(standings.map((s) => s.displayName));
   for (const d of decks) {
     if (seenStandingNames.has(d.displayName)) continue;
-    const rank = 999;
-    const scoreRow = playerScores.get(d.displayName);
-    const perf = scoreRow?.performanceScore ?? 0;
-    const sw = scoreRow?.swissMatchPoints ?? 0;
-    const br = scoreRow?.bracketWeightedPoints ?? 0;
-    const pb = scoreRow?.placementBonus ?? 0;
-    if (!d.deckFile) {
-      const arch = d.archetype ?? null;
-      decksWithCards.push({
-        playerId: d.playerId,
-        displayName: d.displayName,
-        archetype: arch,
-        harmonizedArchetype: resolveHarmonizedArchetype(
-          d.harmonizedArchetype,
-          { oracleQty: {}, archetype: arch },
-          cardCache,
-        ),
-        rank,
-        performanceScore: perf,
-        swissMatchPoints: sw,
-        bracketWeightedPoints: br,
-        placementBonus: pb,
-        oracleQty: {},
-        lines: [],
-        resolvedOracleIds: {},
-      });
-      continue;
-    }
-    const fp = path.join(dir, "decklists", d.deckFile);
-    if (!fs.existsSync(fp)) {
-      const arch = d.archetype ?? null;
-      decksWithCards.push({
-        playerId: d.playerId,
-        displayName: d.displayName,
-        archetype: arch,
-        harmonizedArchetype: resolveHarmonizedArchetype(
-          d.harmonizedArchetype,
-          { oracleQty: {}, archetype: arch },
-          cardCache,
-        ),
-        rank,
-        performanceScore: perf,
-        swissMatchPoints: sw,
-        bracketWeightedPoints: br,
-        placementBonus: pb,
-        oracleQty: {},
-        lines: [],
-        resolvedOracleIds: {},
-      });
-      continue;
-    }
-    withList++;
-    const text = fs.readFileSync(fp, "utf8");
-    const parsed = parseDecklist(text);
-    const resolved = resolveDeckToOracleIds(text, nameToOracle);
-    const oracleQty = Object.fromEntries(
-      buildOracleQtyFromLines(parsed.lines, resolved),
-    );
-    const arch = d.archetype ?? null;
-    decksWithCards.push({
-      playerId: d.playerId,
-      displayName: d.displayName,
-      archetype: arch,
-      harmonizedArchetype: resolveHarmonizedArchetype(
-        d.harmonizedArchetype,
-        { oracleQty, archetype: arch },
-        cardCache,
-      ),
-      rank,
-      performanceScore: perf,
-      swissMatchPoints: sw,
-      bracketWeightedPoints: br,
-      placementBonus: pb,
-      oracleQty,
-      lines: parsed.lines,
-      resolvedOracleIds: Object.fromEntries(resolved),
-    });
+    processEntry(d, 999);
   }
+
+  // --- Compute midpoint percentile ranks ---
+  const scores = partialDecks.map((d) => d.performanceScore);
+  const N = scores.length;
+  const sortedScores = [...scores].sort((a, b) => a - b);
+  const percentileOf = (score: number): number => {
+    if (N <= 1) return 50;
+    let below = 0;
+    let equal = 0;
+    for (const s of sortedScores) {
+      if (s < score) below++;
+      else if (s === score) equal++;
+    }
+    return ((below + equal / 2) / N) * 100;
+  };
+
+  const decksWithCards: DeckWithCards[] = partialDecks.map((pd) => ({
+    ...pd,
+    percentileScore: percentileOf(pd.performanceScore),
+  }));
 
   const totalPlayers = standings.length;
   const decklistCoverage = { withList, total: totalPlayers };
 
-  /** oracle_id -> aggregate */
+  // --- Card aggregation (dual-track: raw + percentile, copy-weighted) ---
+  const decksOnFile = decksWithCards.filter((d) => Object.keys(d.oracleQty).length > 0);
+  const BAYES_K = Math.max(2, Math.round(decksOnFile.length / 3));
+  const totalPctlSum = decksOnFile.reduce((s, d) => s + d.percentileScore, 0);
+  const globalAvgPercentile =
+    decksOnFile.length > 0 ? totalPctlSum / decksOnFile.length : 50;
+
+  // Pre-compute total cards per deck for copy-weight denominator
+  const deckTotalCards = new Map<string, number>();
+  for (const dw of decksOnFile) {
+    let total = 0;
+    for (const q of Object.values(dw.oracleQty)) total += q.main + q.side;
+    deckTotalCards.set(dw.playerId, total || 1);
+  }
+
   const agg = new Map<
     string,
     {
       sumScore: number;
+      sumPctl: number;
+      weightedSumPctl: number;
+      weightSum: number;
       deckCount: number;
       topCutDeckCount: number;
       bestRank: number;
+      mainQty: number;
       sideQty: number;
       totalQty: number;
     }
@@ -324,25 +276,36 @@ export function computeTournamentStats(slug: string): TournamentStats {
   for (const dw of decksWithCards) {
     const oracleKeys = Object.keys(dw.oracleQty);
     if (oracleKeys.length === 0) continue;
+    const totalCardsInDeck = deckTotalCards.get(dw.playerId) ?? 1;
     const seenInDeck = new Set<string>();
     for (const oid of new Set(oracleKeys)) {
       if (seenInDeck.has(oid)) continue;
       seenInDeck.add(oid);
       const cur = agg.get(oid) ?? {
         sumScore: 0,
+        sumPctl: 0,
+        weightedSumPctl: 0,
+        weightSum: 0,
         deckCount: 0,
         topCutDeckCount: 0,
         bestRank: 999,
+        mainQty: 0,
         sideQty: 0,
         totalQty: 0,
       };
+      const q = dw.oracleQty[oid]!;
+      const copies = q.main + q.side;
+      const copyWeight = copies / totalCardsInDeck;
       cur.sumScore += dw.performanceScore;
+      cur.sumPctl += dw.percentileScore;
+      cur.weightedSumPctl += dw.percentileScore * copyWeight;
+      cur.weightSum += copyWeight;
       cur.deckCount += 1;
       if (dw.rank <= 4) cur.topCutDeckCount += 1;
       cur.bestRank = Math.min(cur.bestRank, dw.rank);
-      const q = dw.oracleQty[oid]!;
+      cur.mainQty += q.main;
       cur.sideQty += q.side;
-      cur.totalQty += q.main + q.side;
+      cur.totalQty += copies;
       agg.set(oid, cur);
     }
   }
@@ -353,6 +316,23 @@ export function computeTournamentStats(slug: string): TournamentStats {
     const name = c?.name ?? oracle_id;
     const type_line = c?.type_line ?? "";
     const colors = c?.colors ?? c?.color_identity ?? [];
+
+    // Copy-weighted percentile avg: a 4-of counts 4x as much as a 1-of
+    const weightedAvgPctl =
+      v.weightSum > 0 ? v.weightedSumPctl / v.weightSum : 50;
+    const adjustedAvgPercentile =
+      (v.weightSum * weightedAvgPctl + BAYES_K * globalAvgPercentile) /
+      (v.weightSum + BAYES_K);
+
+    // Delta uses unweighted avg (presence-based) for interpretability
+    const avgPctl = v.sumPctl / v.deckCount;
+    const decksWithout = decksOnFile.length - v.deckCount;
+    const avgPctlWithout =
+      decksWithout > 0
+        ? (totalPctlSum - v.sumPctl) / decksWithout
+        : globalAvgPercentile;
+    const winRateDelta = avgPctl - avgPctlWithout;
+
     cardRows.push({
       oracle_id,
       name,
@@ -363,17 +343,25 @@ export function computeTournamentStats(slug: string): TournamentStats {
       deckCount: v.deckCount,
       sumPerformanceScore: v.sumScore,
       avgPerformanceScore: v.sumScore / v.deckCount,
+      sumPercentile: v.sumPctl,
+      avgPercentile: avgPctl,
+      adjustedAvgPercentile,
+      winRateDelta,
       topCutDeckCount: v.topCutDeckCount,
+      topCutRate: v.deckCount > 0 ? v.topCutDeckCount / v.deckCount : 0,
       bestRank: v.bestRank,
+      avgMainCopies: v.deckCount > 0 ? v.mainQty / v.deckCount : 0,
+      avgSideCopies: v.deckCount > 0 ? v.sideQty / v.deckCount : 0,
       sideboardCopyShare:
         v.totalQty > 0 ? Math.min(1, v.sideQty / v.totalQty) : 0,
       mainCopyShare:
         v.totalQty > 0 ? Math.min(1, (v.totalQty - v.sideQty) / v.totalQty) : 0,
       playRate: withList > 0 ? v.deckCount / withList : 0,
+      totalCopiesPlayed: v.totalQty,
     });
   }
 
-  cardRows.sort((a, b) => b.sumPerformanceScore - a.sumPerformanceScore);
+  cardRows.sort((a, b) => b.adjustedAvgPercentile - a.adjustedAvgPercentile);
 
   const cardPerformanceClusters = computeCardPerformanceClusters(
     decksWithCards,
@@ -383,8 +371,9 @@ export function computeTournamentStats(slug: string): TournamentStats {
 
   const archMap = new Map<string, { sum: number; n: number }>();
   for (const dw of decksWithCards) {
-    const a = dw.archetype?.trim();
-    if (!a) continue;
+    const coarse = (dw.harmonizedArchetype ?? dw.archetype)?.trim();
+    if (!coarse) continue;
+    const a = applyArchetypeGroups(coarse, meta.archetypeGroups) ?? coarse;
     const cur = archMap.get(a) ?? { sum: 0, n: 0 };
     cur.sum += dw.performanceScore;
     cur.n += 1;
@@ -410,6 +399,18 @@ export function computeTournamentStats(slug: string): TournamentStats {
       ? computeMetagameMatrix(matches, playerToSuperArch)
       : null;
 
+  let metagameGrouped: MetagameMatrixPayload | null = null;
+  if (matches.length > 0 && meta.archetypeGroups) {
+    const playerToGrouped = new Map<string, string>();
+    for (const [player, arch] of playerToSuperArch) {
+      playerToGrouped.set(
+        player,
+        applyArchetypeGroups(arch, meta.archetypeGroups) ?? arch,
+      );
+    }
+    metagameGrouped = computeMetagameMatrix(matches, playerToGrouped);
+  }
+
   const harmonizedListCount = new Map<string, number>();
   let taggedDecklists = 0;
   for (const dw of decksWithCards) {
@@ -430,6 +431,31 @@ export function computeTournamentStats(slug: string): TournamentStats {
       });
     }
     superArchetypePlayRates.sort(
+      (a, b) =>
+        b.playRate - a.playRate || a.archetype.localeCompare(b.archetype),
+    );
+  }
+
+  const groupedPlayRates: SuperArchetypePlayRate[] = [];
+  if (taggedDecklists > 0 && meta.archetypeGroups) {
+    const groupLookup = new Map<string, string>();
+    for (const [group, members] of Object.entries(meta.archetypeGroups)) {
+      for (const m of members) groupLookup.set(m, group);
+    }
+    const groupedCount = new Map<string, number>();
+    for (const [arch, count] of harmonizedListCount) {
+      const g = groupLookup.get(arch) ?? arch;
+      groupedCount.set(g, (groupedCount.get(g) ?? 0) + count);
+    }
+    for (const [archetype, decklistsWith] of groupedCount) {
+      groupedPlayRates.push({
+        archetype,
+        decklistsWith,
+        decklistsTotal: taggedDecklists,
+        playRate: decklistsWith / taggedDecklists,
+      });
+    }
+    groupedPlayRates.sort(
       (a, b) =>
         b.playRate - a.playRate || a.archetype.localeCompare(b.archetype),
     );
@@ -458,6 +484,8 @@ export function computeTournamentStats(slug: string): TournamentStats {
     archetypeRows,
     clusters,
     metagame,
+    metagameGrouped,
     superArchetypePlayRates,
+    groupedPlayRates,
   };
 }

@@ -14,7 +14,7 @@ export type MetagameMatrixPayload = {
   archetypes: string[];
   /** cells[row][col]: game wins for row vs col in row–col pairings. */
   cells: Record<string, Record<string, MetagameCell>>;
-  /** Overall games won / lost per super-archetype (non-mirror, non-bye, non-draw). */
+  /** Overall games won / lost per super-archetype (non-mirror, non-bye). */
   archetypeRecords: Record<string, { gamesWon: number; gamesLost: number }>;
 };
 
@@ -36,8 +36,8 @@ function addPair(
 /**
  * Builds super-archetype × super-archetype **game** totals from Bo3 pairings.
  * Uses `playerToSuperArch` (display name → harmonized label, typically).
- * Skips byes, intentional draws (1–1), incomplete lines, mirrors, and any
- * match where either player lacks a super-archetype tag.
+ * Includes draws (1–1): each side won a game, so both game wins count.
+ * Skips byes, mirrors, and any match where either player lacks a tag.
  */
 export function computeMetagameMatrix(
   matches: MatchRow[],
@@ -58,15 +58,11 @@ export function computeMetagameMatrix(
   for (const row of matches) {
     if (row.bye || row.playerB == null) continue;
     const { playerA: A, playerB: B, gamesA: ga, gamesB: gb } = row;
-    if (ga === 1 && gb === 1) continue;
+    if (ga === 0 && gb === 0) continue;
 
     const archA = playerToSuperArch.get(A)?.trim();
     const archB = playerToSuperArch.get(B)?.trim();
     if (!archA || !archB || archA === archB) continue;
-
-    const decisive =
-      (ga === 2 && gb < 2) || (gb === 2 && ga < 2);
-    if (!decisive) continue;
 
     addPair(pairGames, archA, archB, ga, gb);
     addPair(pairGames, archB, archA, gb, ga);

@@ -9,6 +9,7 @@ import { MetagameMatrix } from "@/components/MetagameMatrix";
 import { ScryfallFooter } from "@/components/ScryfallFooter";
 import { CardPerformanceClusterTable } from "@/components/CardPerformanceClusterTable";
 import { SuperArchetypePlayRates } from "@/components/SuperArchetypePlayRates";
+import { Disclosure } from "@/components/Disclosure";
 import { TournamentCsvExports } from "@/components/TournamentCsvExports";
 import { TournamentSection } from "@/components/TournamentSection";
 import { computeTournamentStats } from "@/lib/aggregate";
@@ -47,16 +48,30 @@ export default async function TournamentPage({ params }: Props) {
   const csvBundles: { label: string; filename: string; csv: string }[] = [
     { label: "Cards", filename: "cards.csv", csv: cardRowsToCsv(stats.cardRows) },
   ];
+  if (stats.groupedPlayRates.length > 0) {
+    csvBundles.push({
+      label: "Play rates (grouped)",
+      filename: "play-rate-grouped.csv",
+      csv: superArchetypePlayRatesToCsv(stats.groupedPlayRates),
+    });
+  }
   if (stats.superArchetypePlayRates.length > 0) {
     csvBundles.push({
-      label: "Play rates",
-      filename: "super-archetype-play-rate.csv",
+      label: "Play rates (all)",
+      filename: "play-rate-all.csv",
       csv: superArchetypePlayRatesToCsv(stats.superArchetypePlayRates),
+    });
+  }
+  if (stats.metagameGrouped) {
+    csvBundles.push({
+      label: "Matrix (grouped)",
+      filename: "metagame-matrix-grouped.csv",
+      csv: metagameMatrixToCsv(stats.metagameGrouped),
     });
   }
   if (stats.metagame) {
     csvBundles.push({
-      label: "Matrix",
+      label: "Matrix (all)",
       filename: "metagame-matrix.csv",
       csv: metagameMatrixToCsv(stats.metagame),
     });
@@ -73,23 +88,46 @@ export default async function TournamentPage({ params }: Props) {
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-6xl flex-col gap-14 px-4 py-10 sm:px-6">
+    <div className="min-h-full bg-zinc-50/50 dark:bg-zinc-950">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-14 px-4 py-10 sm:px-6">
       <header className="rounded-xl border border-zinc-200/80 bg-gradient-to-b from-zinc-50 to-white px-6 py-7 shadow-sm dark:border-zinc-800/80 dark:from-zinc-900/50 dark:to-zinc-950/80">
-        <Link
-          href="/"
-          className="text-sm text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200"
-        >
-          ← All events
-        </Link>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-zinc-500">
+          <Link href="/" className="hover:text-zinc-800 dark:hover:text-zinc-200">
+            ← All events
+          </Link>
+          <span className="hidden sm:inline">·</span>
+          <Link
+            href="/methodology"
+            className="hover:text-zinc-800 dark:hover:text-zinc-200"
+          >
+            Methodology
+          </Link>
+        </div>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
           {stats.meta.title}
         </h1>
         <p className="mt-1 text-zinc-600 dark:text-zinc-400">
-          {stats.meta.format} · {stats.meta.date}
+          {stats.meta.formatUrl ? (
+            <a
+              href={stats.meta.formatUrl}
+              className="underline hover:text-zinc-800 dark:hover:text-zinc-200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {stats.meta.format}
+            </a>
+          ) : (
+            stats.meta.format
+          )}{" "}
+          · {stats.meta.date}
         </p>
         <p className="mt-2 text-sm text-zinc-500">
           Decklists on file: {stats.decklistCoverage.withList} /{" "}
           {stats.decklistCoverage.total} players
+        </p>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+          Final standings, decklists, and stats from this event — browse cards,
+          matchups, and how each deck performed.
         </p>
       </header>
 
@@ -98,43 +136,46 @@ export default async function TournamentPage({ params }: Props) {
         aside={<TournamentCsvExports slug={slug} bundles={csvBundles} />}
         description={
           <>
-            Each card gets the full{" "}
-            <strong className="font-medium text-zinc-800 dark:text-zinc-200">
-              deck performance score
-            </strong>{" "}
-            once per deck (unique oracle). Swiss + weighted bracket points;
-            placement bonuses are usually off when match data exists (see{" "}
-            <code className="rounded bg-zinc-100 px-1 dark:bg-zinc-800">
-              meta.json
-            </code>
-            ).{" "}
-            <strong className="font-medium text-zinc-800 dark:text-zinc-200">
-              Play %
-            </strong>{" "}
-            is how many decklists on file run the card.{" "}
-            <strong className="font-medium text-zinc-800 dark:text-zinc-200">
-              ≤4th
-            </strong>{" "}
-            counts decklists with the card that placed 4th or better.{" "}
-            <strong className="font-medium text-zinc-800 dark:text-zinc-200">
-              Main % / Side %
-            </strong>{" "}
-            split all registered copies (core vs tech).
+            Which cards showed up in decks that did well? Sort any column;
+            optional view uses raw match points instead of our adjusted scores.{" "}
+            <Link
+              href="/methodology#card-evaluation"
+              className="underline hover:text-zinc-800 dark:hover:text-zinc-200"
+            >
+              How is this calculated?
+            </Link>
           </>
         }
       >
-        <CardsTable rows={stats.cardRows} />
+        <CardsTable
+          rows={stats.cardRows}
+          playerOptions={stats.decksWithCards
+            .filter((d) => Object.keys(d.oracleQty).length > 0)
+            .map((d) => ({
+              playerId: d.playerId,
+              displayName: d.displayName,
+              rank: d.rank,
+              percentileScore: d.percentileScore,
+              oracleQty: d.oracleQty,
+            }))
+            .sort((a, b) => a.rank - b.rank || a.displayName.localeCompare(b.displayName))}
+        />
       </TournamentSection>
 
       {stats.cardPerformanceClusters.length > 0 ? (
         <TournamentSection
-          title="Card clusters (best-half decks)"
+          title="Card packages"
           description={
             <>
-              Non-land mainboard cards that appear together in the upper half
-              of decklists by performance score, clustered with k-means on
-              TF‑IDF deck vectors. Labels list centroid‑proximate cards. Export
-              in CSV above.
+              Cards that frequently appear together in top-performing decks,
+              grouped automatically. Labels show the most representative cards
+              per group.{" "}
+              <Link
+                href="/methodology#card-packages"
+                className="underline hover:text-zinc-800 dark:hover:text-zinc-200"
+              >
+                How is this calculated?
+              </Link>
             </>
           }
         >
@@ -154,37 +195,67 @@ export default async function TournamentPage({ params }: Props) {
         />
       </TournamentSection>
 
-      {stats.superArchetypePlayRates.length > 0 || stats.metagame ? (
+      {stats.groupedPlayRates.length > 0 ||
+      stats.superArchetypePlayRates.length > 0 ||
+      stats.metagame ? (
         <TournamentSection
-          title="Metagame (super-archetypes)"
-          description="Play share uses tagged decklists only. The matchup matrix uses Bo3 games between two different super-archetypes."
+          title="Metagame"
+          description={
+            <>
+              Play share and head-to-head game win rates by archetype.{" "}
+              <Link
+                href="/methodology#metagame"
+                className="underline hover:text-zinc-800 dark:hover:text-zinc-200"
+              >
+                How is this calculated?
+              </Link>
+            </>
+          }
         >
-          {stats.superArchetypePlayRates.length > 0 ? (
+          <h3 className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+            Who brought what?
+          </h3>
+          {stats.groupedPlayRates.length > 0 ? (
+            <SuperArchetypePlayRates rows={stats.groupedPlayRates} />
+          ) : stats.superArchetypePlayRates.length > 0 ? (
             <SuperArchetypePlayRates rows={stats.superArchetypePlayRates} />
           ) : null}
-          {stats.metagame ? (
-            <div
-              className={
-                stats.superArchetypePlayRates.length > 0
-                  ? "mt-2 border-t border-zinc-200/70 pt-8 dark:border-zinc-800/70"
-                  : ""
-              }
-            >
-              <MetagameMatrix data={stats.metagame} />
+
+          {stats.groupedPlayRates.length > 0 &&
+          stats.superArchetypePlayRates.length > 0 ? (
+            <Disclosure title="Show individual archetypes">
+              <SuperArchetypePlayRates rows={stats.superArchetypePlayRates} />
+            </Disclosure>
+          ) : null}
+
+          {stats.metagameGrouped ? (
+            <div className="border-t border-zinc-200/70 pt-8 dark:border-zinc-800/70">
+              <h3 className="mb-4 text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+                How matchups went (games)
+              </h3>
+              <MetagameMatrix data={stats.metagameGrouped} />
             </div>
-          ) : (
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">
-              Not enough decisive matchups between two different tagged
-              super-archetypes for a matrix — play share above still applies.
+          ) : null}
+
+          {stats.metagame ? (
+            <div className="border-t border-zinc-200/70 pt-6 dark:border-zinc-800/70">
+              <Disclosure title="Show all individual archetype matchups">
+                <MetagameMatrix data={stats.metagame} />
+              </Disclosure>
+            </div>
+          ) : !stats.metagameGrouped ? (
+            <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
+              Not enough matchup data between different archetypes for a
+              matrix — play share above still applies.
             </p>
-          )}
+          ) : null}
         </TournamentSection>
       ) : null}
 
       {stats.archetypeRows.length > 0 ? (
         <TournamentSection
-          title="Archetypes (manual tags)"
-          description="Raw labels from decks.json — use harmonized columns in Decks for collapsed names."
+          title="Archetypes (tagged)"
+          description="Deck labels assigned by the tournament organizer."
         >
           <ArchetypeTable rows={stats.archetypeRows} />
         </TournamentSection>
@@ -192,14 +263,17 @@ export default async function TournamentPage({ params }: Props) {
 
       {stats.clusters.length > 0 ? (
         <TournamentSection
-          title="Suggested clusters (main nonland TF‑IDF, k-means)"
+          title="Deck archetypes (auto-detected)"
           description={
             <>
-              Labels use centroid cards. Override with manual archetypes in{" "}
-              <code className="rounded bg-zinc-100 px-1 dark:bg-zinc-800">
-                decks.json
-              </code>{" "}
-              when pools are odd.
+              Decklists grouped by shared mainboard cards. Labels show the
+              most distinctive cards per cluster.{" "}
+              <Link
+                href="/methodology#deck-archetypes"
+                className="underline hover:text-zinc-800 dark:hover:text-zinc-200"
+              >
+                How is this calculated?
+              </Link>
             </>
           }
         >
@@ -214,6 +288,7 @@ export default async function TournamentPage({ params }: Props) {
       ) : null}
 
       <ScryfallFooter />
+      </div>
     </div>
   );
 }

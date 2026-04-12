@@ -5,7 +5,14 @@ export type TournamentMeta = {
   slug: string;
   title: string;
   format: string;
+  /** Optional URL describing or linking to the card pool / format rules. */
+  formatUrl?: string;
   date: string;
+  /**
+   * Maps a broad group label to an array of harmonized archetype names.
+   * Archetypes not listed in any group keep their own name.
+   */
+  archetypeGroups?: Record<string, string[]>;
   scoring?: {
     bracketSemisWeight: number;
     /** 3rd/4th playoff; defaults to `bracketSemisWeight` when omitted. */
@@ -105,6 +112,8 @@ export type DeckWithCards = {
   /** Final rank from standings */
   rank: number;
   performanceScore: number;
+  /** Midpoint percentile rank (0–100) among all players. */
+  percentileScore: number;
   swissMatchPoints: number;
   bracketWeightedPoints: number;
   placementBonus: number;
@@ -131,16 +140,48 @@ export type CardAggregateRow = {
   image_normal?: string;
   scryfall_uri?: string;
   deckCount: number;
+
+  /* --- raw scoring (match-points based) --- */
   sumPerformanceScore: number;
   avgPerformanceScore: number;
+
+  /* --- percentile scoring --- */
+  /** Sum of deck percentile ranks for decks running this card. */
+  sumPercentile: number;
+  /** Mean deck percentile among decks running this card. */
+  avgPercentile: number;
+  /** Bayesian-shrunk avg percentile: `(n*avg + k*50) / (n+k)`, k=2. */
+  adjustedAvgPercentile: number;
+  /** `avgPercentile(with) - avgPercentile(without)`. */
+  winRateDelta: number;
+
   topCutDeckCount: number;
+  /** `topCutDeckCount / deckCount` (0–1). */
+  topCutRate: number;
   bestRank: number;
+
+  /** Average main-deck copies per deck that runs the card. */
+  avgMainCopies: number;
+  /** Average sideboard copies per deck that runs the card. */
+  avgSideCopies: number;
+
   /** Share of all copies (main+side) that are in sideboards, 0–1. */
   sideboardCopyShare: number;
   /** Share of all copies in mainboards, 0–1 (tech vs core). */
   mainCopyShare: number;
   /** Fraction of decklists on file that run ≥1 copy (meta presence). */
   playRate: number;
+  /** Sum of (main + side) copies across all decklists that run this card. */
+  totalCopiesPlayed: number;
+};
+
+/** Player row for card-table “focus this deck” UI (decklists with parsed cards). */
+export type CardTablePlayerOption = {
+  playerId: string;
+  displayName: string;
+  rank: number;
+  percentileScore: number;
+  oracleQty: Record<string, { main: number; side: number }>;
 };
 
 /** Super-archetype share among decklists with lists (denominator = lists on file). */
@@ -175,6 +216,7 @@ export type CardPerformanceCluster = {
   /** Representative card names from centroid similarity. */
   label: string;
   oracleIds: string[];
+  /** Mean `adjustedAvgPercentile` among cards in this cluster (0–100). */
   avgMemberAvgScore: number;
   cardCount: number;
 };

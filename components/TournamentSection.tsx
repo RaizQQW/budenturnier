@@ -23,12 +23,12 @@ export function TournamentSection({
           ) : null}
         </div>
         {description ? (
-          <div className="max-w-3xl text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <div className="max-w-3xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
             {description}
           </div>
         ) : null}
       </div>
-      <div className="flex flex-col gap-5 pt-5">{children}</div>
+      <div className="flex flex-col gap-6 pt-6">{children}</div>
     </section>
   );
 }

@@ -65,32 +65,43 @@ export function DeckTable({
 }) {
   const [openId, setOpenId] = useState<string | null>(null);
 
+  const showBracket = decks.some((d) => d.bracketWeightedPoints !== 0);
+  const showPlacement = decks.some((d) => d.placementBonus !== 0);
+  const colCount = 4 + (showBracket ? 1 : 0) + (showPlacement ? 1 : 0) + 2;
+
   return (
     <div className="overflow-x-auto rounded-lg border border-zinc-200 dark:border-zinc-800">
-      <table className="w-full min-w-[720px] border-collapse text-sm">
+      <table className="w-full min-w-[640px] border-collapse text-sm">
         <thead>
-          <tr className="border-b border-zinc-200 bg-zinc-50 text-left dark:border-zinc-800 dark:bg-zinc-900/80">
+          <tr className="border-b border-zinc-200 bg-zinc-100/80 text-left dark:border-zinc-800 dark:bg-zinc-900">
             <th className="px-3 py-2 font-medium">Rank</th>
             <th className="px-3 py-2 font-medium">Player</th>
             <th className="px-3 py-2 font-medium">Archetype</th>
-            <th className="px-3 py-2 font-medium">Harmonized</th>
             <th className="px-3 py-2 font-medium text-right">Swiss pts</th>
-            <th className="px-3 py-2 font-medium text-right">Bracket w.</th>
-            <th className="px-3 py-2 font-medium text-right">Place +</th>
+            {showBracket && (
+              <th className="px-3 py-2 font-medium text-right">Bracket</th>
+            )}
+            {showPlacement && (
+              <th className="px-3 py-2 font-medium text-right">Place +</th>
+            )}
             <th className="px-3 py-2 font-medium text-right">Total</th>
             <th className="px-3 py-2 font-medium">List</th>
           </tr>
         </thead>
         <tbody>
-          {decks.map((d) => {
+          {decks.map((d, rowIndex) => {
             const hasList = d.lines.length > 0;
             const expanded = openId === d.playerId;
+            const zebra =
+              rowIndex % 2 === 1
+                ? "bg-zinc-50/50 dark:bg-zinc-900/30"
+                : "";
             return (
               <Fragment key={d.playerId}>
                 <tr
-                  className={`border-b border-zinc-100 dark:border-zinc-900 ${
+                  className={`border-b border-zinc-100 dark:border-zinc-900 ${zebra} ${
                     hasList
-                      ? "cursor-pointer hover:bg-zinc-50 dark:hover:bg-zinc-900/60"
+                      ? "cursor-pointer hover:bg-zinc-100/80 dark:hover:bg-zinc-900/60"
                       : ""
                   }`}
                   onClick={() => {
@@ -119,20 +130,21 @@ export function DeckTable({
                     </span>
                   </td>
                   <td className="px-3 py-2 text-zinc-600 dark:text-zinc-400">
-                    {d.archetype ?? "—"}
-                  </td>
-                  <td className="px-3 py-2 text-zinc-600 dark:text-zinc-400">
-                    {d.harmonizedArchetype ?? "—"}
+                    {d.harmonizedArchetype ?? d.archetype ?? "—"}
                   </td>
                   <td className="px-3 py-2 text-right tabular-nums">
                     {d.swissMatchPoints.toFixed(1)}
                   </td>
-                  <td className="px-3 py-2 text-right tabular-nums">
-                    {d.bracketWeightedPoints.toFixed(1)}
-                  </td>
-                  <td className="px-3 py-2 text-right tabular-nums">
-                    {d.placementBonus.toFixed(1)}
-                  </td>
+                  {showBracket && (
+                    <td className="px-3 py-2 text-right tabular-nums">
+                      {d.bracketWeightedPoints.toFixed(1)}
+                    </td>
+                  )}
+                  {showPlacement && (
+                    <td className="px-3 py-2 text-right tabular-nums">
+                      {d.placementBonus.toFixed(1)}
+                    </td>
+                  )}
                   <td className="px-3 py-2 text-right font-medium tabular-nums">
                     {d.performanceScore.toFixed(1)}
                   </td>
@@ -148,7 +160,7 @@ export function DeckTable({
                 </tr>
                 {expanded && hasList ? (
                   <tr className="border-b border-zinc-200 bg-zinc-50/90 dark:border-zinc-800 dark:bg-zinc-950/80">
-                    <td colSpan={9} className="px-4 py-4 align-top">
+                    <td colSpan={colCount} className="px-4 py-4 align-top">
                       <div className="max-h-[min(70vh,560px)] overflow-y-auto pr-1">
                         <DecklistBlock
                           title="Mainboard"
@@ -176,15 +188,10 @@ export function DeckTable({
           Click a row with a decklist to expand. Click again to collapse.
           <span className="mt-1 block">
             <strong className="font-medium text-zinc-600 dark:text-zinc-400">
-              Harmonized
+              Archetype
             </strong>{" "}
-            uses mainboard signatures from the card cache; optional{" "}
-            <code className="rounded bg-zinc-100 px-0.5 dark:bg-zinc-800">
-              harmonizedArchetype
-            </code>{" "}
-            in <code className="rounded bg-zinc-100 px-0.5 dark:bg-zinc-800">decks.json</code>{" "}
-            overrides that guess. Otherwise manual tags are lightly normalized
-            (e.g. Vampires → Rakdos Vampires).
+            is read from mainboard signatures when we have a decklist; otherwise
+            it uses the tag from the event (e.g. Vampires → Rakdos Vampires).
           </span>
         </p>
       ) : null}
