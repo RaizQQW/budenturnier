@@ -13,25 +13,53 @@ export async function generateStaticParams() {
   return tournaments.map((t) => ({ slug: t.slug }));
 }
 
-export default async function Image() {
+export default function Image() {
   const logoData = fs.readFileSync(
     path.join(process.cwd(), "public", "logo.png"),
   );
   const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
 
-  // Zoom to 200 % width so the title text (top ~20 % of image) scrolls
-  // off the top and only the 5-colour panels fill the frame.
   return new ImageResponse(
     <div
       style={{
         width: 1200,
         height: 630,
-        backgroundImage: `url(${logoSrc})`,
-        backgroundSize: "2400px auto",
-        backgroundPosition: "center bottom",
-        backgroundColor: "#ffffff",
+        backgroundColor: "#18181b",
+        display: "flex",
+        alignItems: "center",
+        padding: "0 80px",
+        gap: 64,
       }}
-    />,
+    >
+      {/* Scaled-up icon — panels only, text cropped off the top */}
+      <div
+        style={{
+          width: 420,
+          height: 420,
+          flexShrink: 0,
+          backgroundImage: `url(${logoSrc})`,
+          backgroundSize: "1350px auto",
+          backgroundPosition: "center bottom",
+          backgroundColor: "#ffffff",
+          borderRadius: 16,
+        }}
+      />
+      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        <div
+          style={{
+            fontSize: 72,
+            fontWeight: 700,
+            color: "#f4f4f5",
+            lineHeight: 1.05,
+          }}
+        >
+          Budenturnier
+        </div>
+        <div style={{ fontSize: 42, color: "#a1a1aa", fontWeight: 400 }}>
+          Metagame Explorer
+        </div>
+      </div>
+    </div>,
     { ...size },
   );
 }
