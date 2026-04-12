@@ -1,0 +1,26 @@
+Mainboard
+4 Culling Ritual
+4 Daemogoth Titan
+4 Daemogoth Woe-Eater
+4 Deathcap Glade
+1 Duress
+4 Elvish Mystic
+4 Falkenrath Noble
+8 Forest
+3 Infernal Grasp
+4 Life's Legacy
+3 Llanowar Wastes
+4 Reclusive Taxidermist
+2 Swamp
+4 Tend the Pests
+2 Valentin, Dean of the Vein
+1 Westvale Abbey
+4 Woodland Cemetery
+
+SIDEBOARD:
+3 Duress
+2 Eaten Alive
+4 Go Blank
+1 Infernal Grasp
+4 Stain the Mind
+1 Witchbane Orb

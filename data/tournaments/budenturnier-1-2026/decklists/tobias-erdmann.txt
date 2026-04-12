@@ -1,0 +1,30 @@
+Mainboard
+2 Abrade
+4 Adeline, Resplendent Cathar
+4 Battlefield Forge
+2 Blade Historian
+4 Bloodthirsty Adversary
+4 Brutal Cathar // Moonrage Brute
+4 Champion of the Parish
+4 Clifftop Retreat
+1 Furycalm Snarl
+2 Hanweir Militia Captain // Westvale Cult Leader
+4 Intrepid Adversary
+4 Mountain
+9 Plains
+3 Play with Fire
+2 Rip Apart
+1 Sundown Pass
+4 Thraben Inspector
+2 Valorous Stance
+
+SIDEBOARD:
+1 Archangel Avacyn // Avacyn, the Purifier
+2 Borrowed Time
+2 Cathar Commando
+2 Elite Inquisitor
+1 Play with Fire
+2 Rip Apart
+1 Valorous Stance
+1 Vanquish the Horde
+3 Welcoming Vampire

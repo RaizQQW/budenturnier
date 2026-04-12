@@ -1,0 +1,42 @@
+Mainboard
+3 Deathcap Glade
+1 Declaration in Stone
+3 Dig Up
+3 Evolving Wilds
+2 Eyetwitch
+3 Flunk
+1 Forest
+1 Garruk Relentless
+2 Graveyard Trespasser
+2 Humiliate
+1 Infernal Grasp
+4 Isolated Chapel
+2 Overgrown Farmland
+3 Plains
+4 Professor of Symbology
+2 Seasons Past
+2 Sedgemoor Witch
+3 Shattered Sanctum
+1 Sorin, Grim Nemesis
+3 Swamp
+1 The Celestus
+1 To the Slaughter
+1 Umbral Juke
+1 Urborg, Tomb of Yawgmoth
+3 Vanishing Verse
+4 Vanquish the Horde
+3 Woodland Cemetery
+
+SIDEBOARD:
+1 Containment Breach
+2 Culling Ritual
+1 Environmental Sciences
+1 Introduction to Prophecy
+1 Mascot Exhibition
+1 Parasitic Grasp
+1 Pest Summoning
+1 Reduce to Memory
+1 Silverquill Command
+2 Tainted Adversary
+2 Witchbane Orb
+1 Witherbloom Command

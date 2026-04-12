@@ -1,0 +1,32 @@
+3 Augur of Autumn (EOC) 92
+4 Avacyn's Pilgrim (MM3) 119
+3 Borrowed Time (MID) 6
+1 Caves of Koilos (DMU) 244
+4 Cemetery Prowler (VOW) 191
+4 Cram Session (STX) 170
+3 Culling Ritual (STX) 172
+4 Dig Up (VOW) 197
+2 Duress (ONE) 92
+4 Elvish Mystic (M15) 173
+1 Fateful Absence (MID) 18
+9 Forest (TMT) 319
+1 Gnarled Professor (STX) 133
+1 Infernal Grasp (ECC) 77
+4 Llanowar Wastes (M3C) 354
+2 Overgrown Farmland (MID) 265
+1 Plains (TMT) 191
+4 Primal Adversary (MID) 194
+1 Swamp (EOE) 369 *F*
+1 Umbral Juke (STX) 89
+2 Urborg, Tomb of Yawgmoth (M15) 248
+1 Valorous Stance (FDN) 583
+
+SIDEBOARD:
+1 Containment Breach (STX) 125
+1 Culling Ritual (STX) 172
+3 Dread Fugue (VOW) 107
+2 Duress (ONE) 92
+1 Environmental Sciences (MB2) 2
+3 Introduction to Annihilation (STX) 3
+2 Umbral Juke (STX) 89
+2 Valorous Stance (FDN) 583

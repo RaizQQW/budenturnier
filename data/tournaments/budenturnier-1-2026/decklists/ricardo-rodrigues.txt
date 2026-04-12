@@ -1,0 +1,28 @@
+1 Anje, Maid of Dishonor
+4 Bloodthirsty Adversary
+3 Bloodvial Purveyor
+3 Dominating Vampire
+2 Falkenrath Forebear
+4 Foreboding Ruins
+4 Haunted Ridge
+4 Henrika Domnathi // Henrika, Infernal Seer
+3 Infernal Grasp
+6 Mountain
+1 Olivia, Mobilized for War
+3 Play with Fire
+4 Slaughter Specialist
+2 Stensia Masquerade
+3 Stromkirk Noble
+6 Swamp
+4 Vampire Socialite
+4 Voldaren Estate
+
+SIDEBOARD:
+2 Abrade
+2 Baleful Mastery
+1 Bloodline Culling
+3 Cemetery Gatekeeper
+1 Falkenrath Forebear
+2 Graveyard Trespasser
+1 Stromkirk Noble
+3 Vampires' Vengeance

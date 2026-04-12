@@ -1,0 +1,2606 @@
+{
+  "cards": {
+    "15e5136e-ed15-49a8-b027-e09436673fb4": {
+      "oracle_id": "15e5136e-ed15-49a8-b027-e09436673fb4",
+      "name": "Culling Ritual",
+      "type_line": "Sorcery",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/a/b/abaad8c5-763d-4276-9b19-623cd19f59b9.jpg?1775941703",
+      "scryfall_uri": "https://scryfall.com/card/soc/302/culling-ritual?utm_source=api"
+    },
+    "a52e73bb-47cb-4912-9b81-4ae40641eabb": {
+      "oracle_id": "a52e73bb-47cb-4912-9b81-4ae40641eabb",
+      "name": "Daemogoth Titan",
+      "type_line": "Creature — Demon",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/2/c2f18828-ade7-4b99-97b2-e34bc2fdb68c.jpg?1627428470",
+      "scryfall_uri": "https://scryfall.com/card/stx/174/daemogoth-titan?utm_source=api"
+    },
+    "290323d7-d8cb-4706-87d9-b920a4e2f680": {
+      "oracle_id": "290323d7-d8cb-4706-87d9-b920a4e2f680",
+      "name": "Daemogoth Woe-Eater",
+      "type_line": "Creature — Demon",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/9/c965cbe3-50e5-41bb-bdb9-e65d97aab716.jpg?1627428499",
+      "scryfall_uri": "https://scryfall.com/card/stx/175/daemogoth-woe-eater?utm_source=api"
+    },
+    "f6d24565-5b32-4eff-b2e0-6e2c25516ff0": {
+      "oracle_id": "f6d24565-5b32-4eff-b2e0-6e2c25516ff0",
+      "name": "Deathcap Glade",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/8/78897104-80e1-4d8a-9958-145b40f679e8.jpg?1775938766",
+      "scryfall_uri": "https://scryfall.com/card/sos/253/deathcap-glade?utm_source=api"
+    },
+    "33d405ea-7a9a-4970-b70f-9c05d90dd6f0": {
+      "oracle_id": "33d405ea-7a9a-4970-b70f-9c05d90dd6f0",
+      "name": "Duress",
+      "type_line": "Sorcery",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/4/34c3a894-ee75-4db9-a69f-711bb3cc150a.jpg?1730490899",
+      "scryfall_uri": "https://scryfall.com/card/fdn/606/duress?utm_source=api"
+    },
+    "3f3b2c10-21f8-4e13-be83-4ef3fa36e123": {
+      "oracle_id": "3f3b2c10-21f8-4e13-be83-4ef3fa36e123",
+      "name": "Elvish Mystic",
+      "type_line": "Creature — Elf Druid",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/b/eb654a76-62ee-4fd8-83d4-cb912211a9a0.jpg?1775941461",
+      "scryfall_uri": "https://scryfall.com/card/soc/266/elvish-mystic?utm_source=api"
+    },
+    "3739b179-bc81-4737-8376-66a57e16b942": {
+      "oracle_id": "3739b179-bc81-4737-8376-66a57e16b942",
+      "name": "Falkenrath Noble",
+      "type_line": "Creature — Vampire Noble",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/3/f38eac93-3a0e-40e0-84f8-3670fd84ca00.jpg?1736794723",
+      "scryfall_uri": "https://scryfall.com/card/dsc/140/falkenrath-noble?utm_source=api"
+    },
+    "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6": {
+      "oracle_id": "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6",
+      "name": "Forest",
+      "type_line": "Basic Land — Forest",
+      "colors": [],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/1/f169dfb2-e4c8-46e9-8591-e51bb82da082.jpg?1775938964",
+      "scryfall_uri": "https://scryfall.com/card/sos/280/forest?utm_source=api"
+    },
+    "94f0a572-e91c-4b56-a5d1-6cbbeabd210d": {
+      "oracle_id": "94f0a572-e91c-4b56-a5d1-6cbbeabd210d",
+      "name": "Infernal Grasp",
+      "type_line": "Instant",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/6/f67b323d-0dda-45f8-84b7-d883ce5045a8.jpg?1775941089",
+      "scryfall_uri": "https://scryfall.com/card/soc/216/infernal-grasp?utm_source=api"
+    },
+    "cb7baa46-7963-4d45-9a6e-e3c34db3c0e6": {
+      "oracle_id": "cb7baa46-7963-4d45-9a6e-e3c34db3c0e6",
+      "name": "Life's Legacy",
+      "type_line": "Sorcery",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/f/bf0e70d2-5f1a-441b-99b9-d003fa15b999.jpg?1673484689",
+      "scryfall_uri": "https://scryfall.com/card/ncc/300/lifes-legacy?utm_source=api"
+    },
+    "32116127-cf96-4a1b-8896-a1ebc087b597": {
+      "oracle_id": "32116127-cf96-4a1b-8896-a1ebc087b597",
+      "name": "Llanowar Wastes",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/2/6/266316d3-3bbc-4283-aab8-69629855909f.jpg?1775942271",
+      "scryfall_uri": "https://scryfall.com/card/soc/383/llanowar-wastes?utm_source=api"
+    },
+    "7a0168c5-e258-4c50-96aa-95deb2198e6f": {
+      "oracle_id": "7a0168c5-e258-4c50-96aa-95deb2198e6f",
+      "name": "Reclusive Taxidermist",
+      "type_line": "Creature — Human Druid",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/0/10edf37a-ee35-491d-b83a-39035f7df65a.jpg?1643593213",
+      "scryfall_uri": "https://scryfall.com/card/vow/214/reclusive-taxidermist?utm_source=api"
+    },
+    "56719f6a-1a6c-4c0a-8d21-18f7d7350b68": {
+      "oracle_id": "56719f6a-1a6c-4c0a-8d21-18f7d7350b68",
+      "name": "Swamp",
+      "type_line": "Basic Land — Swamp",
+      "colors": [],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/1/51fe930f-2b5a-4b1e-9007-6ee74fb44715.jpg?1775938936",
+      "scryfall_uri": "https://scryfall.com/card/sos/276/swamp?utm_source=api"
+    },
+    "9ffce1d5-e29c-4dab-8b97-6b32655785d4": {
+      "oracle_id": "9ffce1d5-e29c-4dab-8b97-6b32655785d4",
+      "name": "Tend the Pests",
+      "type_line": "Instant",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/8/f/8f43ed93-008d-44db-8204-ef2cc3b7cf8a.jpg?1624740284",
+      "scryfall_uri": "https://scryfall.com/card/stx/242/tend-the-pests?utm_source=api"
+    },
+    "6e1aa07a-5d9b-4daf-8dc4-c1717360855f": {
+      "oracle_id": "6e1aa07a-5d9b-4daf-8dc4-c1717360855f",
+      "name": "Valentin, Dean of the Vein // Lisette, Dean of the Root",
+      "type_line": "Legendary Creature — Vampire Warlock // Legendary Creature — Human Druid",
+      "colors": [],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/5/65008352-bc7e-40b2-a832-b46813e5dc4c.jpg?1634060553",
+      "scryfall_uri": "https://scryfall.com/card/stx/161/valentin-dean-of-the-vein-lisette-dean-of-the-root?utm_source=api"
+    },
+    "04eeb9ad-5c59-411b-8809-db8349838588": {
+      "oracle_id": "04eeb9ad-5c59-411b-8809-db8349838588",
+      "name": "Westvale Abbey // Ormendahl, Profane Prince",
+      "type_line": "Land // Legendary Creature — Demon",
+      "colors": [],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/f/5fbc6091-a161-45b0-9932-543b569caaee.jpg?1738800720",
+      "scryfall_uri": "https://scryfall.com/card/inr/287/westvale-abbey-ormendahl-profane-prince?utm_source=api"
+    },
+    "c9fe1383-1331-4a58-a45a-3320250221a9": {
+      "oracle_id": "c9fe1383-1331-4a58-a45a-3320250221a9",
+      "name": "Woodland Cemetery",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/d/4d6f6c96-f813-4864-b4e1-b2a0aa8be1e8.jpg?1775942552",
+      "scryfall_uri": "https://scryfall.com/card/soc/424/woodland-cemetery?utm_source=api"
+    },
+    "d437ecc2-2fd3-4ad3-b23e-217f55e58dae": {
+      "oracle_id": "d437ecc2-2fd3-4ad3-b23e-217f55e58dae",
+      "name": "Eaten Alive",
+      "type_line": "Sorcery",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/4/143d278d-d99b-42da-9fbd-9ab70526d53a.jpg?1736467937",
+      "scryfall_uri": "https://scryfall.com/card/inr/106/eaten-alive?utm_source=api"
+    },
+    "60186579-285b-4034-a782-431f79df5b07": {
+      "oracle_id": "60186579-285b-4034-a782-431f79df5b07",
+      "name": "Go Blank",
+      "type_line": "Sorcery",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/8/4/846e8657-7435-44c6-a997-b8b156d0cd2c.jpg?1624590993",
+      "scryfall_uri": "https://scryfall.com/card/stx/72/go-blank?utm_source=api"
+    },
+    "1994d563-8726-49c9-a18a-6ba2604a8cb7": {
+      "oracle_id": "1994d563-8726-49c9-a18a-6ba2604a8cb7",
+      "name": "Stain the Mind",
+      "type_line": "Sorcery",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/7/c7d2b046-59bc-4e39-94ce-981179307bd3.jpg?1562794132",
+      "scryfall_uri": "https://scryfall.com/card/m15/117/stain-the-mind?utm_source=api"
+    },
+    "7411a8f4-b736-482f-886e-5fa671e94e0d": {
+      "oracle_id": "7411a8f4-b736-482f-886e-5fa671e94e0d",
+      "name": "Witchbane Orb",
+      "type_line": "Artifact",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/3/53e0bf16-62f5-4b62-96e8-bc7e049bcf89.jpg?1562830363",
+      "scryfall_uri": "https://scryfall.com/card/isd/236/witchbane-orb?utm_source=api"
+    },
+    "4c9bcba6-87b5-4fb3-97ee-6fe5b739337d": {
+      "oracle_id": "4c9bcba6-87b5-4fb3-97ee-6fe5b739337d",
+      "name": "Consider",
+      "type_line": "Instant",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/f/ff6f3824-3670-46e1-af43-0db405726084.jpg?1743206296",
+      "scryfall_uri": "https://scryfall.com/card/tdc/148/consider?utm_source=api"
+    },
+    "8dc067bf-f78f-4ac4-b6e7-b305c42cf0bc": {
+      "oracle_id": "8dc067bf-f78f-4ac4-b6e7-b305c42cf0bc",
+      "name": "Darksteel Citadel",
+      "type_line": "Artifact Land",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/2/b/2ba7597d-6d76-45b8-b172-342999e401bd.jpg?1625979955",
+      "scryfall_uri": "https://scryfall.com/card/c21/285/darksteel-citadel?utm_source=api"
+    },
+    "02628058-c9d8-4265-afd1-3fb697ec89f7": {
+      "oracle_id": "02628058-c9d8-4265-afd1-3fb697ec89f7",
+      "name": "Ensoul Artifact",
+      "type_line": "Enchantment — Aura",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/8/3/8351efc5-a392-4ec8-877f-15d5b3dc0929.jpg?1562790075",
+      "scryfall_uri": "https://scryfall.com/card/m15/54/ensoul-artifact?utm_source=api"
+    },
+    "c7aecca5-2f67-4245-ab2d-e723d8b23a67": {
+      "oracle_id": "c7aecca5-2f67-4245-ab2d-e723d8b23a67",
+      "name": "Expressive Iteration",
+      "type_line": "Sorcery",
+      "colors": [
+        "R",
+        "U"
+      ],
+      "color_identity": [
+        "R",
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/d/b/db54cb6f-25e0-4d5f-876e-a6aa66042d63.jpg?1775941751",
+      "scryfall_uri": "https://scryfall.com/card/soc/309/expressive-iteration?utm_source=api"
+    },
+    "64883ef2-c536-42e2-b52f-cfd1984fcdfd": {
+      "oracle_id": "64883ef2-c536-42e2-b52f-cfd1984fcdfd",
+      "name": "Fading Hope",
+      "type_line": "Instant",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/2/c2fb1fff-12be-4bd5-8dba-c36e84d49651.jpg?1634348819",
+      "scryfall_uri": "https://scryfall.com/card/mid/51/fading-hope?utm_source=api"
+    },
+    "b2c6aa39-2d2a-459c-a555-fb48ba993373": {
+      "oracle_id": "b2c6aa39-2d2a-459c-a555-fb48ba993373",
+      "name": "Island",
+      "type_line": "Basic Land — Island",
+      "colors": [],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/7/77b88bb8-6bd9-4632-b937-89468fcb5e6a.jpg?1775938923",
+      "scryfall_uri": "https://scryfall.com/card/sos/274/island?utm_source=api"
+    },
+    "a3fb7228-e76b-4e96-a40e-20b5fed75685": {
+      "oracle_id": "a3fb7228-e76b-4e96-a40e-20b5fed75685",
+      "name": "Mountain",
+      "type_line": "Basic Land — Mountain",
+      "colors": [],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/a/6/a642c7b1-d4d1-4125-a66d-560438e5ee51.jpg?1775938951",
+      "scryfall_uri": "https://scryfall.com/card/sos/278/mountain?utm_source=api"
+    },
+    "a3a98bc9-caa0-49b7-951c-fe4e4f54e4ba": {
+      "oracle_id": "a3a98bc9-caa0-49b7-951c-fe4e4f54e4ba",
+      "name": "Ornithopter",
+      "type_line": "Artifact Creature — Thopter",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/0/305078a5-ac18-4721-bba2-3434eba5b1cf.jpg?1691675959",
+      "scryfall_uri": "https://scryfall.com/card/dmr/233/ornithopter?utm_source=api"
+    },
+    "5ffc1e77-152b-4a82-8ea8-2c79cc31d5ef": {
+      "oracle_id": "5ffc1e77-152b-4a82-8ea8-2c79cc31d5ef",
+      "name": "Play with Fire",
+      "type_line": "Instant",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/f/6f1a6c60-a8c4-44c2-b1ea-d3befbabdf43.jpg?1636223358",
+      "scryfall_uri": "https://scryfall.com/card/mid/154/play-with-fire?utm_source=api"
+    },
+    "822b6d56-939a-42b9-b50c-9a8ba50ec3ad": {
+      "oracle_id": "822b6d56-939a-42b9-b50c-9a8ba50ec3ad",
+      "name": "Serpentine Ambush",
+      "type_line": "Instant",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/8/b8214b1c-29f8-4986-89ac-2d7fc929edf3.jpg?1643588544",
+      "scryfall_uri": "https://scryfall.com/card/vow/77/serpentine-ambush?utm_source=api"
+    },
+    "0fe16212-66c3-4e45-a641-7391e9b2e304": {
+      "oracle_id": "0fe16212-66c3-4e45-a641-7391e9b2e304",
+      "name": "Shivan Reef",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "R",
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/1/e13d0982-2542-4770-8e93-637478a0f84a.jpg?1775942408",
+      "scryfall_uri": "https://scryfall.com/card/soc/404/shivan-reef?utm_source=api"
+    },
+    "d3c623f3-c7c9-47c0-8096-6dee3267baff": {
+      "oracle_id": "d3c623f3-c7c9-47c0-8096-6dee3267baff",
+      "name": "Shrapnel Blast",
+      "type_line": "Instant",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/a/e/ae1c5afc-81b4-438a-928e-0b0aefae191a.jpg?1561759352",
+      "scryfall_uri": "https://scryfall.com/card/ddu/48/shrapnel-blast?utm_source=api"
+    },
+    "a9530416-d5fb-4ddd-ae6f-0eefb9f276c5": {
+      "oracle_id": "a9530416-d5fb-4ddd-ae6f-0eefb9f276c5",
+      "name": "Stormchaser Drake",
+      "type_line": "Creature — Drake",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/d/3dd5c860-9d27-40d9-af38-aaf40bd52423.jpg?1643588717",
+      "scryfall_uri": "https://scryfall.com/card/vow/82/stormchaser-drake?utm_source=api"
+    },
+    "6a6c5e17-6465-4a1f-9d63-8a3ce2edc522": {
+      "oracle_id": "6a6c5e17-6465-4a1f-9d63-8a3ce2edc522",
+      "name": "Sulfur Falls",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "R",
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/6/56a6df05-f4e4-40d9-a701-6d5adb7ce9fd.jpg?1775942438",
+      "scryfall_uri": "https://scryfall.com/card/soc/408/sulfur-falls?utm_source=api"
+    },
+    "f9db72dc-9a5b-48a4-a86e-7464d9a2166a": {
+      "oracle_id": "f9db72dc-9a5b-48a4-a86e-7464d9a2166a",
+      "name": "Abrade",
+      "type_line": "Instant",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/a/1add1757-c1f8-448a-b279-c6940fb7ad5f.jpg?1775941207",
+      "scryfall_uri": "https://scryfall.com/card/soc/234/abrade?utm_source=api"
+    },
+    "0ec54683-a65c-461d-862e-585b6499d6a5": {
+      "oracle_id": "0ec54683-a65c-461d-862e-585b6499d6a5",
+      "name": "Burn Down the House",
+      "type_line": "Sorcery",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/2/0/20ded7af-8086-465e-a980-3099217d324c.jpg?1634350460",
+      "scryfall_uri": "https://scryfall.com/card/mid/131/burn-down-the-house?utm_source=api"
+    },
+    "f7e55117-69fb-412e-b16e-d92e0f95f629": {
+      "oracle_id": "f7e55117-69fb-412e-b16e-d92e0f95f629",
+      "name": "Cathartic Pyre",
+      "type_line": "Instant",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/0/d/0d762a71-ee49-49fd-a54a-0c066277c88c.jpg?1767731049",
+      "scryfall_uri": "https://scryfall.com/card/ecc/90/cathartic-pyre?utm_source=api"
+    },
+    "c7efe6c6-3da1-47a6-a8ad-30c36502a7ab": {
+      "oracle_id": "c7efe6c6-3da1-47a6-a8ad-30c36502a7ab",
+      "name": "Mercurial Transformation",
+      "type_line": "Sorcery — Lesson",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/a/d/adcbe115-5482-4e5a-95bb-8ccbb01d3547.jpg?1637082344",
+      "scryfall_uri": "https://scryfall.com/card/stx/47/mercurial-transformation?utm_source=api"
+    },
+    "a188fe7e-68de-4c7c-806c-bfe8fc7b44bf": {
+      "oracle_id": "a188fe7e-68de-4c7c-806c-bfe8fc7b44bf",
+      "name": "Pithing Needle",
+      "type_line": "Artifact",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/7/776899f8-e977-42b7-8b54-6f726a349e3c.jpg?1673149414",
+      "scryfall_uri": "https://scryfall.com/card/2x2/312/pithing-needle?utm_source=api"
+    },
+    "fa3e28b1-131c-4223-81e0-18dfbab22c26": {
+      "oracle_id": "fa3e28b1-131c-4223-81e0-18dfbab22c26",
+      "name": "Prismari Command",
+      "type_line": "Instant",
+      "colors": [
+        "R",
+        "U"
+      ],
+      "color_identity": [
+        "R",
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/7/372d0c0b-439c-413f-aac4-5174c75aadb0.jpg?1775941859",
+      "scryfall_uri": "https://scryfall.com/card/soc/323/prismari-command?utm_source=api"
+    },
+    "814e321d-16fd-4f7b-a8d8-2b089be76f2c": {
+      "oracle_id": "814e321d-16fd-4f7b-a8d8-2b089be76f2c",
+      "name": "Resculpt",
+      "type_line": "Instant",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/4/5443f46d-03f9-468e-a78d-a059529b1151.jpg?1775940996",
+      "scryfall_uri": "https://scryfall.com/card/soc/201/resculpt?utm_source=api"
+    },
+    "d808262d-43ca-46f8-ab8b-b584773f9c58": {
+      "oracle_id": "d808262d-43ca-46f8-ab8b-b584773f9c58",
+      "name": "Test of Talents",
+      "type_line": "Instant",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/e/6e2b6236-b40c-430c-98b0-7940b942657a.jpg?1624590572",
+      "scryfall_uri": "https://scryfall.com/card/stx/59/test-of-talents?utm_source=api"
+    },
+    "1573f7f9-672c-421a-b1ac-3d0d8aea59ca": {
+      "oracle_id": "1573f7f9-672c-421a-b1ac-3d0d8aea59ca",
+      "name": "Tormod's Crypt",
+      "type_line": "Artifact",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/5/752bf493-5839-47e8-95f2-6d8201907428.jpg?1675201100",
+      "scryfall_uri": "https://scryfall.com/card/dmr/235/tormods-crypt?utm_source=api"
+    },
+    "49554441-bb48-4829-b8d6-55e687a6c2e2": {
+      "oracle_id": "49554441-bb48-4829-b8d6-55e687a6c2e2",
+      "name": "Declaration in Stone",
+      "type_line": "Sorcery",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/f/6f5513a2-e63d-44df-b8a5-37c298e38e3c.jpg?1697357006",
+      "scryfall_uri": "https://scryfall.com/card/ncc/196/declaration-in-stone?utm_source=api"
+    },
+    "ae96fe7e-8d89-4f44-9cc4-3c9b124fdc4b": {
+      "oracle_id": "ae96fe7e-8d89-4f44-9cc4-3c9b124fdc4b",
+      "name": "Dig Up",
+      "type_line": "Sorcery",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/8/f/8f14c947-2452-4fd6-8f1a-391cf5898100.jpg?1643592557",
+      "scryfall_uri": "https://scryfall.com/card/vow/197/dig-up?utm_source=api"
+    },
+    "a75445d3-1303-4bb5-89ad-26ea93fecd48": {
+      "oracle_id": "a75445d3-1303-4bb5-89ad-26ea93fecd48",
+      "name": "Evolving Wilds",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/a/3/a30f5555-2fbe-4c88-9e4f-1f2e81ea6cfd.jpg?1771424582",
+      "scryfall_uri": "https://scryfall.com/card/tmc/65/evolving-wilds?utm_source=api"
+    },
+    "6a7a5e93-fea8-4aa0-a2b1-73d466220cfb": {
+      "oracle_id": "6a7a5e93-fea8-4aa0-a2b1-73d466220cfb",
+      "name": "Eyetwitch",
+      "type_line": "Creature — Eye Bat",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/f/1f4d1bb6-cb8f-4d01-9879-0b3a0585cbf4.jpg?1624590927",
+      "scryfall_uri": "https://scryfall.com/card/stx/70/eyetwitch?utm_source=api"
+    },
+    "5cd99378-e8e2-43fe-80fc-13d680746a4a": {
+      "oracle_id": "5cd99378-e8e2-43fe-80fc-13d680746a4a",
+      "name": "Flunk",
+      "type_line": "Instant",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/8/f8487884-e991-4feb-823b-90d9125edf19.jpg?1624590966",
+      "scryfall_uri": "https://scryfall.com/card/stx/71/flunk?utm_source=api"
+    },
+    "7cec9021-6f25-4fd8-b40e-adf4ffd3a7b8": {
+      "oracle_id": "7cec9021-6f25-4fd8-b40e-adf4ffd3a7b8",
+      "name": "Garruk Relentless // Garruk, the Veil-Cursed",
+      "type_line": "Legendary Planeswalker — Garruk // Legendary Planeswalker — Garruk",
+      "colors": [],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/8/6897514f-e396-46d6-91e3-158366c741bb.jpg?1736468332",
+      "scryfall_uri": "https://scryfall.com/card/inr/197/garruk-relentless-garruk-the-veil-cursed?utm_source=api"
+    },
+    "0bbd6cad-9b6f-45a6-9f2e-d7b4853586ae": {
+      "oracle_id": "0bbd6cad-9b6f-45a6-9f2e-d7b4853586ae",
+      "name": "Graveyard Trespasser // Graveyard Glutton",
+      "type_line": "Creature — Human Werewolf // Creature — Werewolf",
+      "colors": [],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/d/a/daa2a273-488f-4285-a069-ad159ad2d393.jpg?1634347903",
+      "scryfall_uri": "https://scryfall.com/card/mid/104/graveyard-trespasser-graveyard-glutton?utm_source=api"
+    },
+    "cf18a1ca-1fb5-4c90-b20a-6ae2fb54a9bb": {
+      "oracle_id": "cf18a1ca-1fb5-4c90-b20a-6ae2fb54a9bb",
+      "name": "Humiliate",
+      "type_line": "Sorcery",
+      "colors": [
+        "B",
+        "W"
+      ],
+      "color_identity": [
+        "B",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/d/c/dc3ae8cb-fbdb-45a8-83c2-cbf4aff01f90.jpg?1627429247",
+      "scryfall_uri": "https://scryfall.com/card/stx/193/humiliate?utm_source=api"
+    },
+    "7e5d9efe-48a9-434b-bb09-056e0e09cc9a": {
+      "oracle_id": "7e5d9efe-48a9-434b-bb09-056e0e09cc9a",
+      "name": "Isolated Chapel",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "B",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/8/78814c92-b52c-462a-866f-3e7da9db9f70.jpg?1775942263",
+      "scryfall_uri": "https://scryfall.com/card/soc/382/isolated-chapel?utm_source=api"
+    },
+    "709d2f10-1585-48c3-9058-ddd5f62f0452": {
+      "oracle_id": "709d2f10-1585-48c3-9058-ddd5f62f0452",
+      "name": "Overgrown Farmland",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "G",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/4/644fb0ed-f434-4cc4-b7e9-a60db5ece2b7.jpg?1743207666",
+      "scryfall_uri": "https://scryfall.com/card/tdc/381/overgrown-farmland?utm_source=api"
+    },
+    "bc71ebf6-2056-41f7-be35-b2e5c34afa99": {
+      "oracle_id": "bc71ebf6-2056-41f7-be35-b2e5c34afa99",
+      "name": "Plains",
+      "type_line": "Basic Land — Plains",
+      "colors": [],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/d/8/d85d0f25-a24a-4de0-9b8b-93fb5017bce9.jpg?1775938910",
+      "scryfall_uri": "https://scryfall.com/card/sos/272/plains?utm_source=api"
+    },
+    "1a8ae444-6237-4591-97ab-f43e181b2f4f": {
+      "oracle_id": "1a8ae444-6237-4591-97ab-f43e181b2f4f",
+      "name": "Professor of Symbology",
+      "type_line": "Creature — Kor Cleric",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/4/f427cf73-9f5e-4ef5-bc4f-29ffbfda9d57.jpg?1624589635",
+      "scryfall_uri": "https://scryfall.com/card/stx/24/professor-of-symbology?utm_source=api"
+    },
+    "c46738a4-e0d4-41dc-a20d-4800f00cea62": {
+      "oracle_id": "c46738a4-e0d4-41dc-a20d-4800f00cea62",
+      "name": "Seasons Past",
+      "type_line": "Sorcery",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/6/668afd78-3cf5-4daf-8dfb-fca90de0ae5a.jpg?1576385218",
+      "scryfall_uri": "https://scryfall.com/card/soi/226/seasons-past?utm_source=api"
+    },
+    "25dce517-ac0a-4577-89ed-04296c7c4069": {
+      "oracle_id": "25dce517-ac0a-4577-89ed-04296c7c4069",
+      "name": "Sedgemoor Witch",
+      "type_line": "Creature — Human Warlock",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/9/e900c1eb-968b-4046-b824-c167a7a5b682.jpg?1624591402",
+      "scryfall_uri": "https://scryfall.com/card/stx/86/sedgemoor-witch?utm_source=api"
+    },
+    "c854ecb0-cc60-4c48-a9aa-7f2348a7a8c6": {
+      "oracle_id": "c854ecb0-cc60-4c48-a9aa-7f2348a7a8c6",
+      "name": "Shattered Sanctum",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "B",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/a/5aa0c810-3b7d-4661-979e-e84fb327742d.jpg?1775938816",
+      "scryfall_uri": "https://scryfall.com/card/sos/260/shattered-sanctum?utm_source=api"
+    },
+    "0a01dd05-e289-489f-b3ad-88e15e157bd0": {
+      "oracle_id": "0a01dd05-e289-489f-b3ad-88e15e157bd0",
+      "name": "Sorin, Grim Nemesis",
+      "type_line": "Legendary Planeswalker — Sorin",
+      "colors": [
+        "B",
+        "W"
+      ],
+      "color_identity": [
+        "B",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/2/c2933144-c931-498a-9e91-f5165873c3b7.jpg?1576385388",
+      "scryfall_uri": "https://scryfall.com/card/soi/251/sorin-grim-nemesis?utm_source=api"
+    },
+    "c0ad2b5f-066b-424b-bddf-d3014731e599": {
+      "oracle_id": "c0ad2b5f-066b-424b-bddf-d3014731e599",
+      "name": "The Celestus",
+      "type_line": "Legendary Artifact",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/9/39226a07-d44e-41a6-b9f1-685ef505d015.jpg?1637114509",
+      "scryfall_uri": "https://scryfall.com/card/mid/252/the-celestus?utm_source=api"
+    },
+    "518cf9ce-14aa-4f51-81bf-f8c2692a4244": {
+      "oracle_id": "518cf9ce-14aa-4f51-81bf-f8c2692a4244",
+      "name": "To the Slaughter",
+      "type_line": "Instant",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/a/5a645c8d-7cfb-466b-9fd0-e1c26bf6f652.jpg?1576384612",
+      "scryfall_uri": "https://scryfall.com/card/soi/139/to-the-slaughter?utm_source=api"
+    },
+    "d56afdf6-51e0-4151-a86c-4c4827a50a0e": {
+      "oracle_id": "d56afdf6-51e0-4151-a86c-4c4827a50a0e",
+      "name": "Umbral Juke",
+      "type_line": "Instant",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/f/3fbd0921-e953-492b-ad73-c8a8bfaa750b.jpg?1624591481",
+      "scryfall_uri": "https://scryfall.com/card/stx/89/umbral-juke?utm_source=api"
+    },
+    "db6174d7-211d-4817-b8e4-8384594c83f9": {
+      "oracle_id": "db6174d7-211d-4817-b8e4-8384594c83f9",
+      "name": "Urborg, Tomb of Yawgmoth",
+      "type_line": "Legendary Land",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/9/e/9e1a9e38-6ffc-490f-b0be-23ba4e8204c6.jpg?1619399578",
+      "scryfall_uri": "https://scryfall.com/card/tsr/287/urborg-tomb-of-yawgmoth?utm_source=api"
+    },
+    "5b8f0cdf-572d-4025-b930-79291f7c35be": {
+      "oracle_id": "5b8f0cdf-572d-4025-b930-79291f7c35be",
+      "name": "Vanishing Verse",
+      "type_line": "Instant",
+      "colors": [
+        "B",
+        "W"
+      ],
+      "color_identity": [
+        "B",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/8/a/8a475868-a335-45e7-9d59-9dc4c2cea1ae.jpg?1775941950",
+      "scryfall_uri": "https://scryfall.com/card/soc/335/vanishing-verse?utm_source=api"
+    },
+    "a332e80a-dc51-4dc6-bc85-e114a1c6fdb8": {
+      "oracle_id": "a332e80a-dc51-4dc6-bc85-e114a1c6fdb8",
+      "name": "Vanquish the Horde",
+      "type_line": "Sorcery",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/8/7/87514302-be90-4afe-9508-d9742425d1ba.jpg?1771424407",
+      "scryfall_uri": "https://scryfall.com/card/tmc/45/vanquish-the-horde?utm_source=api"
+    },
+    "043dd2e5-21e4-49b9-90b2-831e587b2238": {
+      "oracle_id": "043dd2e5-21e4-49b9-90b2-831e587b2238",
+      "name": "Containment Breach",
+      "type_line": "Sorcery — Lesson",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/0/d/0dcca120-b72e-4007-98e1-cb22e7b9a705.jpg?1771241735",
+      "scryfall_uri": "https://scryfall.com/card/stx/125/containment-breach?utm_source=api"
+    },
+    "2f889671-a1d6-4034-881b-58c93897d707": {
+      "oracle_id": "2f889671-a1d6-4034-881b-58c93897d707",
+      "name": "Environmental Sciences",
+      "type_line": "Sorcery — Lesson",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/6/46b394fc-a99c-44e7-9226-da0699167541.jpg?1637082125",
+      "scryfall_uri": "https://scryfall.com/card/stx/1/environmental-sciences?utm_source=api"
+    },
+    "9ae1fded-2e77-498a-98e7-4a4908447175": {
+      "oracle_id": "9ae1fded-2e77-498a-98e7-4a4908447175",
+      "name": "Introduction to Prophecy",
+      "type_line": "Sorcery — Lesson",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/8/7820923e-bad2-4d6a-92b3-97b9737d2ca9.jpg?1637082328",
+      "scryfall_uri": "https://scryfall.com/card/stx/4/introduction-to-prophecy?utm_source=api"
+    },
+    "a1ea2cba-f184-4a27-9971-3a56b0a0e390": {
+      "oracle_id": "a1ea2cba-f184-4a27-9971-3a56b0a0e390",
+      "name": "Mascot Exhibition",
+      "type_line": "Sorcery — Lesson",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/2/0/2047592c-739c-41dd-b3e8-31ae1c7688ab.jpg?1637082330",
+      "scryfall_uri": "https://scryfall.com/card/stx/5/mascot-exhibition?utm_source=api"
+    },
+    "d9763c75-75f7-4766-8cca-84c899796e3c": {
+      "oracle_id": "d9763c75-75f7-4766-8cca-84c899796e3c",
+      "name": "Parasitic Grasp",
+      "type_line": "Instant",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/0/7/0713adf7-1770-4d5b-80f7-d6cbd24f7890.jpg?1643590056",
+      "scryfall_uri": "https://scryfall.com/card/vow/123/parasitic-grasp?utm_source=api"
+    },
+    "f6e0cb77-4115-4948-8e1e-fdb774b1b254": {
+      "oracle_id": "f6e0cb77-4115-4948-8e1e-fdb774b1b254",
+      "name": "Pest Summoning",
+      "type_line": "Sorcery — Lesson",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/2/6267e19a-a777-4767-8433-86b6624362b6.jpg?1637082369",
+      "scryfall_uri": "https://scryfall.com/card/stx/211/pest-summoning?utm_source=api"
+    },
+    "661736eb-97d7-4b3c-ab18-708479a5fb29": {
+      "oracle_id": "661736eb-97d7-4b3c-ab18-708479a5fb29",
+      "name": "Reduce to Memory",
+      "type_line": "Sorcery — Lesson",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/b/7bfc408e-34d6-4e94-8678-4cc229cbc6f5.jpg?1637082371",
+      "scryfall_uri": "https://scryfall.com/card/stx/25/reduce-to-memory?utm_source=api"
+    },
+    "6075b999-75c5-41c8-898d-ee612ba79a92": {
+      "oracle_id": "6075b999-75c5-41c8-898d-ee612ba79a92",
+      "name": "Silverquill Command",
+      "type_line": "Sorcery",
+      "colors": [
+        "B",
+        "W"
+      ],
+      "color_identity": [
+        "B",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/c/5c55f533-9d31-4ad1-b336-927aba6e74d6.jpg?1624740020",
+      "scryfall_uri": "https://scryfall.com/card/stx/232/silverquill-command?utm_source=api"
+    },
+    "8bed92cc-b3f8-4201-bcbc-44535ff1bd96": {
+      "oracle_id": "8bed92cc-b3f8-4201-bcbc-44535ff1bd96",
+      "name": "Tainted Adversary",
+      "type_line": "Creature — Zombie",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/6/e6b9b8fc-c30d-49e7-bb6c-219380d73a82.jpg?1634350309",
+      "scryfall_uri": "https://scryfall.com/card/mid/124/tainted-adversary?utm_source=api"
+    },
+    "7cc81fb3-495c-47cd-8c56-96197d87e9e0": {
+      "oracle_id": "7cc81fb3-495c-47cd-8c56-96197d87e9e0",
+      "name": "Witherbloom Command",
+      "type_line": "Sorcery",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/0/d/0d68dee5-56ff-45bb-a37e-9e2dfc07c5a7.jpg?1775941977",
+      "scryfall_uri": "https://scryfall.com/card/soc/339/witherbloom-command?utm_source=api"
+    },
+    "38515f89-348b-4cf3-b7bd-1f6fe4ce2fba": {
+      "oracle_id": "38515f89-348b-4cf3-b7bd-1f6fe4ce2fba",
+      "name": "Adeline, Resplendent Cathar",
+      "type_line": "Legendary Creature — Human Knight",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/d/1de30c12-2011-495a-be25-f7a46b23e142.jpg?1743206101",
+      "scryfall_uri": "https://scryfall.com/card/tdc/108/adeline-resplendent-cathar?utm_source=api"
+    },
+    "29e1c6e3-d76e-4388-b4e9-f732fdec4338": {
+      "oracle_id": "29e1c6e3-d76e-4388-b4e9-f732fdec4338",
+      "name": "Angelfire Ignition",
+      "type_line": "Sorcery",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "color_identity": [
+        "R",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/8/4/84ec79d8-c8de-46be-9d82-5e6bd5de9cad.jpg?1736468471",
+      "scryfall_uri": "https://scryfall.com/card/inr/229/angelfire-ignition?utm_source=api"
+    },
+    "6b75b94e-83b7-457e-ac41-7ca90b5a59aa": {
+      "oracle_id": "6b75b94e-83b7-457e-ac41-7ca90b5a59aa",
+      "name": "Battlefield Forge",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "R",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/4/c47c1bf5-f11e-4f86-b20b-5d899a11dc56.jpg?1775942132",
+      "scryfall_uri": "https://scryfall.com/card/soc/362/battlefield-forge?utm_source=api"
+    },
+    "faeaa3eb-6eb8-4621-98c7-0c6f58bbff85": {
+      "oracle_id": "faeaa3eb-6eb8-4621-98c7-0c6f58bbff85",
+      "name": "Champion of the Parish",
+      "type_line": "Creature — Human Soldier",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/c/ec2120ff-a6d4-4192-96c0-33c139155ddf.jpg?1592762531",
+      "scryfall_uri": "https://scryfall.com/card/ddq/4/champion-of-the-parish?utm_source=api"
+    },
+    "d7faa3c8-46cf-46b2-bfa4-89000307cf18": {
+      "oracle_id": "d7faa3c8-46cf-46b2-bfa4-89000307cf18",
+      "name": "Clifftop Retreat",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "R",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/0/9/09d0e0dd-28e6-4d78-b768-b08188681d92.jpg?1775942159",
+      "scryfall_uri": "https://scryfall.com/card/soc/366/clifftop-retreat?utm_source=api"
+    },
+    "35bba442-1aec-4d33-b502-4c580d61644b": {
+      "oracle_id": "35bba442-1aec-4d33-b502-4c580d61644b",
+      "name": "Fateful Absence",
+      "type_line": "Instant",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/c/eca8d6f8-c6f1-437c-99e2-4281eae14a6f.jpg?1634346819",
+      "scryfall_uri": "https://scryfall.com/card/mid/18/fateful-absence?utm_source=api"
+    },
+    "b72fde5e-862a-45e8-9880-f2c16975a9ac": {
+      "oracle_id": "b72fde5e-862a-45e8-9880-f2c16975a9ac",
+      "name": "Intrepid Adversary",
+      "type_line": "Creature — Human Scout",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/7/773199f9-c83b-4a77-8342-9f1552ecf595.jpg?1634348280",
+      "scryfall_uri": "https://scryfall.com/card/mid/25/intrepid-adversary?utm_source=api"
+    },
+    "410f5067-3380-4afb-9881-4b3bf0268493": {
+      "oracle_id": "410f5067-3380-4afb-9881-4b3bf0268493",
+      "name": "Sungold Sentinel",
+      "type_line": "Creature — Human Soldier",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/7/e7e1afd0-49d4-4657-ab75-98b0bfbfb245.jpg?1634348552",
+      "scryfall_uri": "https://scryfall.com/card/mid/37/sungold-sentinel?utm_source=api"
+    },
+    "caa02547-66e3-4e27-a2d3-5e94f3e7a069": {
+      "oracle_id": "caa02547-66e3-4e27-a2d3-5e94f3e7a069",
+      "name": "Thraben Inspector",
+      "type_line": "Creature — Human Soldier",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/0/8/08a5007f-06a0-40fa-a252-c38baa6b5c6f.jpg?1736467608",
+      "scryfall_uri": "https://scryfall.com/card/inr/45/thraben-inspector?utm_source=api"
+    },
+    "774dce79-67e0-4820-8013-c7a7347993ce": {
+      "oracle_id": "774dce79-67e0-4820-8013-c7a7347993ce",
+      "name": "Cathar Commando",
+      "type_line": "Creature — Human Soldier",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/c/7cd21530-ca72-4986-a0f2-142b9f23c413.jpg?1736467482",
+      "scryfall_uri": "https://scryfall.com/card/inr/15/cathar-commando?utm_source=api"
+    },
+    "34c8fffd-1b23-4f40-ad29-1f0acb519e7e": {
+      "oracle_id": "34c8fffd-1b23-4f40-ad29-1f0acb519e7e",
+      "name": "Cemetery Protector",
+      "type_line": "Creature — Human Soldier",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/0/c00731eb-69fe-42f3-9919-66a4cdec00f7.jpg?1643585934",
+      "scryfall_uri": "https://scryfall.com/card/vow/6/cemetery-protector?utm_source=api"
+    },
+    "8c4d7cbc-9cfc-4f0a-8844-e458ab806056": {
+      "oracle_id": "8c4d7cbc-9cfc-4f0a-8844-e458ab806056",
+      "name": "Elite Spellbinder",
+      "type_line": "Creature — Human Cleric",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/9/d/9d3a7998-ccac-45ad-a4e9-3a2cb057f63b.jpg?1624589440",
+      "scryfall_uri": "https://scryfall.com/card/stx/17/elite-spellbinder?utm_source=api"
+    },
+    "cbdbf18f-0180-4ade-a79e-1e644dd42d6f": {
+      "oracle_id": "cbdbf18f-0180-4ade-a79e-1e644dd42d6f",
+      "name": "Rip Apart",
+      "type_line": "Sorcery",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "color_identity": [
+        "R",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/a/b/ab3443be-ab7f-4ab1-bc31-0ace68773f2d.jpg?1775941899",
+      "scryfall_uri": "https://scryfall.com/card/soc/328/rip-apart?utm_source=api"
+    },
+    "1f938353-9081-4dc1-b8e7-d18ece038bd4": {
+      "oracle_id": "1f938353-9081-4dc1-b8e7-d18ece038bd4",
+      "name": "Valorous Stance",
+      "type_line": "Instant",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/0/4/04762c85-d25d-4120-adec-8681adcf581a.jpg?1736467629",
+      "scryfall_uri": "https://scryfall.com/card/inr/48/valorous-stance?utm_source=api"
+    },
+    "1829f1dc-1fa9-4361-b318-d4dee280e6fd": {
+      "oracle_id": "1829f1dc-1fa9-4361-b318-d4dee280e6fd",
+      "name": "Anje, Maid of Dishonor",
+      "type_line": "Legendary Creature — Vampire",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "color_identity": [
+        "B",
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/b/1bfac4ab-97f1-448c-8554-42ed03eb5656.jpg?1643593763",
+      "scryfall_uri": "https://scryfall.com/card/vow/231/anje-maid-of-dishonor?utm_source=api"
+    },
+    "3b943c3e-1f18-4997-b6d0-28ef75aed88e": {
+      "oracle_id": "3b943c3e-1f18-4997-b6d0-28ef75aed88e",
+      "name": "Bloodthirsty Adversary",
+      "type_line": "Creature — Vampire",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/d/1d6d5c4b-01ec-407f-b3b6-854ab5127bdc.jpg?1712354388",
+      "scryfall_uri": "https://scryfall.com/card/otc/157/bloodthirsty-adversary?utm_source=api"
+    },
+    "d74a2cbf-4d13-401d-9b3f-bfbde4942afd": {
+      "oracle_id": "d74a2cbf-4d13-401d-9b3f-bfbde4942afd",
+      "name": "Florian, Voldaren Scion",
+      "type_line": "Legendary Creature — Vampire Noble",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "color_identity": [
+        "B",
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/3/3377d600-e43f-4cce-ae3f-541e519ee4ad.jpg?1726775603",
+      "scryfall_uri": "https://scryfall.com/card/dsc/217/florian-voldaren-scion?utm_source=api"
+    },
+    "5c87e2fa-77f1-4978-b25f-f14d227301d1": {
+      "oracle_id": "5c87e2fa-77f1-4978-b25f-f14d227301d1",
+      "name": "Foreboding Ruins",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "B",
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/9/e9236b80-fa80-4da3-a357-db7749011499.jpg?1726285414",
+      "scryfall_uri": "https://scryfall.com/card/dsc/277/foreboding-ruins?utm_source=api"
+    },
+    "651dea9c-2375-4e44-8e65-ba8e40f0c0ef": {
+      "oracle_id": "651dea9c-2375-4e44-8e65-ba8e40f0c0ef",
+      "name": "Furycalm Snarl",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "R",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/2/5/25a1cd4f-be6c-4e05-93ba-9e393cec76df.jpg?1775942219",
+      "scryfall_uri": "https://scryfall.com/card/soc/375/furycalm-snarl?utm_source=api"
+    },
+    "e2a37967-4212-4553-9f77-bcb613405807": {
+      "oracle_id": "e2a37967-4212-4553-9f77-bcb613405807",
+      "name": "Haunted Ridge",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "B",
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/2/32f1e668-89b8-4f82-afc1-6c3efb1fef3b.jpg?1736468677",
+      "scryfall_uri": "https://scryfall.com/card/inr/280/haunted-ridge?utm_source=api"
+    },
+    "e233cb5b-7237-4271-8157-9179cc897b6c": {
+      "oracle_id": "e233cb5b-7237-4271-8157-9179cc897b6c",
+      "name": "Killian, Ink Duelist",
+      "type_line": "Legendary Creature — Human Warlock",
+      "colors": [
+        "B",
+        "W"
+      ],
+      "color_identity": [
+        "B",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/9/f/9f51c115-dc9b-40a4-849d-3fc0c26e5a39.jpg?1775941809",
+      "scryfall_uri": "https://scryfall.com/card/soc/317/killian-ink-duelist?utm_source=api"
+    },
+    "d28eac97-f38a-4d2a-aeae-e758bd3ecf4e": {
+      "oracle_id": "d28eac97-f38a-4d2a-aeae-e758bd3ecf4e",
+      "name": "Markov Purifier",
+      "type_line": "Creature — Vampire Cleric",
+      "colors": [
+        "B",
+        "W"
+      ],
+      "color_identity": [
+        "B",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/b/bb95d34a-0b13-4533-9efc-08381c81e6cd.jpg?1643594199",
+      "scryfall_uri": "https://scryfall.com/card/vow/241/markov-purifier?utm_source=api"
+    },
+    "c9fc13d6-bd10-47bc-b2b6-7f67a1f3371e": {
+      "oracle_id": "c9fc13d6-bd10-47bc-b2b6-7f67a1f3371e",
+      "name": "Shineshadow Snarl",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "B",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/a/7a198106-4d31-4e10-884a-bdf2316f8088.jpg?1775942402",
+      "scryfall_uri": "https://scryfall.com/card/soc/403/shineshadow-snarl?utm_source=api"
+    },
+    "fbffaf9f-40e7-4113-a037-533b733cebce": {
+      "oracle_id": "fbffaf9f-40e7-4113-a037-533b733cebce",
+      "name": "Sorin the Mirthless",
+      "type_line": "Legendary Planeswalker — Sorin",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/c/cc7ff5f4-a7cc-41a1-a22b-8cf67ad18707.jpg?1643590354",
+      "scryfall_uri": "https://scryfall.com/card/vow/131/sorin-the-mirthless?utm_source=api"
+    },
+    "5ad0b405-cca4-475e-985c-4d7e3599d87e": {
+      "oracle_id": "5ad0b405-cca4-475e-985c-4d7e3599d87e",
+      "name": "Sundown Pass",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "R",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/3/b34000e9-ff20-4fb4-9d0b-03a172a92457.jpg?1775938845",
+      "scryfall_uri": "https://scryfall.com/card/sos/264/sundown-pass?utm_source=api"
+    },
+    "d64e96bf-6815-462c-93b4-c9c22dc43eda": {
+      "oracle_id": "d64e96bf-6815-462c-93b4-c9c22dc43eda",
+      "name": "By Invitation Only",
+      "type_line": "Sorcery",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/6/46764e49-64da-4a94-b61c-75e006b2c5a9.jpg?1643585907",
+      "scryfall_uri": "https://scryfall.com/card/vow/5/by-invitation-only?utm_source=api"
+    },
+    "f22c3624-6bd5-4761-b8ad-ac301ad9351c": {
+      "oracle_id": "f22c3624-6bd5-4761-b8ad-ac301ad9351c",
+      "name": "Curse of the Pierced Heart",
+      "type_line": "Enchantment — Aura Curse",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/1/71010182-c004-4d18-adab-80319cd1e625.jpg?1562831956",
+      "scryfall_uri": "https://scryfall.com/card/isd/138/curse-of-the-pierced-heart?utm_source=api"
+    },
+    "09618da4-6e2d-4047-96d7-0576c0754e7d": {
+      "oracle_id": "09618da4-6e2d-4047-96d7-0576c0754e7d",
+      "name": "End the Festivities",
+      "type_line": "Sorcery",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/e/bec748e6-7245-4a71-aeee-cefed8346948.jpg?1643591154",
+      "scryfall_uri": "https://scryfall.com/card/vow/155/end-the-festivities?utm_source=api"
+    },
+    "f21d0319-0509-4ac1-b6e3-10955a26fd7a": {
+      "oracle_id": "f21d0319-0509-4ac1-b6e3-10955a26fd7a",
+      "name": "Fracture",
+      "type_line": "Instant",
+      "colors": [
+        "B",
+        "W"
+      ],
+      "color_identity": [
+        "B",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/b/cba33bf7-0919-408c-8eb0-0bb9fe920c81.jpg?1775941758",
+      "scryfall_uri": "https://scryfall.com/card/soc/310/fracture?utm_source=api"
+    },
+    "dc5a501c-e16c-4d4b-a510-70a14272473e": {
+      "oracle_id": "dc5a501c-e16c-4d4b-a510-70a14272473e",
+      "name": "Tribute to Hunger",
+      "type_line": "Instant",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/1/11f1b897-bb7d-4217-97a7-c89f2453c8fa.jpg?1773974731",
+      "scryfall_uri": "https://scryfall.com/card/fdn/614/tribute-to-hunger?utm_source=api"
+    },
+    "3a82e724-28f6-430f-a474-ab4276197963": {
+      "oracle_id": "3a82e724-28f6-430f-a474-ab4276197963",
+      "name": "Vampires' Vengeance",
+      "type_line": "Instant",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/d/bdcfd9ee-9553-4080-a25c-d3552ddc7e82.jpg?1682209417",
+      "scryfall_uri": "https://scryfall.com/card/moc/289/vampires-vengeance?utm_source=api"
+    },
+    "16c99713-f19e-4b25-9b03-6a8d8203adfe": {
+      "oracle_id": "16c99713-f19e-4b25-9b03-6a8d8203adfe",
+      "name": "Crawl from the Cellar",
+      "type_line": "Sorcery",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/9/79563dd1-640c-4ebd-a347-0b71439b79d3.jpg?1736467916",
+      "scryfall_uri": "https://scryfall.com/card/inr/102/crawl-from-the-cellar?utm_source=api"
+    },
+    "c6e92911-a100-43eb-ab4b-3778b0db1918": {
+      "oracle_id": "c6e92911-a100-43eb-ab4b-3778b0db1918",
+      "name": "Dawnhart Rejuvenator",
+      "type_line": "Creature — Human Warlock",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/f/cf4b5ad9-3de6-4d53-93a0-3b8d2e484687.jpg?1636224166",
+      "scryfall_uri": "https://scryfall.com/card/mid/180/dawnhart-rejuvenator?utm_source=api"
+    },
+    "c92d6f26-5856-42dc-9ee5-21292d78a1fb": {
+      "oracle_id": "c92d6f26-5856-42dc-9ee5-21292d78a1fb",
+      "name": "Deathbonnet Sprout // Deathbonnet Hulk",
+      "type_line": "Creature — Fungus // Creature — Fungus Horror",
+      "colors": [],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/a/2/a2cda10b-7cd5-4cf5-87bd-c3b8c6aa2b47.jpg?1739662647",
+      "scryfall_uri": "https://scryfall.com/card/mid/181/deathbonnet-sprout-deathbonnet-hulk?utm_source=api"
+    },
+    "1920254f-0f65-4426-aabc-f3807476b67b": {
+      "oracle_id": "1920254f-0f65-4426-aabc-f3807476b67b",
+      "name": "Diregraf Rebirth",
+      "type_line": "Sorcery",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/5/b51ed1ea-661e-49c6-9751-1eb7bb651bb1.jpg?1636684125",
+      "scryfall_uri": "https://scryfall.com/card/mid/220/diregraf-rebirth?utm_source=api"
+    },
+    "b51a852c-ccde-4d23-a3f3-a002f7eacdab": {
+      "oracle_id": "b51a852c-ccde-4d23-a3f3-a002f7eacdab",
+      "name": "Eccentric Farmer",
+      "type_line": "Creature — Human Peasant",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/e/fe2a1718-eae1-4330-b494-c3088b992aae.jpg?1736468317",
+      "scryfall_uri": "https://scryfall.com/card/inr/194/eccentric-farmer?utm_source=api"
+    },
+    "a89ebf63-63c9-42cd-98b4-ec852cd9b0a8": {
+      "oracle_id": "a89ebf63-63c9-42cd-98b4-ec852cd9b0a8",
+      "name": "Grisly Salvage",
+      "type_line": "Instant",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/2/12a90f7a-28df-4017-b221-0e9234ff74a7.jpg?1743207137",
+      "scryfall_uri": "https://scryfall.com/card/tdc/290/grisly-salvage?utm_source=api"
+    },
+    "e9208fc2-616d-4c32-bd66-76a8bf85a6b5": {
+      "oracle_id": "e9208fc2-616d-4c32-bd66-76a8bf85a6b5",
+      "name": "Hound Tamer // Untamed Pup",
+      "type_line": "Creature — Human Werewolf // Creature — Werewolf",
+      "colors": [],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/2/8/28e2119b-ed78-4b98-a956-f2b453d0b164.jpg?1636224412",
+      "scryfall_uri": "https://scryfall.com/card/mid/187/hound-tamer-untamed-pup?utm_source=api"
+    },
+    "1d85eec2-80db-466c-bd48-d2a12866e8bd": {
+      "oracle_id": "1d85eec2-80db-466c-bd48-d2a12866e8bd",
+      "name": "Old Stickfingers",
+      "type_line": "Legendary Creature — Horror",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/2/329888c6-25d9-4eb9-9308-f979c3859669.jpg?1726285231",
+      "scryfall_uri": "https://scryfall.com/card/dsc/227/old-stickfingers?utm_source=api"
+    },
+    "f05d5632-0a82-45bf-b66e-22cf4080ed5e": {
+      "oracle_id": "f05d5632-0a82-45bf-b66e-22cf4080ed5e",
+      "name": "Shadowbeast Sighting",
+      "type_line": "Sorcery",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/b/1b12e978-4deb-4ccc-8ae6-462bc4598c90.jpg?1636224740",
+      "scryfall_uri": "https://scryfall.com/card/mid/198/shadowbeast-sighting?utm_source=api"
+    },
+    "0b7fabe8-bc44-47b1-93bb-b895a1bd0aa9": {
+      "oracle_id": "0b7fabe8-bc44-47b1-93bb-b895a1bd0aa9",
+      "name": "Bloodline Culling",
+      "type_line": "Instant",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/a/fac827f7-a587-4adf-8408-2d9ccd9c1343.jpg?1634349575",
+      "scryfall_uri": "https://scryfall.com/card/mid/89/bloodline-culling?utm_source=api"
+    },
+    "39e20898-cf01-48dc-8972-7ac500c3fa79": {
+      "oracle_id": "39e20898-cf01-48dc-8972-7ac500c3fa79",
+      "name": "Ghoulish Procession",
+      "type_line": "Enchantment",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/1/c178227f-3b66-45f7-9838-dff70f1f2003.jpg?1736467958",
+      "scryfall_uri": "https://scryfall.com/card/inr/110/ghoulish-procession?utm_source=api"
+    },
+    "9545f126-062f-4410-a362-e16255a128d6": {
+      "oracle_id": "9545f126-062f-4410-a362-e16255a128d6",
+      "name": "Outland Liberator // Frenzied Trapbreaker",
+      "type_line": "Creature — Human Werewolf // Creature — Werewolf",
+      "colors": [],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/0/60e53d61-fcc3-4def-8206-052b46f62deb.jpg?1636224528",
+      "scryfall_uri": "https://scryfall.com/card/mid/190/outland-liberator-frenzied-trapbreaker?utm_source=api"
+    },
+    "1bde8eaa-9beb-4529-b540-5e0155c09713": {
+      "oracle_id": "1bde8eaa-9beb-4529-b540-5e0155c09713",
+      "name": "Rotten Reunion",
+      "type_line": "Instant",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/9/7/97398ad2-675b-4a34-aab7-935dd6714f1c.jpg?1675567516",
+      "scryfall_uri": "https://scryfall.com/card/mid/119/rotten-reunion?utm_source=api"
+    },
+    "069f6530-e65c-4d52-85f3-e0a2acd148c5": {
+      "oracle_id": "069f6530-e65c-4d52-85f3-e0a2acd148c5",
+      "name": "Avacyn's Pilgrim",
+      "type_line": "Creature — Human Monk",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/a/3/a390a7df-b8da-41aa-93e5-2c0db938a27e.jpg?1637630879",
+      "scryfall_uri": "https://scryfall.com/card/mic/132/avacyns-pilgrim?utm_source=api"
+    },
+    "8fe6e954-f19b-4d11-83d3-74c634d51bad": {
+      "oracle_id": "8fe6e954-f19b-4d11-83d3-74c634d51bad",
+      "name": "Briarbridge Tracker",
+      "type_line": "Creature — Human Scout",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/2/e215a7bd-112f-4228-a99e-5a8cb4be5cee.jpg?1636223950",
+      "scryfall_uri": "https://scryfall.com/card/mid/172/briarbridge-tracker?utm_source=api"
+    },
+    "6789a170-f2c5-4fc0-8a45-2b2361e67410": {
+      "oracle_id": "6789a170-f2c5-4fc0-8a45-2b2361e67410",
+      "name": "Chord of Calling",
+      "type_line": "Instant",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/1/b18fe7e0-8344-40cc-b242-83f01c6be7a6.jpg?1702429548",
+      "scryfall_uri": "https://scryfall.com/card/rvr/134/chord-of-calling?utm_source=api"
+    },
+    "d1cd7a93-4b83-4755-90bc-17cb64bfb131": {
+      "oracle_id": "d1cd7a93-4b83-4755-90bc-17cb64bfb131",
+      "name": "Circle of Confinement",
+      "type_line": "Enchantment",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/3/13031fb6-9d5a-4add-9a86-28b2a9373fd2.jpg?1643585961",
+      "scryfall_uri": "https://scryfall.com/card/vow/7/circle-of-confinement?utm_source=api"
+    },
+    "5334dc24-040e-4094-80f4-8d1b9de01230": {
+      "oracle_id": "5334dc24-040e-4094-80f4-8d1b9de01230",
+      "name": "Devouring Light",
+      "type_line": "Instant",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/a/8/a81a828b-e17e-4789-b73e-1f44a7f03e9f.jpg?1702429276",
+      "scryfall_uri": "https://scryfall.com/card/rvr/15/devouring-light?utm_source=api"
+    },
+    "56f1a16a-9f41-41fb-b580-c200bca27cd6": {
+      "oracle_id": "56f1a16a-9f41-41fb-b580-c200bca27cd6",
+      "name": "Fortified Village",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "G",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/a/4a0aeb3a-923a-4b97-9d27-ea7e0b57de75.jpg?1743207579",
+      "scryfall_uri": "https://scryfall.com/card/tdc/366/fortified-village?utm_source=api"
+    },
+    "00de57d2-7cb6-4337-9bc6-f6711e4dfabf": {
+      "oracle_id": "00de57d2-7cb6-4337-9bc6-f6711e4dfabf",
+      "name": "Game Trail",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "G",
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/2/a/2a84a604-7b05-4716-bcd8-40d2acdb76e8.jpg?1706241163",
+      "scryfall_uri": "https://scryfall.com/card/mkc/264/game-trail?utm_source=api"
+    },
+    "2788cc1e-18b6-4506-be4c-f4056600e33c": {
+      "oracle_id": "2788cc1e-18b6-4506-be4c-f4056600e33c",
+      "name": "Gavony Dawnguard",
+      "type_line": "Creature — Human Soldier",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/8/58891dae-1c59-4f53-82ec-5b4c47133182.jpg?1634348150",
+      "scryfall_uri": "https://scryfall.com/card/mid/20/gavony-dawnguard?utm_source=api"
+    },
+    "8a44e4e7-dfa2-427b-bbff-11c398fa60bb": {
+      "oracle_id": "8a44e4e7-dfa2-427b-bbff-11c398fa60bb",
+      "name": "Gavony Township",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "G",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/e/ce46c4e2-a515-41d7-8d70-d20cf4925996.jpg?1682210473",
+      "scryfall_uri": "https://scryfall.com/card/moc/406/gavony-township?utm_source=api"
+    },
+    "b347be2d-9aa1-42a9-b652-8fb032832f09": {
+      "oracle_id": "b347be2d-9aa1-42a9-b652-8fb032832f09",
+      "name": "Halana and Alena, Partners",
+      "type_line": "Legendary Creature — Human Ranger",
+      "colors": [
+        "G",
+        "R"
+      ],
+      "color_identity": [
+        "G",
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/6/b649f459-c9dc-495d-8703-b685996bb80c.jpg?1730491095",
+      "scryfall_uri": "https://scryfall.com/card/fdn/659/halana-and-alena-partners?utm_source=api"
+    },
+    "6c728edd-ab67-44ce-b19d-aa98dfce68bb": {
+      "oracle_id": "6c728edd-ab67-44ce-b19d-aa98dfce68bb",
+      "name": "Katilda, Dawnhart Prime",
+      "type_line": "Legendary Creature — Human Warlock",
+      "colors": [
+        "G",
+        "W"
+      ],
+      "color_identity": [
+        "G",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/7/673cd775-d417-4652-a91d-825ad5c89e8a.jpg?1636684486",
+      "scryfall_uri": "https://scryfall.com/card/mid/230/katilda-dawnhart-prime?utm_source=api"
+    },
+    "c6911265-54ef-4c16-bcf2-1ffb24b7d426": {
+      "oracle_id": "c6911265-54ef-4c16-bcf2-1ffb24b7d426",
+      "name": "Kessig Wolf Run",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "G",
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/2/32da0d6c-64dd-4aec-b63e-953e96164603.jpg?1743207632",
+      "scryfall_uri": "https://scryfall.com/card/tdc/375/kessig-wolf-run?utm_source=api"
+    },
+    "21971c8b-ff9b-40f8-8c9a-93d26c2615b7": {
+      "oracle_id": "21971c8b-ff9b-40f8-8c9a-93d26c2615b7",
+      "name": "Rem Karolus, Stalwart Slayer",
+      "type_line": "Legendary Creature — Human Knight",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "color_identity": [
+        "R",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/3/b31e307a-9689-4e11-8c5f-96b7a4b50bed.jpg?1636684729",
+      "scryfall_uri": "https://scryfall.com/card/mid/235/rem-karolus-stalwart-slayer?utm_source=api"
+    },
+    "185c70c1-8403-4ae5-b45d-3679d4ee092a": {
+      "oracle_id": "185c70c1-8403-4ae5-b45d-3679d4ee092a",
+      "name": "Rockfall Vale",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "G",
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/d/c/dcdea659-ecaf-4abe-be0f-64e105abb104.jpg?1743207701",
+      "scryfall_uri": "https://scryfall.com/card/tdc/387/rockfall-vale?utm_source=api"
+    },
+    "24919141-82d2-42ad-963c-e53511a868b3": {
+      "oracle_id": "24919141-82d2-42ad-963c-e53511a868b3",
+      "name": "Sigarda, Champion of Light",
+      "type_line": "Legendary Creature — Angel",
+      "colors": [
+        "G",
+        "W"
+      ],
+      "color_identity": [
+        "G",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/c/5c6cf357-c231-4512-aa9a-ab4a60007136.jpg?1636684917",
+      "scryfall_uri": "https://scryfall.com/card/mid/240/sigarda-champion-of-light?utm_source=api"
+    },
+    "79b56cf8-d573-40cf-b797-6b4eef2bed23": {
+      "oracle_id": "79b56cf8-d573-40cf-b797-6b4eef2bed23",
+      "name": "Sigarda, Heron's Grace",
+      "type_line": "Legendary Creature — Angel",
+      "colors": [
+        "G",
+        "W"
+      ],
+      "color_identity": [
+        "G",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/a/1/a1de7031-f589-4af5-9c63-06fb7ec7a6b5.jpg?1637631578",
+      "scryfall_uri": "https://scryfall.com/card/mic/155/sigarda-herons-grace?utm_source=api"
+    },
+    "9b7f1d05-707c-4ed3-9f0e-8ced1232c2ee": {
+      "oracle_id": "9b7f1d05-707c-4ed3-9f0e-8ced1232c2ee",
+      "name": "Thalia, Guardian of Thraben",
+      "type_line": "Legendary Creature — Human Soldier",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/9/c9f8b8fb-1cd8-450e-a1fe-892e7a323479.jpg?1643587106",
+      "scryfall_uri": "https://scryfall.com/card/vow/38/thalia-guardian-of-thraben?utm_source=api"
+    },
+    "e6555cca-e608-4c87-b835-9cd47fd1f543": {
+      "oracle_id": "e6555cca-e608-4c87-b835-9cd47fd1f543",
+      "name": "Tireless Tracker",
+      "type_line": "Creature — Human Scout",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/6/66444549-ad9b-49c6-a7c6-34e977c1085d.jpg?1752944911",
+      "scryfall_uri": "https://scryfall.com/card/eoc/110/tireless-tracker?utm_source=api"
+    },
+    "2cb96408-9195-4e41-ad9a-f8c74fbad083": {
+      "oracle_id": "2cb96408-9195-4e41-ad9a-f8c74fbad083",
+      "name": "Torens, Fist of the Angels",
+      "type_line": "Legendary Creature — Human Cleric",
+      "colors": [
+        "G",
+        "W"
+      ],
+      "color_identity": [
+        "G",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/8/f8566528-ba96-4425-8831-b5d6197da9ae.jpg?1736468554",
+      "scryfall_uri": "https://scryfall.com/card/inr/250/torens-fist-of-the-angels?utm_source=api"
+    },
+    "90249526-1875-450a-882d-bf6f6bfd37a6": {
+      "oracle_id": "90249526-1875-450a-882d-bf6f6bfd37a6",
+      "name": "Ajani Steadfast",
+      "type_line": "Legendary Planeswalker — Ajani",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/1/51825d35-cdb2-40fa-ab89-1625161b04af.jpg?1690004002",
+      "scryfall_uri": "https://scryfall.com/card/cmm/813/ajani-steadfast?utm_source=api"
+    },
+    "04e3d36f-5dec-422c-a371-15e135fdface": {
+      "oracle_id": "04e3d36f-5dec-422c-a371-15e135fdface",
+      "name": "Blessed Defiance",
+      "type_line": "Instant",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/5/1555cdcb-3471-4ee7-99c3-d05311bf433c.jpg?1634346564",
+      "scryfall_uri": "https://scryfall.com/card/mid/5/blessed-defiance?utm_source=api"
+    },
+    "79af045e-2c73-4003-8f62-b8611a225f08": {
+      "oracle_id": "79af045e-2c73-4003-8f62-b8611a225f08",
+      "name": "Bonds of Faith",
+      "type_line": "Enchantment — Aura",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/c/cc5dbb93-63a2-478e-b874-1fdf3a03cbff.jpg?1592762504",
+      "scryfall_uri": "https://scryfall.com/card/ddq/2/bonds-of-faith?utm_source=api"
+    },
+    "5cc5be7a-cbe6-4853-bb95-0390e25b4f2b": {
+      "oracle_id": "5cc5be7a-cbe6-4853-bb95-0390e25b4f2b",
+      "name": "Butcher's Cleaver",
+      "type_line": "Artifact — Equipment",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/c/3c55bce1-8746-4554-9876-f443c37a125b.jpg?1736468578",
+      "scryfall_uri": "https://scryfall.com/card/inr/256/butchers-cleaver?utm_source=api"
+    },
+    "4f7e865b-6ab0-4361-b864-63c38cdb2fed": {
+      "oracle_id": "4f7e865b-6ab0-4361-b864-63c38cdb2fed",
+      "name": "Elite Inquisitor",
+      "type_line": "Creature — Human Soldier",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/9/c9411c44-92a8-4f5d-b3de-d80046649c8c.jpg?1562836951",
+      "scryfall_uri": "https://scryfall.com/card/isd/13/elite-inquisitor?utm_source=api"
+    },
+    "e1a89535-7126-48e0-b335-b732a677b157": {
+      "oracle_id": "e1a89535-7126-48e0-b335-b732a677b157",
+      "name": "Ephemeral Shields",
+      "type_line": "Instant",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/0/60fcd11e-9bc3-4a27-966c-42767bac3223.jpg?1682208406",
+      "scryfall_uri": "https://scryfall.com/card/moc/184/ephemeral-shields?utm_source=api"
+    },
+    "cb9d557a-fc06-428c-8be6-7d28add33028": {
+      "oracle_id": "cb9d557a-fc06-428c-8be6-7d28add33028",
+      "name": "Fiend Hunter",
+      "type_line": "Creature — Human Cleric",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/6/f606cf4d-e29b-415a-956c-b148045c44e9.jpg?1736467504",
+      "scryfall_uri": "https://scryfall.com/card/inr/22/fiend-hunter?utm_source=api"
+    },
+    "e5deac0b-4417-42cc-b145-db0afe34f6e0": {
+      "oracle_id": "e5deac0b-4417-42cc-b145-db0afe34f6e0",
+      "name": "Geist-Honored Monk",
+      "type_line": "Creature — Human Monk",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/d/4d09ef1d-3552-43a3-91c7-0d14c0f06780.jpg?1631234027",
+      "scryfall_uri": "https://scryfall.com/card/khc/25/geist-honored-monk?utm_source=api"
+    },
+    "317169b8-9014-48e6-862b-ca21b706846e": {
+      "oracle_id": "317169b8-9014-48e6-862b-ca21b706846e",
+      "name": "Hopeful Initiate",
+      "type_line": "Creature — Human Warlock",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/6/c655f9e8-ff99-48d0-83a9-ea6a853f17c6.jpg?1736467517",
+      "scryfall_uri": "https://scryfall.com/card/inr/27/hopeful-initiate?utm_source=api"
+    },
+    "d7407920-7596-497a-a135-b9343909a0cb": {
+      "oracle_id": "d7407920-7596-497a-a135-b9343909a0cb",
+      "name": "Kessig Cagebreakers",
+      "type_line": "Creature — Human Rogue",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/9/e9bf3f93-a06f-4364-bb8e-b2b1eb77dcc3.jpg?1637631207",
+      "scryfall_uri": "https://scryfall.com/card/mic/142/kessig-cagebreakers?utm_source=api"
+    },
+    "694cb93a-bcc5-44b0-a76c-19ae4a4e5e0f": {
+      "oracle_id": "694cb93a-bcc5-44b0-a76c-19ae4a4e5e0f",
+      "name": "Ranger's Guile",
+      "type_line": "Instant",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/0/2/02392840-f0c4-462e-84ce-9a7cdd9f5efb.jpg?1594737163",
+      "scryfall_uri": "https://scryfall.com/card/m21/199/rangers-guile?utm_source=api"
+    },
+    "1ed2d8e0-462b-468e-8fd3-1f3c6d99fb8a": {
+      "oracle_id": "1ed2d8e0-462b-468e-8fd3-1f3c6d99fb8a",
+      "name": "Brutal Cathar // Moonrage Brute",
+      "type_line": "Creature — Human Soldier Werewolf // Creature — Werewolf",
+      "colors": [],
+      "color_identity": [
+        "R",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/0/d/0dbac7ce-a6fa-466e-b6ba-173cf2dec98e.jpg?1634347036",
+      "scryfall_uri": "https://scryfall.com/card/mid/7/brutal-cathar-moonrage-brute?utm_source=api"
+    },
+    "4e07a0b3-f340-4ed1-a8a9-c25fe6f37fb3": {
+      "oracle_id": "4e07a0b3-f340-4ed1-a8a9-c25fe6f37fb3",
+      "name": "Saryth, the Viper's Fang",
+      "type_line": "Legendary Creature — Human Warlock",
+      "colors": [
+        "G"
+      ],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/8/0/8050afb7-3c16-4456-aa34-4cc999fac7f5.jpg?1706240929",
+      "scryfall_uri": "https://scryfall.com/card/mkc/185/saryth-the-vipers-fang?utm_source=api"
+    },
+    "0761a0e7-d443-4bab-bb15-307c83d4a6a1": {
+      "oracle_id": "0761a0e7-d443-4bab-bb15-307c83d4a6a1",
+      "name": "Lunarch Veteran // Luminous Phantom",
+      "type_line": "Creature — Human Cleric // Creature — Spirit Cleric",
+      "colors": [],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/3/438e3302-daf9-436b-8b08-24b3f33295f6.jpg?1736467543",
+      "scryfall_uri": "https://scryfall.com/card/inr/32/lunarch-veteran-luminous-phantom?utm_source=api"
+    },
+    "f3ae58ed-8ef7-4e0a-945f-1f622157236b": {
+      "oracle_id": "f3ae58ed-8ef7-4e0a-945f-1f622157236b",
+      "name": "Avacyn's Judgment",
+      "type_line": "Sorcery",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/2/6/2642eb44-becf-4e99-934f-7241fcc32dee.jpg?1641603042",
+      "scryfall_uri": "https://scryfall.com/card/voc/142/avacyns-judgment?utm_source=api"
+    },
+    "26aba6fa-830f-4a7f-8618-488d8e00215a": {
+      "oracle_id": "26aba6fa-830f-4a7f-8618-488d8e00215a",
+      "name": "Falkenrath Gorger",
+      "type_line": "Creature — Vampire Berserker",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/6/16c376f5-f69b-49d4-95f4-92bdd68c564c.jpg?1736468131",
+      "scryfall_uri": "https://scryfall.com/card/inr/152/falkenrath-gorger?utm_source=api"
+    },
+    "81b90905-fbc0-426a-a084-c3300533abb4": {
+      "oracle_id": "81b90905-fbc0-426a-a084-c3300533abb4",
+      "name": "Lightning Axe",
+      "type_line": "Instant",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/9/0/90911c79-24c3-4566-b72c-02ccde083f1b.jpg?1736473361",
+      "scryfall_uri": "https://scryfall.com/card/inr/162/lightning-axe?utm_source=api"
+    },
+    "1f8d387e-e4bb-4e76-a173-f46f7b107b95": {
+      "oracle_id": "1f8d387e-e4bb-4e76-a173-f46f7b107b95",
+      "name": "Olivia, Mobilized for War",
+      "type_line": "Legendary Creature — Vampire Knight",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "color_identity": [
+        "B",
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/2/7297dd81-8367-42e9-abf9-9227e202e7ae.jpg?1576385369",
+      "scryfall_uri": "https://scryfall.com/card/soi/248/olivia-mobilized-for-war?utm_source=api"
+    },
+    "88f5d146-420b-417c-bcf1-fe0e78312a74": {
+      "oracle_id": "88f5d146-420b-417c-bcf1-fe0e78312a74",
+      "name": "Stensia Masquerade",
+      "type_line": "Enchantment",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/a/faaf031f-2c77-4248-8a29-f47e64773cfd.jpg?1736468223",
+      "scryfall_uri": "https://scryfall.com/card/inr/172/stensia-masquerade?utm_source=api"
+    },
+    "f307b5b4-e949-4f69-8dc7-856e33a45a16": {
+      "oracle_id": "f307b5b4-e949-4f69-8dc7-856e33a45a16",
+      "name": "Tormenting Voice",
+      "type_line": "Sorcery",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/d/6da46103-a14c-4aa2-92fc-fd758335caf4.jpg?1604198268",
+      "scryfall_uri": "https://scryfall.com/card/znr/172/tormenting-voice?utm_source=api"
+    },
+    "91a45e96-2a93-4c48-b472-11904d2b856d": {
+      "oracle_id": "91a45e96-2a93-4c48-b472-11904d2b856d",
+      "name": "Vampire Socialite",
+      "type_line": "Creature — Vampire Noble",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "color_identity": [
+        "B",
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/0/f07cbf04-2864-4407-800e-4d55c10d3426.jpg?1637114433",
+      "scryfall_uri": "https://scryfall.com/card/mid/249/vampire-socialite?utm_source=api"
+    },
+    "105cea6e-18e9-4dec-a533-0dca4d41320b": {
+      "oracle_id": "105cea6e-18e9-4dec-a533-0dca4d41320b",
+      "name": "Vampire's Kiss",
+      "type_line": "Sorcery",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/9/7/974bf8cc-4259-48cc-8e7f-1580bb010d3f.jpg?1643590522",
+      "scryfall_uri": "https://scryfall.com/card/vow/136/vampires-kiss?utm_source=api"
+    },
+    "cef82674-1f61-407b-801b-a76a3803e598": {
+      "oracle_id": "cef82674-1f61-407b-801b-a76a3803e598",
+      "name": "Voldaren Epicure",
+      "type_line": "Creature — Vampire",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/8/e8fe855c-fe94-4de7-a033-9892a9d6ee0e.jpg?1736468269",
+      "scryfall_uri": "https://scryfall.com/card/inr/182/voldaren-epicure?utm_source=api"
+    },
+    "fb0c0426-f1a6-4e52-9242-627786d3119a": {
+      "oracle_id": "fb0c0426-f1a6-4e52-9242-627786d3119a",
+      "name": "Voldaren Estate",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/f/1fcbc704-4fb3-49c3-9040-aa1681e86e2c.jpg?1698988666",
+      "scryfall_uri": "https://scryfall.com/card/lcc/369/voldaren-estate?utm_source=api"
+    },
+    "7292272d-6511-466b-aadd-c4fe7ed8df09": {
+      "oracle_id": "7292272d-6511-466b-aadd-c4fe7ed8df09",
+      "name": "Bloodvial Purveyor",
+      "type_line": "Creature — Vampire",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/8/4889c58b-8b84-42af-a56c-e886655aa997.jpg?1753197853",
+      "scryfall_uri": "https://scryfall.com/card/vow/98/bloodvial-purveyor?utm_source=api"
+    },
+    "145ef633-a2e0-4bd9-a866-5767821eb44f": {
+      "oracle_id": "145ef633-a2e0-4bd9-a866-5767821eb44f",
+      "name": "Dominating Vampire",
+      "type_line": "Creature — Vampire",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/b/4b11d234-c6e4-45b2-a3c2-dcacc77cc084.jpg?1643591128",
+      "scryfall_uri": "https://scryfall.com/card/vow/154/dominating-vampire?utm_source=api"
+    },
+    "940080ce-c504-48c8-a763-326fef907217": {
+      "oracle_id": "940080ce-c504-48c8-a763-326fef907217",
+      "name": "Falkenrath Forebear",
+      "type_line": "Creature — Vampire",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/5/451559d0-b62d-4757-8eb5-f6b0e240899c.jpg?1643589670",
+      "scryfall_uri": "https://scryfall.com/card/vow/111/falkenrath-forebear?utm_source=api"
+    },
+    "0c0845c3-f4b5-444e-8f42-da0c7dbf2841": {
+      "oracle_id": "0c0845c3-f4b5-444e-8f42-da0c7dbf2841",
+      "name": "Henrika Domnathi // Henrika, Infernal Seer",
+      "type_line": "Legendary Creature — Vampire // Legendary Creature — Vampire",
+      "colors": [],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/9/4/946ca338-5f43-4cff-bd93-1b28449c5fdc.jpg?1643589923",
+      "scryfall_uri": "https://scryfall.com/card/vow/119/henrika-domnathi-henrika-infernal-seer?utm_source=api"
+    },
+    "ab431f93-73bb-49d9-9321-a0712f096ed7": {
+      "oracle_id": "ab431f93-73bb-49d9-9321-a0712f096ed7",
+      "name": "Slaughter Specialist",
+      "type_line": "Creature — Vampire Warrior",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/b/cb83e33c-810e-4de3-800d-2038f38a1eda.jpg?1634350263",
+      "scryfall_uri": "https://scryfall.com/card/mid/122/slaughter-specialist?utm_source=api"
+    },
+    "c55909d3-1f67-4a4a-9d53-8513d6cf96d8": {
+      "oracle_id": "c55909d3-1f67-4a4a-9d53-8513d6cf96d8",
+      "name": "Stromkirk Noble",
+      "type_line": "Creature — Vampire Noble",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/0/f/0f306c7e-cacc-4c26-a3f1-fad4f3ff7cf3.jpg?1730490996",
+      "scryfall_uri": "https://scryfall.com/card/fdn/632/stromkirk-noble?utm_source=api"
+    },
+    "adfcdadd-ddda-477b-8e72-0cae2430fb63": {
+      "oracle_id": "adfcdadd-ddda-477b-8e72-0cae2430fb63",
+      "name": "Baleful Mastery",
+      "type_line": "Instant",
+      "colors": [
+        "B"
+      ],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/7/579e20e7-1395-4a6c-a836-ae3419fc8808.jpg?1712354258",
+      "scryfall_uri": "https://scryfall.com/card/otc/126/baleful-mastery?utm_source=api"
+    },
+    "fa450433-85b0-4f95-bd4e-f141ba036bee": {
+      "oracle_id": "fa450433-85b0-4f95-bd4e-f141ba036bee",
+      "name": "Cemetery Gatekeeper",
+      "type_line": "Creature — Vampire",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/5/457086c4-1b4e-4f79-8f2a-10b16174c8bb.jpg?1643590978",
+      "scryfall_uri": "https://scryfall.com/card/vow/148/cemetery-gatekeeper?utm_source=api"
+    },
+    "7b1c1a0c-f443-4eb5-a430-9eea886361ca": {
+      "oracle_id": "7b1c1a0c-f443-4eb5-a430-9eea886361ca",
+      "name": "Divide by Zero",
+      "type_line": "Instant",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/9/1958d96e-ec44-48ab-80b1-5b01a24ac7b8.jpg?1702134275",
+      "scryfall_uri": "https://scryfall.com/card/stx/41/divide-by-zero?utm_source=api"
+    },
+    "d4a84e78-d9b9-4c67-8a4b-4329e65f0f15": {
+      "oracle_id": "d4a84e78-d9b9-4c67-8a4b-4329e65f0f15",
+      "name": "Hullbreaker Horror",
+      "type_line": "Creature — Kraken Horror",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/3/137acb70-a1fd-4ea9-a5d9-f4b438eb5e82.jpg?1736467749",
+      "scryfall_uri": "https://scryfall.com/card/inr/68/hullbreaker-horror?utm_source=api"
+    },
+    "f224db3d-cdd2-43f2-b625-4b861efa6449": {
+      "oracle_id": "f224db3d-cdd2-43f2-b625-4b861efa6449",
+      "name": "Lier, Disciple of the Drowned",
+      "type_line": "Legendary Creature — Human Wizard",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/8/b8b70585-e0ea-4cb4-9360-a8ab47626696.jpg?1743206346",
+      "scryfall_uri": "https://scryfall.com/card/tdc/157/lier-disciple-of-the-drowned?utm_source=api"
+    },
+    "4722105b-0085-4bb8-bca1-9de0d3eb5600": {
+      "oracle_id": "4722105b-0085-4bb8-bca1-9de0d3eb5600",
+      "name": "Stormcarved Coast",
+      "type_line": "Land",
+      "colors": [],
+      "color_identity": [
+        "R",
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/d/bd3ae4fa-4c97-410a-8c0a-bd203342595d.jpg?1775938837",
+      "scryfall_uri": "https://scryfall.com/card/sos/263/stormcarved-coast?utm_source=api"
+    },
+    "f2c10591-4c0c-4286-af91-e8d8d10a4c9d": {
+      "oracle_id": "f2c10591-4c0c-4286-af91-e8d8d10a4c9d",
+      "name": "Thing in the Ice // Awoken Horror",
+      "type_line": "Creature — Horror // Creature — Kraken Horror",
+      "colors": [],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/2/7269d533-cb3f-498e-b97f-eb6c49e170c3.jpg?1736467854",
+      "scryfall_uri": "https://scryfall.com/card/inr/91/thing-in-the-ice-awoken-horror?utm_source=api"
+    },
+    "48369aec-a991-4bef-8554-01c84302b063": {
+      "oracle_id": "48369aec-a991-4bef-8554-01c84302b063",
+      "name": "Aetherspouts",
+      "type_line": "Instant",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/5/b5cb6da6-d43b-4ad1-bb77-9eeb6d15240c.jpg?1637629569",
+      "scryfall_uri": "https://scryfall.com/card/mic/97/aetherspouts?utm_source=api"
+    },
+    "6a521eed-0965-4fce-8a11-190dc2863da8": {
+      "oracle_id": "6a521eed-0965-4fce-8a11-190dc2863da8",
+      "name": "Flame-Blessed Bolt",
+      "type_line": "Instant",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/1/b1771a8f-7bea-4bb0-9949-566ee6613b93.jpg?1643591339",
+      "scryfall_uri": "https://scryfall.com/card/vow/158/flame-blessed-bolt?utm_source=api"
+    },
+    "24661b81-6bee-4ad8-b3ab-53cb65005c51": {
+      "oracle_id": "24661b81-6bee-4ad8-b3ab-53cb65005c51",
+      "name": "Goblin Rabblemaster",
+      "type_line": "Creature — Goblin Warrior",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/c/bce84a87-093a-42de-9696-8c3250e0f33b.jpg?1592764823",
+      "scryfall_uri": "https://scryfall.com/card/ddt/46/goblin-rabblemaster?utm_source=api"
+    },
+    "60e36f86-e284-468e-8073-07f19a3ed65e": {
+      "oracle_id": "60e36f86-e284-468e-8073-07f19a3ed65e",
+      "name": "Introduction to Annihilation",
+      "type_line": "Sorcery — Lesson",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/0/b0bc4682-bcaf-4f51-be0b-9f2851a16e3b.jpg?1637082326",
+      "scryfall_uri": "https://scryfall.com/card/stx/3/introduction-to-annihilation?utm_source=api"
+    },
+    "f426aa1a-e1dc-4563-b450-2e23d6bd980b": {
+      "oracle_id": "f426aa1a-e1dc-4563-b450-2e23d6bd980b",
+      "name": "Manaform Hellkite",
+      "type_line": "Creature — Dragon",
+      "colors": [
+        "R"
+      ],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/0/a/0a559655-0967-41b9-8248-170f95c05f84.jpg?1775941324",
+      "scryfall_uri": "https://scryfall.com/card/soc/248/manaform-hellkite?utm_source=api"
+    },
+    "3407fe41-fdd3-4119-8f70-4bc4590a379f": {
+      "oracle_id": "3407fe41-fdd3-4119-8f70-4bc4590a379f",
+      "name": "Negate",
+      "type_line": "Instant",
+      "colors": [
+        "U"
+      ],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/5/2/52d58fe4-6070-4022-9cd7-c35a11b44525.jpg?1771342360",
+      "scryfall_uri": "https://scryfall.com/card/tmt/47/negate?utm_source=api"
+    },
+    "7493d78c-26c4-402e-bec5-6449773d0344": {
+      "oracle_id": "7493d78c-26c4-402e-bec5-6449773d0344",
+      "name": "Smoldering Egg // Ashmouth Dragon",
+      "type_line": "Creature — Dragon Egg // Creature — Dragon",
+      "colors": [],
+      "color_identity": [
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/1/41b6381f-4ff8-49e9-bf00-cfe32851318b.jpg?1739657544",
+      "scryfall_uri": "https://scryfall.com/card/mid/159/smoldering-egg-ashmouth-dragon?utm_source=api"
+    },
+    "ec22386d-42fd-40f9-b800-a043e80faabe": {
+      "oracle_id": "ec22386d-42fd-40f9-b800-a043e80faabe",
+      "name": "Angelic Overseer",
+      "type_line": "Creature — Angel",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/2/2/221d999c-dde1-4a0f-87cf-9e9f44969f94.jpg?1562827383",
+      "scryfall_uri": "https://scryfall.com/card/isd/3/angelic-overseer?utm_source=api"
+    },
+    "15d8b339-7520-43c9-b2dc-4a936357042b": {
+      "oracle_id": "15d8b339-7520-43c9-b2dc-4a936357042b",
+      "name": "Divine Reckoning",
+      "type_line": "Sorcery",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/c/b/cbb97027-d6bc-4529-960d-6b0ab2af9c50.jpg?1568003822",
+      "scryfall_uri": "https://scryfall.com/card/c19/62/divine-reckoning?utm_source=api"
+    },
+    "3ab3996f-aa3f-4041-8634-8e197d51f108": {
+      "oracle_id": "3ab3996f-aa3f-4041-8634-8e197d51f108",
+      "name": "Mass Calcify",
+      "type_line": "Sorcery",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/1/316a2d2f-ca94-463f-ada4-2b12bce6312f.jpg?1562784781",
+      "scryfall_uri": "https://scryfall.com/card/m15/18/mass-calcify?utm_source=api"
+    },
+    "82f3faa8-39fa-450b-843f-d60a4c36d8f7": {
+      "oracle_id": "82f3faa8-39fa-450b-843f-d60a4c36d8f7",
+      "name": "Mikaeus, the Lunarch",
+      "type_line": "Legendary Creature — Human Cleric",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/b/fb885d30-c6e5-494a-bc01-3d5085b8e262.jpg?1682208524",
+      "scryfall_uri": "https://scryfall.com/card/moc/197/mikaeus-the-lunarch?utm_source=api"
+    },
+    "bad76170-c773-4be5-9457-20dc9f745cb4": {
+      "oracle_id": "bad76170-c773-4be5-9457-20dc9f745cb4",
+      "name": "Odric, Lunarch Marshal",
+      "type_line": "Legendary Creature — Human Soldier",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/1/d/1db600b2-9b8b-4c21-8d8b-8033ec680a35.jpg?1736467562",
+      "scryfall_uri": "https://scryfall.com/card/inr/36/odric-lunarch-marshal?utm_source=api"
+    },
+    "1857dc32-8ff1-4519-b1ca-480a5c2d3b3c": {
+      "oracle_id": "1857dc32-8ff1-4519-b1ca-480a5c2d3b3c",
+      "name": "Savior of Ollenbock",
+      "type_line": "Creature — Human Soldier",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/b/a/ba77e83b-1846-4c42-bea0-2e304429fbe0.jpg?1643586996",
+      "scryfall_uri": "https://scryfall.com/card/vow/34/savior-of-ollenbock?utm_source=api"
+    },
+    "93e9b0d6-97a8-4357-bcd4-f82d81bad232": {
+      "oracle_id": "93e9b0d6-97a8-4357-bcd4-f82d81bad232",
+      "name": "Silver-Inlaid Dagger",
+      "type_line": "Artifact — Equipment",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/8/f8b8162a-68f0-45df-bb25-8fd4487257a4.jpg?1562839962",
+      "scryfall_uri": "https://scryfall.com/card/isd/233/silver-inlaid-dagger?utm_source=api"
+    },
+    "605c1ee0-5e8a-4e0a-a99b-42a38873f822": {
+      "oracle_id": "605c1ee0-5e8a-4e0a-a99b-42a38873f822",
+      "name": "Welcoming Vampire",
+      "type_line": "Creature — Vampire",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/5/35a69bb5-b8e6-4558-9563-10c7a3662f93.jpg?1744402764",
+      "scryfall_uri": "https://scryfall.com/card/tdc/140/welcoming-vampire?utm_source=api"
+    },
+    "d139294c-36bb-4a1e-800d-50c4a4ae9877": {
+      "oracle_id": "d139294c-36bb-4a1e-800d-50c4a4ae9877",
+      "name": "Congregate",
+      "type_line": "Instant",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/8/9/89396f5e-5bc3-4c8a-976b-2cb2946eb35d.jpg?1675198780",
+      "scryfall_uri": "https://scryfall.com/card/dmr/4/congregate?utm_source=api"
+    },
+    "f62f3f4e-d506-43a9-91d8-bbc86e0a9167": {
+      "oracle_id": "f62f3f4e-d506-43a9-91d8-bbc86e0a9167",
+      "name": "Gryff's Boon",
+      "type_line": "Enchantment — Aura",
+      "colors": [
+        "W"
+      ],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/a/0/a01e7a3f-9654-4f72-8adc-20dad0b5d14e.jpg?1736467511",
+      "scryfall_uri": "https://scryfall.com/card/inr/25/gryffs-boon?utm_source=api"
+    },
+    "7acd7ef5-0e26-436d-962a-1a391f81c2e8": {
+      "oracle_id": "7acd7ef5-0e26-436d-962a-1a391f81c2e8",
+      "name": "Perilous Vault",
+      "type_line": "Artifact",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/f/3f747fa8-515c-4c79-8d2e-f1bbab2e4602.jpg?1690005680",
+      "scryfall_uri": "https://scryfall.com/card/cmm/968/perilous-vault?utm_source=api"
+    },
+    "72ccdcef-5c84-45ba-bda3-3dc014e1585c": {
+      "oracle_id": "72ccdcef-5c84-45ba-bda3-3dc014e1585c",
+      "name": "Scuttling Doom Engine",
+      "type_line": "Artifact Creature — Construct",
+      "colors": [],
+      "color_identity": [],
+      "image_normal": "https://cards.scryfall.io/normal/front/7/a/7ad0dfdd-2075-4a42-976b-e493246bc61c.jpg?1592711322",
+      "scryfall_uri": "https://scryfall.com/card/c18/219/scuttling-doom-engine?utm_source=api"
+    },
+    "edd531b9-f615-4399-8c8c-1c5e18c4acbf": {
+      "oracle_id": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+      "name": "Delver of Secrets // Insectile Aberration",
+      "type_line": "Creature — Human Wizard // Creature — Human Insect",
+      "colors": [],
+      "color_identity": [
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/9/6904ea20-e504-47da-95a0-08739fdde260.jpg?1736467707",
+      "scryfall_uri": "https://scryfall.com/card/inr/60/delver-of-secrets-insectile-aberration?utm_source=api"
+    },
+    "da412474-1da8-409b-bd7b-87cbfc239fb0": {
+      "oracle_id": "da412474-1da8-409b-bd7b-87cbfc239fb0",
+      "name": "Suspicious Stowaway // Seafaring Werewolf",
+      "type_line": "Creature — Human Rogue Werewolf // Creature — Werewolf",
+      "colors": [],
+      "color_identity": [
+        "G",
+        "U"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/a/b/ab17c8fa-4c06-4542-848a-e3f2f9f47c27.jpg?1634347650",
+      "scryfall_uri": "https://scryfall.com/card/mid/80/suspicious-stowaway-seafaring-werewolf?utm_source=api"
+    },
+    "259ac30c-cc05-4c04-9b23-71283f84b808": {
+      "oracle_id": "259ac30c-cc05-4c04-9b23-71283f84b808",
+      "name": "Wedding Announcement // Wedding Festivity",
+      "type_line": "Enchantment // Enchantment",
+      "colors": [],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/e/4e6f365d-c5c4-4fd6-94cb-833b89239d73.jpg?1736467644",
+      "scryfall_uri": "https://scryfall.com/card/inr/51/wedding-announcement-wedding-festivity?utm_source=api"
+    },
+    "96cb97ca-4ce0-4d33-86fb-4db4ce1956be": {
+      "oracle_id": "96cb97ca-4ce0-4d33-86fb-4db4ce1956be",
+      "name": "Edgar, Charmed Groom // Edgar Markov's Coffin",
+      "type_line": "Legendary Creature — Vampire Noble // Legendary Artifact",
+      "colors": [],
+      "color_identity": [
+        "B",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/6/3/63ba8eef-b834-4031-b0a1-0f8505d53813.jpg?1643594071",
+      "scryfall_uri": "https://scryfall.com/card/vow/236/edgar-charmed-groom-edgar-markovs-coffin?utm_source=api"
+    },
+    "a720f3d3-c2d7-4e50-8cc6-600120380e9c": {
+      "oracle_id": "a720f3d3-c2d7-4e50-8cc6-600120380e9c",
+      "name": "Voldaren Bloodcaster // Bloodbat Summoner",
+      "type_line": "Creature — Vampire Wizard // Creature — Vampire Wizard",
+      "colors": [],
+      "color_identity": [
+        "B"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/b/4b4390f4-451f-4575-96e0-dc4dcb45ad8f.jpg?1736468073",
+      "scryfall_uri": "https://scryfall.com/card/inr/138/voldaren-bloodcaster-bloodbat-summoner?utm_source=api"
+    },
+    "432b37a5-d32a-4b78-91ab-860aa026b7cc": {
+      "oracle_id": "432b37a5-d32a-4b78-91ab-860aa026b7cc",
+      "name": "Archangel Avacyn // Avacyn, the Purifier",
+      "type_line": "Legendary Creature — Angel // Legendary Creature — Angel",
+      "colors": [],
+      "color_identity": [
+        "R",
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/f/e/fe675f03-cbb5-4177-b7d7-64a30260ee2a.jpg?1736467464",
+      "scryfall_uri": "https://scryfall.com/card/inr/11/archangel-avacyn-avacyn-the-purifier?utm_source=api"
+    },
+    "6bb7d0df-7a9f-4e17-8c31-7628c4b12356": {
+      "oracle_id": "6bb7d0df-7a9f-4e17-8c31-7628c4b12356",
+      "name": "Arlinn Kord // Arlinn, Embraced by the Moon",
+      "type_line": "Legendary Planeswalker — Arlinn // Legendary Planeswalker — Arlinn",
+      "colors": [],
+      "color_identity": [
+        "G",
+        "R"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/7/e72d7c11-2165-4c72-80f3-3c1a7b4b5572.jpg?1736468478",
+      "scryfall_uri": "https://scryfall.com/card/inr/230/arlinn-kord-arlinn-embraced-by-the-moon?utm_source=api"
+    },
+    "87c43776-dd98-4e12-9b95-82d2b8f4f1ab": {
+      "oracle_id": "87c43776-dd98-4e12-9b95-82d2b8f4f1ab",
+      "name": "Duskwatch Recruiter // Krallenhorde Howler",
+      "type_line": "Creature — Human Warrior Werewolf // Creature — Werewolf",
+      "colors": [],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/4/e/4ef68479-ab2e-4a60-886c-ad007b64f185.jpg?1739519198",
+      "scryfall_uri": "https://scryfall.com/card/inr/193/duskwatch-recruiter-krallenhorde-howler?utm_source=api"
+    },
+    "6e638587-30b3-4c4b-b463-fb415ea048f7": {
+      "oracle_id": "6e638587-30b3-4c4b-b463-fb415ea048f7",
+      "name": "Mayor of Avabruck // Howlpack Alpha",
+      "type_line": "Creature — Human Advisor Werewolf // Creature — Werewolf",
+      "colors": [],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/e/f/ef84540b-a132-4169-b3c0-b0edeb395c9b.jpg?1736468379",
+      "scryfall_uri": "https://scryfall.com/card/inr/207/mayor-of-avabruck-howlpack-alpha?utm_source=api"
+    },
+    "18563bc9-6090-4629-b304-89a67d93f635": {
+      "oracle_id": "18563bc9-6090-4629-b304-89a67d93f635",
+      "name": "Tovolar's Huntmaster // Tovolar's Packleader",
+      "type_line": "Creature — Human Werewolf // Creature — Werewolf",
+      "colors": [],
+      "color_identity": [
+        "G"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/9/3983a304-5040-4b8d-945a-bf4ede3104a8.jpg?1636224948",
+      "scryfall_uri": "https://scryfall.com/card/mid/204/tovolars-huntmaster-tovolars-packleader?utm_source=api"
+    },
+    "b85e7ab2-6f57-4b65-8c16-034b342996f0": {
+      "oracle_id": "b85e7ab2-6f57-4b65-8c16-034b342996f0",
+      "name": "Ambitious Farmhand // Seasoned Cathar",
+      "type_line": "Creature — Human Peasant // Creature — Human Knight",
+      "colors": [],
+      "color_identity": [
+        "W"
+      ],
+      "image_normal": "https://cards.scryfall.io/normal/front/3/6/36cb9b12-98a3-4770-9ae0-a3b02f057c2e.jpg?1736467448",
+      "scryfall_uri": "https://scryfall.com/card/inr/8/ambitious-farmhand-seasoned-cathar?utm_source=api"
+    }
+  }
+}

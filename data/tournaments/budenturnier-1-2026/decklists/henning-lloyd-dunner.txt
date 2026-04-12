@@ -1,0 +1,30 @@
+~~Mainboard~~
+4 Consider
+4 Darksteel Citadel
+4 Delver of Secrets // Insectile Aberration
+4 Ensoul Artifact
+3 Expressive Iteration
+4 Fading Hope
+6 Island
+3 Mountain
+4 Ornithopter
+3 Play with Fire
+4 Serpentine Ambush
+4 Shivan Reef
+3 Shrapnel Blast
+4 Stormchaser Drake
+2 Sulfur Falls
+4 Suspicious Stowaway // Seafaring Werewolf
+~~Sideboard~~
+1 Abrade
+1 Burn Down the House
+2 Cathartic Pyre
+1 Expressive Iteration
+1 Mercurial Transformation
+1 Pithing Needle
+1 Play with Fire
+2 Prismari Command
+1 Resculpt
+1 Shrapnel Blast
+1 Test of Talents
+2 Tormod's Crypt

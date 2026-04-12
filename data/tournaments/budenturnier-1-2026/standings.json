@@ -1,0 +1,23 @@
+{
+  "standings": [
+    { "rank": 1, "displayName": "Lei Gao", "matchPoints": 13, "omwPercent": 55.93, "gwPercent": 77.78, "ogwPercent": 53.6, "hasDecklist": true },
+    { "rank": 2, "displayName": "Julian Gramatke", "matchPoints": 13, "omwPercent": 64, "gwPercent": 71.79, "ogwPercent": 62.11, "hasDecklist": true },
+    { "rank": 3, "displayName": "Fabian M", "matchPoints": 10, "omwPercent": 48.33, "gwPercent": 63.64, "ogwPercent": 49.85, "hasDecklist": true },
+    { "rank": 4, "displayName": "Mombo", "matchPoints": 10, "omwPercent": 53.27, "gwPercent": 58.33, "ogwPercent": 52.2, "hasDecklist": true },
+    { "rank": 5, "displayName": "Henning Lloyd Dünner", "matchPoints": 9, "omwPercent": 58.67, "gwPercent": 61.54, "ogwPercent": 56.93, "hasDecklist": true },
+    { "rank": 6, "displayName": "Ricardo Rodrigues", "matchPoints": 9, "omwPercent": 57.27, "gwPercent": 60, "ogwPercent": 53.82, "hasDecklist": true },
+    { "rank": 7, "displayName": "Andy Gast", "matchPoints": 9, "omwPercent": 53.33, "gwPercent": 50, "ogwPercent": 53.96, "hasDecklist": false },
+    { "rank": 8, "displayName": "Max Q.", "matchPoints": 9, "omwPercent": 52, "gwPercent": 58.33, "ogwPercent": 51.58, "hasDecklist": true },
+    { "rank": 9, "displayName": "Simon Ranzau", "matchPoints": 7, "omwPercent": 56, "gwPercent": 54.55, "ogwPercent": 55.57, "hasDecklist": true },
+    { "rank": 10, "displayName": "Luc", "matchPoints": 7, "omwPercent": 49.33, "gwPercent": 54.55, "ogwPercent": 52.06, "hasDecklist": true },
+    { "rank": 11, "displayName": "Lars-Erik Endlich", "matchPoints": 7, "omwPercent": 42.6, "gwPercent": 48.72, "ogwPercent": 46.9, "hasDecklist": true },
+    { "rank": 12, "displayName": "Teasy", "matchPoints": 6, "omwPercent": 61.33, "gwPercent": 41.67, "ogwPercent": 58.76, "hasDecklist": true },
+    { "rank": 13, "displayName": "Andreas Hansen Meyer", "matchPoints": 6, "omwPercent": 48.25, "gwPercent": 50, "ogwPercent": 49.37, "hasDecklist": true },
+    { "rank": 14, "displayName": "Tobias Erdmann", "matchPoints": 6, "omwPercent": 47.93, "gwPercent": 46.15, "ogwPercent": 47.66, "hasDecklist": true },
+    { "rank": 15, "displayName": "Darius Metz", "matchPoints": 6, "omwPercent": 44.92, "gwPercent": 41.67, "ogwPercent": 46.19, "hasDecklist": true },
+    { "rank": 16, "displayName": "Stefan Rather", "matchPoints": 5, "omwPercent": 46.67, "gwPercent": 44.44, "ogwPercent": 50.12, "hasDecklist": true },
+    { "rank": 17, "displayName": "Spook", "matchPoints": 5, "omwPercent": 45.33, "gwPercent": 38.89, "ogwPercent": 50.18, "hasDecklist": true },
+    { "rank": 18, "displayName": "Michael Hagemann", "matchPoints": 4, "omwPercent": 56.58, "gwPercent": 30, "ogwPercent": 53.82, "hasDecklist": true },
+    { "rank": 19, "displayName": "Niklas Meyer", "matchPoints": 3, "omwPercent": 43.93, "gwPercent": 27.27, "ogwPercent": 46.68, "hasDecklist": true }
+  ]
+}

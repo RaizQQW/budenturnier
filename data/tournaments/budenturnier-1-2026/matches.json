@@ -1,0 +1,544 @@
+{
+  "matches": [
+    {
+      "phase": "swiss",
+      "swissRound": 1,
+      "table": 1,
+      "playerA": "Max Q.",
+      "playerB": "Andreas Hansen Meyer",
+      "gamesA": 2,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 1,
+      "table": 2,
+      "playerA": "Teasy",
+      "playerB": "Tobias Erdmann",
+      "gamesA": 2,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 1,
+      "table": 3,
+      "playerA": "Julian Gramatke",
+      "playerB": "Lei Gao",
+      "gamesA": 1,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 1,
+      "table": 4,
+      "playerA": "Ricardo Rodrigues",
+      "playerB": "Niklas Meyer",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 1,
+      "table": 5,
+      "playerA": "Simon Ranzau",
+      "playerB": "Lars-Erik Endlich",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 1,
+      "table": 6,
+      "playerA": "Luc",
+      "playerB": "Darius Metz",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 1,
+      "table": 7,
+      "playerA": "Andy Gast",
+      "playerB": "Fabian M",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 1,
+      "table": 8,
+      "playerA": "Mombo",
+      "playerB": "Michael Hagemann",
+      "gamesA": 1,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 1,
+      "table": 9,
+      "playerA": "Henning Lloyd Dünner",
+      "playerB": "Spook",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 1,
+      "table": 10,
+      "playerA": "Stefan Rather",
+      "playerB": null,
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": true
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 2,
+      "table": 1,
+      "playerA": "Stefan Rather",
+      "playerB": "Simon Ranzau",
+      "gamesA": 1,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 2,
+      "table": 2,
+      "playerA": "Teasy",
+      "playerB": "Max Q.",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 2,
+      "table": 3,
+      "playerA": "Luc",
+      "playerB": "Henning Lloyd Dünner",
+      "gamesA": 1,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 2,
+      "table": 4,
+      "playerA": "Andy Gast",
+      "playerB": "Ricardo Rodrigues",
+      "gamesA": 0,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 2,
+      "table": 5,
+      "playerA": "Lei Gao",
+      "playerB": "Michael Hagemann",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 2,
+      "table": 6,
+      "playerA": "Julian Gramatke",
+      "playerB": "Mombo",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 2,
+      "table": 7,
+      "playerA": "Darius Metz",
+      "playerB": "Spook",
+      "gamesA": 0,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 2,
+      "table": 8,
+      "playerA": "Niklas Meyer",
+      "playerB": "Lars-Erik Endlich",
+      "gamesA": 0,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 2,
+      "table": 9,
+      "playerA": "Andreas Hansen Meyer",
+      "playerB": "Tobias Erdmann",
+      "gamesA": 1,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 2,
+      "table": 10,
+      "playerA": "Fabian M",
+      "playerB": null,
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": true
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 3,
+      "table": 1,
+      "playerA": "Stefan Rather",
+      "playerB": "Max Q.",
+      "gamesA": 0,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 3,
+      "table": 2,
+      "playerA": "Ricardo Rodrigues",
+      "playerB": "Lei Gao",
+      "gamesA": 0,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 3,
+      "table": 3,
+      "playerA": "Simon Ranzau",
+      "playerB": "Julian Gramatke",
+      "gamesA": 0,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 3,
+      "table": 4,
+      "playerA": "Teasy",
+      "playerB": "Henning Lloyd Dünner",
+      "gamesA": 0,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 3,
+      "table": 5,
+      "playerA": "Andy Gast",
+      "playerB": "Tobias Erdmann",
+      "gamesA": 2,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 3,
+      "table": 6,
+      "playerA": "Luc",
+      "playerB": "Fabian M",
+      "gamesA": 1,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 3,
+      "table": 7,
+      "playerA": "Lars-Erik Endlich",
+      "playerB": "Spook",
+      "gamesA": 1,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 3,
+      "table": 8,
+      "playerA": "Michael Hagemann",
+      "playerB": "Niklas Meyer",
+      "gamesA": 0,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 3,
+      "table": 9,
+      "playerA": "Mombo",
+      "playerB": "Darius Metz",
+      "gamesA": 2,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 3,
+      "table": 10,
+      "playerA": "Andreas Hansen Meyer",
+      "playerB": null,
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": true
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 4,
+      "table": 1,
+      "playerA": "Stefan Rather",
+      "playerB": "Spook",
+      "gamesA": 1,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 4,
+      "table": 2,
+      "playerA": "Lei Gao",
+      "playerB": "Teasy",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 4,
+      "table": 3,
+      "playerA": "Max Q.",
+      "playerB": "Andy Gast",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 4,
+      "table": 4,
+      "playerA": "Ricardo Rodrigues",
+      "playerB": "Mombo",
+      "gamesA": 0,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 4,
+      "table": 5,
+      "playerA": "Lars-Erik Endlich",
+      "playerB": "Fabian M",
+      "gamesA": 1,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 4,
+      "table": 6,
+      "playerA": "Simon Ranzau",
+      "playerB": "Luc",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 4,
+      "table": 7,
+      "playerA": "Henning Lloyd Dünner",
+      "playerB": "Julian Gramatke",
+      "gamesA": 1,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 4,
+      "table": 8,
+      "playerA": "Andreas Hansen Meyer",
+      "playerB": "Niklas Meyer",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 4,
+      "table": 9,
+      "playerA": "Tobias Erdmann",
+      "playerB": "Michael Hagemann",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 4,
+      "table": 10,
+      "playerA": "Darius Metz",
+      "playerB": null,
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": true
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 5,
+      "table": 1,
+      "playerA": "Stefan Rather",
+      "playerB": "Lars-Erik Endlich",
+      "gamesA": 1,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 5,
+      "table": 2,
+      "playerA": "Julian Gramatke",
+      "playerB": "Max Q.",
+      "gamesA": 2,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 5,
+      "table": 3,
+      "playerA": "Simon Ranzau",
+      "playerB": "Mombo",
+      "gamesA": 1,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 5,
+      "table": 4,
+      "playerA": "Fabian M",
+      "playerB": "Tobias Erdmann",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 5,
+      "table": 5,
+      "playerA": "Teasy",
+      "playerB": "Andy Gast",
+      "gamesA": 1,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 5,
+      "table": 6,
+      "playerA": "Andreas Hansen Meyer",
+      "playerB": "Ricardo Rodrigues",
+      "gamesA": 0,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 5,
+      "table": 7,
+      "playerA": "Lei Gao",
+      "playerB": "Henning Lloyd Dünner",
+      "gamesA": 2,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 5,
+      "table": 8,
+      "playerA": "Spook",
+      "playerB": "Luc",
+      "gamesA": 0,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 5,
+      "table": 9,
+      "playerA": "Niklas Meyer",
+      "playerB": "Darius Metz",
+      "gamesA": 1,
+      "gamesB": 2,
+      "bye": false
+    },
+    {
+      "phase": "swiss",
+      "swissRound": 5,
+      "table": 10,
+      "playerA": "Michael Hagemann",
+      "playerB": null,
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": true
+    },
+    {
+      "phase": "bracket",
+      "bracketRound": "semis",
+      "table": 1,
+      "playerA": "Julian Gramatke",
+      "playerB": "Fabian M",
+      "gamesA": 2,
+      "gamesB": 1,
+      "bye": false
+    },
+    {
+      "phase": "bracket",
+      "bracketRound": "semis",
+      "table": 2,
+      "playerA": "Lei Gao",
+      "playerB": "Mombo",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "bracket",
+      "bracketRound": "third",
+      "table": 1,
+      "playerA": "Fabian M",
+      "playerB": "Mombo",
+      "gamesA": 2,
+      "gamesB": 0,
+      "bye": false
+    },
+    {
+      "phase": "bracket",
+      "bracketRound": "finals",
+      "table": 1,
+      "playerA": "Julian Gramatke",
+      "playerB": "Lei Gao",
+      "gamesA": 0,
+      "gamesB": 2,
+      "bye": false
+    }
+  ]
+}

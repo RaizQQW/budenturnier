@@ -1,0 +1,30 @@
+Mainboard
+4 Blood Researcher
+2 Daemogoth Woe-Eater
+4 Dina, Soul Steeper
+3 Eyetwitch
+3 Falkenrath Noble
+1 Field of Ruin
+5 Forest
+3 Hunt for Specimens
+4 Infernal Grasp
+2 Infuse with Vitality
+4 Llanowar Wastes
+2 Plumb the Forbidden
+4 Sedgemoor Witch
+7 Swamp
+4 Tend the Pests
+2 Valentin, Dean of the Vein
+2 Witherbloom Command
+4 Woodland Cemetery
+
+SIDEBOARD:
+2 Biting Rain
+2 Containment Breach
+1 Culling Ritual
+2 Curse of Leeches
+1 Diregraf Rebirth
+2 Environmental Sciences
+2 Go Blank
+1 Necrotic Fumes
+2 Pest Summoning

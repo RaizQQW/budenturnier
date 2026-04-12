@@ -1,0 +1,27 @@
+{
+  "decks": [
+    {
+      "playerId": "lei-gao",
+      "displayName": "Lei Gao",
+      "deckFile": "lei-gao.txt",
+      "archetype": "Mardu Midrange",
+      "harmonizedArchetype": "Mardu Midrange"
+    },
+    { "playerId": "julian-gramatke", "displayName": "Julian Gramatke", "deckFile": "julian-gramatke.txt", "archetype": "Abzan Control" },
+    { "playerId": "mombo", "displayName": "Mombo", "deckFile": "mombo.txt", "archetype": "Selesnya Humans" },
+    { "playerId": "niklas-meyer", "displayName": "Niklas Meyer", "deckFile": "niklas-meyer.txt", "archetype": "Vampires" },
+    { "playerId": "henning-lloyd-dunner", "displayName": "Henning Lloyd Dünner", "deckFile": "henning-lloyd-dunner.txt", "archetype": "Izzet Ensoul" },
+    { "playerId": "max-q", "displayName": "Max Q.", "deckFile": "max-q.txt", "archetype": "Naya Humans (toolbox)" },
+    { "playerId": "simon-ranzau", "displayName": "Simon Ranzau", "deckFile": "simon-ranzau.txt", "archetype": "Izzet Control" },
+    { "playerId": "lars-erik-endlich", "displayName": "Lars-Erik Endlich", "deckFile": "lars-erik-endlich.txt", "archetype": "Boros Humans" },
+    { "playerId": "darius-metz", "displayName": "Darius Metz", "deckFile": "darius-metz.txt", "archetype": "BG Sacrifice Midrange" },
+    { "playerId": "luc", "displayName": "Luc", "deckFile": "luc.txt", "archetype": "BG Graveyard" },
+    { "playerId": "stefan-rather", "displayName": "Stefan Rather", "deckFile": "stefan-rather.txt", "archetype": "MonoWhite Midrange" },
+    { "playerId": "ricardo-rodrigues", "displayName": "Ricardo Rodrigues", "deckFile": "ricardo-rodrigues.txt", "archetype": "Rakdos Vampires" },
+    { "playerId": "michael-hagemann", "displayName": "Michael Hagemann", "deckFile": "michael-hagemann.txt", "archetype": "BG Midrange" },
+    { "playerId": "spook", "displayName": "Spook", "deckFile": "spook.txt", "archetype": "BG Pests" },
+    { "playerId": "teasy", "displayName": "Teasy", "deckFile": "teasy.txt", "archetype": "UW Control" },
+    { "playerId": "tobias-erdmann", "displayName": "Tobias Erdmann", "deckFile": "tobias-erdmann.txt", "archetype": "Boros Aggro" },
+    { "playerId": "andreas-hansen-meyer", "displayName": "Andreas Hansen Meyer", "deckFile": "andreas-hansen-meyer.txt", "archetype": "BG Pests" }
+  ]
+}

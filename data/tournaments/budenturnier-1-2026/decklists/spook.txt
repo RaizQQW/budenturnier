@@ -1,0 +1,39 @@
+Mainboard
+2 Altar's Reap
+1 Beledros Witherbloom
+2 Blex, Vexing Pest
+3 Callous Bloodmage
+2 Culling Ritual
+1 Deadly Brew
+2 Dina, Soul Steeper
+2 Eaten Alive
+4 Elvish Mystic
+1 Evolving Wilds
+2 Falkenrath Noble
+2 Field of Ruin
+4 Forest
+3 Hunt for Specimens
+2 Llanowar Wastes
+2 Mortality Spear
+1 Parallel Lives
+2 Plumb the Forbidden
+1 Professor Onyx
+4 Sedgemoor Witch
+8 Swamp
+3 Undying Malice
+1 Urborg, Tomb of Yawgmoth
+1 Westvale Abbey
+4 Woodland Cemetery
+
+SIDEBOARD:
+2 Containment Breach
+1 Deadly Brew
+1 Environmental Sciences
+1 Falkenrath Noble
+1 Introduction to Annihilation
+1 Necrotic Fumes
+3 Pest Summoning
+1 Plumb the Forbidden
+2 Ranger's Guile
+1 Wandering Archaic
+1 Witherbloom Apprentice
