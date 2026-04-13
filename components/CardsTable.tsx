@@ -373,13 +373,13 @@ export function CardsTable({
 
       <div className="overflow-x-auto rounded-lg border border-zinc-200 dark:border-zinc-800">
         <div className="max-h-[min(70vh,720px)] overflow-y-auto">
-          <table className="w-full min-w-0 table-fixed border-collapse text-sm">
+          <table className="w-full min-w-[760px] border-collapse text-sm">
             <thead className="sticky top-0 z-10 bg-zinc-100/90 shadow-sm dark:bg-zinc-900">
               <tr className="border-b border-zinc-200 text-left dark:border-zinc-800">
-                <Th sortKey="adjustedAvg" currentSort={sortKey} onSort={setSortKey} className="w-10 whitespace-nowrap px-2 py-2 text-center text-xs sm:px-3 sm:text-sm" title="Performance grade relative to all cards in this event (S = top 5%, A = next 15%, B = next 25%, C = next 30%, D = next 15%, F = bottom 10%)">
+                <Th sortKey="adjustedAvg" currentSort={sortKey} onSort={setSortKey} className="w-[4.5rem] whitespace-nowrap px-2 py-2 text-center text-xs sm:px-3 sm:text-sm" title="Performance grade relative to all cards in this event (S = top 5%, A = next 15%, B = next 25%, C = next 30%, D = next 15%, F = bottom 10%)">
                   Grade
                 </Th>
-                <th className="w-[36%] min-w-[7rem] px-2 py-2 text-xs font-medium sm:w-[26%] sm:px-3 sm:text-sm lg:w-[20%]">
+                <th className="min-w-[12rem] px-2 py-2 text-xs font-medium sm:px-3 sm:text-sm">
                   Card
                 </th>
                 <th className="hidden w-[12%] min-w-0 px-2 py-2 text-xs font-medium min-[900px]:table-cell sm:px-3 sm:text-sm">
