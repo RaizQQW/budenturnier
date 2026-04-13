@@ -6,60 +6,10 @@ import { Fragment, useState } from "react";
 import type { MatchRow } from "@/lib/aggregate";
 import type { CardPreviewPayload, DeckWithCards } from "@/lib/types";
 
-import { CardPreview } from "./CardPreview";
 import { ManaCurve } from "./ManaCurve";
+import { DeckTypeBreakdown } from "./DeckTypeBreakdown";
+import { FlatDecklistSection, GroupedDecklist } from "./GroupedDecklist";
 import { RoundResults } from "./RoundResults";
-import { cardNameKey } from "@/lib/parseDecklist";
-
-function DecklistBlock({
-  title,
-  lines,
-  resolvedOracleIds,
-  cardPreviewsByOracle,
-}: {
-  title: string;
-  lines: DeckWithCards["lines"];
-  resolvedOracleIds: DeckWithCards["resolvedOracleIds"];
-  cardPreviewsByOracle: Record<string, CardPreviewPayload>;
-}) {
-  if (lines.length === 0) return null;
-  return (
-    <div className="mb-4 last:mb-0">
-      <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">
-        {title}
-      </h4>
-      <ul className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
-        {lines.map((line, i) => {
-          const oid = resolvedOracleIds[cardNameKey(line.name)];
-          const meta = oid ? cardPreviewsByOracle[oid] : undefined;
-          return (
-            <li
-              key={`${line.board}-${i}-${line.name}`}
-              className="flex gap-2 text-sm tabular-nums text-zinc-800 dark:text-zinc-200"
-            >
-              <span className="w-6 shrink-0 text-right text-zinc-500">
-                {line.qty}×
-              </span>
-              <span className="min-w-0 break-words leading-snug">
-                {meta ? (
-                  <CardPreview
-                    name={meta.name}
-                    typeLine={meta.type_line}
-                    imageNormal={meta.image_normal}
-                    scryfallUri={meta.scryfall_uri}
-                  />
-                ) : (
-                  <span className="font-medium">{line.name}</span>
-                )}
-              </span>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-}
-
 
 export function DeckTable({
   decks,
@@ -180,28 +130,44 @@ export function DeckTable({
                         </div>
                       )}
                       {Object.keys(cardCmcByOracle).length > 0 && (
-                        <div className="mb-4">
+                        <div className="mb-4 flex flex-col gap-4">
                           <ManaCurve
                             lines={d.lines}
                             resolvedOracleIds={d.resolvedOracleIds}
                             oracleCmc={cardCmcByOracle}
                             oracleTypes={cardTypesByOracle}
                           />
+                          <DeckTypeBreakdown
+                            lines={d.lines}
+                            resolvedOracleIds={d.resolvedOracleIds}
+                            oracleTypes={cardTypesByOracle}
+                          />
                         </div>
                       )}
                       <div className="max-h-[min(70vh,560px)] overflow-y-auto pr-1">
-                        <DecklistBlock
-                          title="Mainboard"
-                          lines={d.lines.filter((l) => l.board === "main")}
-                          resolvedOracleIds={d.resolvedOracleIds}
-                          cardPreviewsByOracle={cardPreviewsByOracle}
-                        />
-                        <DecklistBlock
-                          title="Sideboard"
-                          lines={d.lines.filter((l) => l.board === "side")}
-                          resolvedOracleIds={d.resolvedOracleIds}
-                          cardPreviewsByOracle={cardPreviewsByOracle}
-                        />
+                        <div className="flex flex-col gap-6">
+                          {Object.keys(cardTypesByOracle).length > 0 ? (
+                            <GroupedDecklist
+                              lines={d.lines}
+                              resolvedOracleIds={d.resolvedOracleIds}
+                              cardPreviewsByOracle={cardPreviewsByOracle}
+                              oracleTypes={cardTypesByOracle}
+                            />
+                          ) : (
+                            <FlatDecklistSection
+                              title="Mainboard"
+                              lines={d.lines.filter((l) => l.board === "main")}
+                              resolvedOracleIds={d.resolvedOracleIds}
+                              cardPreviewsByOracle={cardPreviewsByOracle}
+                            />
+                          )}
+                          <FlatDecklistSection
+                            title="Sideboard"
+                            lines={d.lines.filter((l) => l.board === "side")}
+                            resolvedOracleIds={d.resolvedOracleIds}
+                            cardPreviewsByOracle={cardPreviewsByOracle}
+                          />
+                        </div>
                       </div>
                     </td>
                   </tr>

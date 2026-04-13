@@ -6,9 +6,9 @@ import { computeTournamentStats } from "@/lib/aggregate";
 import { isValidSlug, loadTournamentIndex } from "@/lib/tournaments";
 import { RoundResults } from "@/components/RoundResults";
 import { ManaCurve } from "@/components/ManaCurve";
-import { CardPreview } from "@/components/CardPreview";
+import { DeckTypeBreakdown } from "@/components/DeckTypeBreakdown";
+import { FlatDecklistSection, GroupedDecklist } from "@/components/GroupedDecklist";
 import { ScryfallFooter } from "@/components/ScryfallFooter";
-import { cardNameKey } from "@/lib/parseDecklist";
 
 type Props = { params: Promise<{ slug: string; playerId: string }> };
 
@@ -47,53 +47,6 @@ function ordinalRank(n: number): string {
   }
 }
 
-function DeckSection({
-  title,
-  lines,
-  resolvedOracleIds,
-  cardPreviewsByOracle,
-}: {
-  title: string;
-  lines: ReturnType<typeof computeTournamentStats>["decksWithCards"][number]["lines"];
-  resolvedOracleIds: Record<string, string>;
-  cardPreviewsByOracle: ReturnType<typeof computeTournamentStats>["cardPreviewsByOracle"];
-}) {
-  if (lines.length === 0) return null;
-  return (
-    <div>
-      <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-zinc-500">
-        {title}
-      </h3>
-      <ul className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
-        {lines.map((line, i) => {
-          const oid = resolvedOracleIds[cardNameKey(line.name)];
-          const meta = oid ? cardPreviewsByOracle[oid] : undefined;
-          return (
-            <li
-              key={`${line.board}-${i}-${line.name}`}
-              className="flex gap-2 text-sm tabular-nums text-zinc-800 dark:text-zinc-200"
-            >
-              <span className="w-6 shrink-0 text-right text-zinc-500">{line.qty}×</span>
-              <span className="min-w-0 break-words leading-snug">
-                {meta ? (
-                  <CardPreview
-                    name={meta.name}
-                    typeLine={meta.type_line}
-                    imageNormal={meta.image_normal}
-                    scryfallUri={meta.scryfall_uri}
-                  />
-                ) : (
-                  <span className="font-medium">{line.name}</span>
-                )}
-              </span>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-}
-
 export default async function PlayerPage({ params }: Props) {
   const { slug, playerId } = await params;
   if (!isValidSlug(slug)) notFound();
@@ -105,6 +58,7 @@ export default async function PlayerPage({ params }: Props) {
   const hasDeck = deck.lines.length > 0;
   const hasMatches = stats.matches.length > 0;
   const hasCmc = Object.keys(stats.cardCmcByOracle).length > 0;
+  const hasOracleTypes = Object.keys(stats.cardTypesByOracle).length > 0;
 
   const archetype = deck.harmonizedArchetype ?? deck.archetype;
   const swissRecord = (() => {
@@ -188,24 +142,38 @@ export default async function PlayerPage({ params }: Props) {
             </h2>
 
             {hasCmc && (
-              <div className="mb-6">
+              <div className="mb-6 flex flex-col gap-6">
                 <ManaCurve
                   lines={deck.lines}
                   resolvedOracleIds={deck.resolvedOracleIds}
                   oracleCmc={stats.cardCmcByOracle}
                   oracleTypes={stats.cardTypesByOracle}
                 />
+                <DeckTypeBreakdown
+                  lines={deck.lines}
+                  resolvedOracleIds={deck.resolvedOracleIds}
+                  oracleTypes={stats.cardTypesByOracle}
+                />
               </div>
             )}
 
-            <div className="flex flex-col gap-6">
-              <DeckSection
-                title="Mainboard"
-                lines={deck.lines.filter((l) => l.board === "main")}
-                resolvedOracleIds={deck.resolvedOracleIds}
-                cardPreviewsByOracle={stats.cardPreviewsByOracle}
-              />
-              <DeckSection
+            <div className="flex flex-col gap-8">
+              {hasOracleTypes ? (
+                <GroupedDecklist
+                  lines={deck.lines}
+                  resolvedOracleIds={deck.resolvedOracleIds}
+                  cardPreviewsByOracle={stats.cardPreviewsByOracle}
+                  oracleTypes={stats.cardTypesByOracle}
+                />
+              ) : (
+                <FlatDecklistSection
+                  title="Mainboard"
+                  lines={deck.lines.filter((l) => l.board === "main")}
+                  resolvedOracleIds={deck.resolvedOracleIds}
+                  cardPreviewsByOracle={stats.cardPreviewsByOracle}
+                />
+              )}
+              <FlatDecklistSection
                 title="Sideboard"
                 lines={deck.lines.filter((l) => l.board === "side")}
                 resolvedOracleIds={deck.resolvedOracleIds}
