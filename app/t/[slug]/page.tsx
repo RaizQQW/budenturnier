@@ -154,8 +154,8 @@ export default async function TournamentPage({ params }: Props) {
         aside={<TournamentCsvExports slug={slug} bundles={csvBundles} />}
         description={
           <>
-            Cards from decks that performed well. Sort any column — switch to
-            raw match points with the Percentile scoring toggle.{" "}
+            Cards from decks that performed well. Sort any column and use
+            grade, play rate, copies, and Top-4 to explore what stood out.{" "}
             <Link
               href="/methodology#card-evaluation"
               className="underline hover:text-zinc-800 dark:hover:text-zinc-200"
