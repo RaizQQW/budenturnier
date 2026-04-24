@@ -9,6 +9,8 @@ import { ManaCurve } from "@/components/ManaCurve";
 import { DeckTypeBreakdown } from "@/components/DeckTypeBreakdown";
 import { FlatDecklistSection, GroupedDecklist } from "@/components/GroupedDecklist";
 import { ScryfallFooter } from "@/components/ScryfallFooter";
+import { CsvDownloadButton } from "@/components/CsvDownloadButton";
+import { decklistRowsToCsv } from "@/lib/csvExport";
 
 type Props = { params: Promise<{ slug: string; playerId: string }> };
 
@@ -59,6 +61,8 @@ export default async function PlayerPage({ params }: Props) {
   const hasMatches = stats.matches.length > 0;
   const hasCmc = Object.keys(stats.cardCmcByOracle).length > 0;
   const hasOracleTypes = Object.keys(stats.cardTypesByOracle).length > 0;
+  const decklistCsvFilename = `${slug}-${playerId}-decklist.csv`;
+  const decklistCsv = decklistRowsToCsv(deck.lines);
 
   const archetype = deck.harmonizedArchetype ?? deck.archetype;
   const swissRecord = (() => {
@@ -137,9 +141,16 @@ export default async function PlayerPage({ params }: Props) {
         {/* Decklist */}
         {hasDeck && (
           <section className="rounded-xl border border-zinc-200/80 bg-zinc-50/40 px-5 py-6 shadow-sm sm:px-7 dark:border-zinc-800/80 dark:bg-zinc-900/25">
-            <h2 className="mb-5 text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-              Decklist
-            </h2>
+            <div className="mb-5 flex items-center justify-between gap-3">
+              <h2 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+                Decklist
+              </h2>
+              <CsvDownloadButton
+                filename={decklistCsvFilename}
+                csv={decklistCsv}
+                label="CSV · Decklist"
+              />
+            </div>
 
             {hasCmc && (
               <div className="mb-6 flex flex-col gap-6">

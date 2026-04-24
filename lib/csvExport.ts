@@ -1,6 +1,7 @@
 import type {
   CardAggregateRow,
   CardPerformanceCluster,
+  ParsedDeckLine,
   SuperArchetypePlayRate,
 } from "./types";
 import type { MetagameMatrixPayload } from "./metagameMatrix";
@@ -133,6 +134,14 @@ export function cardPerformanceClustersToCsv(
         ].join(","),
       );
     }
+  }
+  return lines.join("\r\n");
+}
+
+export function decklistRowsToCsv(rows: ParsedDeckLine[]): string {
+  const lines = ["cardnumber;card"];
+  for (const row of rows) {
+    lines.push([String(row.qty), row.name].join(";"));
   }
   return lines.join("\r\n");
 }
